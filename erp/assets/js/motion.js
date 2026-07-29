@@ -288,6 +288,21 @@
       };
       const active = Math.max(0, tabs.findIndex((t) => t.getAttribute("aria-selected") === "true"));
       requestAnimationFrame(() => moveGlider(active));
+      // A lazy image inside a `hidden` panel is never fetched — the browser
+      // will not load what it cannot display — so the first click on a tab
+      // used to land on an empty frame while its screenshot started
+      // downloading. Once the strip is on screen the inactive panels are one
+      // click away, so their images stop being lazy at that point: nothing is
+      // paid for on first load, and no tab opens blank.
+      const shots = [...root.querySelectorAll(".flag__shot img[loading='lazy']")];
+      if (shots.length && "IntersectionObserver" in window) {
+        const warm = new IntersectionObserver((entries, obs) => {
+          if (!entries.some((e) => e.isIntersecting)) return;
+          shots.forEach((img) => img.setAttribute("loading", "eager"));
+          obs.disconnect();
+        }, { rootMargin: "300px" });
+        warm.observe(root);
+      }
       if ("ResizeObserver" in window) {
         new ResizeObserver(() => {
           const cur = Math.max(0, tabs.findIndex((t) => t.getAttribute("aria-selected") === "true"));
@@ -366,6 +381,101 @@
       });
     });
   }
+  function initHeroSlider() {
+    document.querySelectorAll("[data-hero-slider]").forEach((root) => {
+      const slides = [...root.querySelectorAll(".hero__slide")];
+      const dots = [...root.querySelectorAll(".hero__dot")];
+      // Everything that changes with the slide — the eyebrow, the paragraph
+      // and the primary button as well as the visual — carries data-syn, so
+      // the copy column stays in step without the script knowing about it.
+      const syn = [...root.querySelectorAll("[data-syn]")];
+      if (slides.length < 2) return;
+      const DUR = 6e3;
+      let i = Math.max(0, slides.findIndex((s) => s.classList.contains("is-active")));
+      let timer = null;
+      let paused = false;
+      const schedule = () => {
+        clearTimeout(timer);
+        if (reduced || paused) return;
+        timer = setTimeout(() => show(i + 1), DUR);
+      };
+      // Each copy stack collapses to whatever the active slide actually needs,
+      // so a short slide is not left holding the tallest one's empty space.
+      const stacks = [...root.querySelectorAll(".hero__stack")];
+      const sizeStacks = () => {
+        stacks.forEach((st) => {
+          const on = st.querySelector(".is-active");
+          if (on) st.style.height = on.offsetHeight + "px";
+        });
+      };
+      const show = (n) => {
+        i = (n + slides.length) % slides.length;
+        syn.forEach((el) => el.classList.toggle("is-active", Number(el.dataset.syn) === i));
+        sizeStacks();
+        slides.forEach((s, k) => {
+          if (k === i) s.removeAttribute("inert");
+          else s.setAttribute("inert", "");
+        });
+        dots.forEach((d, k) => {
+          const on = k === i;
+          d.classList.toggle("is-active", on);
+          d.setAttribute("aria-selected", String(on));
+          d.tabIndex = on ? 0 : -1;
+        });
+        schedule();
+      };
+      const setPaused = (v) => {
+        paused = v;
+        dots.forEach((d) => d.classList.toggle("is-paused", v));
+        if (v) clearTimeout(timer);
+        else schedule();
+      };
+      dots.forEach((d, k) => {
+        d.addEventListener("click", () => show(k));
+        d.addEventListener("keydown", (e) => {
+          const map = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: slides.length - 1 };
+          if (!(e.key in map)) return;
+          e.preventDefault();
+          show(map[e.key]);
+          dots[i].focus();
+        });
+      });
+      const prev = root.querySelector("[data-hero-prev]");
+      const next = root.querySelector("[data-hero-next]");
+      if (prev) prev.addEventListener("click", () => show(i - 1));
+      if (next) next.addEventListener("click", () => show(i + 1));
+      // Autoplay yields to anyone who is actually looking at it, and stops
+      // outright on a hidden tab so a backgrounded page is not animating.
+      root.addEventListener("pointerenter", () => setPaused(true));
+      root.addEventListener("pointerleave", () => setPaused(false));
+      root.addEventListener("focusin", () => setPaused(true));
+      root.addEventListener("focusout", (e) => {
+        if (!root.contains(e.relatedTarget)) setPaused(false);
+      });
+      document.addEventListener("visibilitychange", () => setPaused(document.hidden));
+      let x0 = null;
+      root.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+      root.addEventListener("touchend", (e) => {
+        if (x0 === null) return;
+        const dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 44) show(dx < 0 ? i + 1 : i - 1);
+        x0 = null;
+      }, { passive: true });
+      root.style.setProperty("--hero-dur", DUR + "ms");
+      // A width change rewraps the copy, so the pinned heights have to be
+      // recomputed or the stacks keep the old viewport's line count.
+      if ("ResizeObserver" in window) {
+        let w = root.clientWidth;
+        new ResizeObserver(() => {
+          if (root.clientWidth === w) return;
+          w = root.clientWidth;
+          stacks.forEach((st) => { st.style.height = ""; });
+          requestAnimationFrame(sizeStacks);
+        }).observe(root);
+      }
+      show(i);
+    });
+  }
   function boot() {
     initKinetic();
     initReveal();
@@ -377,6 +487,7 @@
     initMarquee();
     initFaq();
     initSteps();
+    initHeroSlider();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot, { once: true });
