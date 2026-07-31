@@ -263,8 +263,8 @@
       const tabs = [...root.querySelectorAll('[role="tab"]')];
       const panels = [...root.querySelectorAll('[role="tabpanel"]')];
       if (!tabs.length) return;
-      const glider = root.querySelector(".flag__glider, .app__glider");
-      const strip = root.querySelector(".flag__tabs, .app__tabs");
+      const glider = root.querySelector(".flag__glider");
+      const strip = root.querySelector(".flag__tabs");
       const moveGlider = (i) => {
         const t = tabs[i];
         if (glider) {
@@ -288,6 +288,21 @@
       };
       const active = Math.max(0, tabs.findIndex((t) => t.getAttribute("aria-selected") === "true"));
       requestAnimationFrame(() => moveGlider(active));
+      // A lazy image inside a `hidden` panel is never fetched — the browser
+      // will not load what it cannot display — so the first click on a tab
+      // used to land on an empty frame while its screenshot started
+      // downloading. Once the strip is on screen the inactive panels are one
+      // click away, so their images stop being lazy at that point: nothing is
+      // paid for on first load, and no tab opens blank.
+      const shots = [...root.querySelectorAll(".flag__shot img[loading='lazy']")];
+      if (shots.length && "IntersectionObserver" in window) {
+        const warm = new IntersectionObserver((entries, obs) => {
+          if (!entries.some((e) => e.isIntersecting)) return;
+          shots.forEach((img) => img.setAttribute("loading", "eager"));
+          obs.disconnect();
+        }, { rootMargin: "300px" });
+        warm.observe(root);
+      }
       if ("ResizeObserver" in window) {
         new ResizeObserver(() => {
           const cur = Math.max(0, tabs.findIndex((t) => t.getAttribute("aria-selected") === "true"));
@@ -461,114 +476,6 @@
       show(i);
     });
   }
-  // Lazy images that the browser will not fetch on its own: ones inside a
-  // `hidden` tab panel (it will not load what it cannot display), and ones a
-  // programmatic scroll jumps past faster than the lazy heuristics react. Any
-  // container marked data-warm flips its lazy images to eager as it comes
-  // near, so nothing is paid for on first load and nothing arrives blank.
-  function initWarmImages() {
-    if (!("IntersectionObserver" in window)) return;
-    document.querySelectorAll("[data-warm]").forEach((root) => {
-      const imgs = [...root.querySelectorAll("img[loading='lazy']")];
-      if (!imgs.length) return;
-      const obs = new IntersectionObserver((entries, o) => {
-        if (!entries.some((e) => e.isIntersecting)) return;
-        imgs.forEach((img) => img.setAttribute("loading", "eager"));
-        o.disconnect();
-      }, { rootMargin: "400px" });
-      obs.observe(root);
-    });
-  }
-  // Pause a drawing's animations while it is scrolled past. Fifteen looping
-  // SVGs were measured running together at 299 animations; the ones off screen
-  // are pure cost. Idle is opt-in via a class, so if this never runs the
-  // graphics simply keep animating as they did before.
-  function initDecorIdle() {
-    const arts = document.querySelectorAll(".decor");
-    if (!arts.length || !("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => e.target.classList.toggle("is-idle", !e.isIntersecting));
-    }, { rootMargin: "250px" });
-    arts.forEach((a) => io.observe(a));
-  }
-  // One quote on a stage at a time. Autoplay yields to anyone looking at it,
-  // the same rule the hero slider follows.
-  function initQuotes() {
-    document.querySelectorAll("[data-quotes]").forEach((root) => {
-      const qs = [...root.querySelectorAll("[data-q]")];
-      const dots = [...root.querySelectorAll(".rev__dot")];
-      if (qs.length < 2) return;
-      const now = root.querySelector("[data-q-now]");
-      const DUR = 7e3;
-      let i = 0, timer = null, paused = false;
-      const schedule = () => {
-        clearTimeout(timer);
-        if (reduced || paused) return;
-        timer = setTimeout(() => show(i + 1), DUR);
-      };
-      const show = (n) => {
-        i = (n + qs.length) % qs.length;
-        qs.forEach((q, k) => {
-          const on = k === i;
-          q.classList.toggle("is-active", on);
-          if (on) q.removeAttribute("inert"); else q.setAttribute("inert", "");
-        });
-        dots.forEach((d, k) => {
-          const on = k === i;
-          d.classList.toggle("is-active", on);
-          d.setAttribute("aria-selected", String(on));
-          d.tabIndex = on ? 0 : -1;
-        });
-        if (now) now.textContent = String(i + 1).padStart(2, "0");
-        schedule();
-      };
-      const setPaused = (v) => { paused = v; if (v) clearTimeout(timer); else schedule(); };
-      dots.forEach((d, k) => {
-        d.addEventListener("click", () => show(k));
-        d.addEventListener("keydown", (e) => {
-          const map = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: qs.length - 1 };
-          if (!(e.key in map)) return;
-          e.preventDefault(); show(map[e.key]); dots[i].focus();
-        });
-      });
-      const prev = root.querySelector("[data-q-prev]");
-      const next = root.querySelector("[data-q-next]");
-      if (prev) prev.addEventListener("click", () => show(i - 1));
-      if (next) next.addEventListener("click", () => show(i + 1));
-      root.addEventListener("pointerenter", () => setPaused(true));
-      root.addEventListener("pointerleave", () => setPaused(false));
-      root.addEventListener("focusin", () => setPaused(true));
-      root.addEventListener("focusout", (e) => { if (!root.contains(e.relatedTarget)) setPaused(false); });
-      document.addEventListener("visibilitychange", () => setPaused(document.hidden));
-      let x0 = null;
-      root.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
-      root.addEventListener("touchend", (e) => {
-        if (x0 === null) return;
-        const dx = e.changedTouches[0].clientX - x0;
-        if (Math.abs(dx) > 44) show(dx < 0 ? i + 1 : i - 1);
-        x0 = null;
-      }, { passive: true });
-      show(0);
-    });
-  }
-  // Generic pick-one: buttons carrying data-swap-to activate the item with the
-  // matching data-swap-item inside the same data-swap container.
-  function initSwap() {
-    document.querySelectorAll("[data-swap]").forEach((root) => {
-      const btns = [...root.querySelectorAll("[data-swap-to]")];
-      const items = [...root.querySelectorAll("[data-swap-item]")];
-      if (!btns.length || !items.length) return;
-      btns.forEach((b) => b.addEventListener("click", () => {
-        const n = b.dataset.swapTo;
-        btns.forEach((o) => {
-          const on = o === b;
-          o.classList.toggle("is-active", on);
-          o.setAttribute("aria-pressed", String(on));
-        });
-        items.forEach((it) => it.classList.toggle("is-active", it.dataset.swapItem === n));
-      }));
-    });
-  }
   function boot() {
     initKinetic();
     initReveal();
@@ -581,10 +488,6 @@
     initFaq();
     initSteps();
     initHeroSlider();
-    initWarmImages();
-    initDecorIdle();
-    initQuotes();
-    initSwap();
   }
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", boot, { once: true });
