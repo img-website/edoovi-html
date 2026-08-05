@@ -41,6 +41,14 @@ h1, h2, h3, h4, h5, h6, .font-display {
   z-index: 1;
 }
 
+html.dark .grid-lines {
+  background-image: none !important;
+}
+html.dark .grid-lines::after,
+html.dark .grid-lines::before {
+  display: none !important;
+}
+
 /* Ensure contents sit above the background grid layers */
 .grid-lines > div {
   position: relative;
@@ -100,21 +108,7 @@ h1, h2, h3, h4, h5, h6, .font-display {
   background: #94a3b8;
 }
 
-/* Custom UI glassmorphism style card */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-}
 
-/* Smooth Interactive Glows */
-.glow-indigo:hover {
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
-}
-.glow-teal:hover {
-  box-shadow: 0 0 30px rgba(20, 184, 166, 0.15);
-}
 
 /* Footer ECG / heartbeat line animation */
 @keyframes ecg-draw {
@@ -168,28 +162,7 @@ h1, h2, h3, h4, h5, h6, .font-display {
   animation: shimmer 3s linear infinite;
 }
 
-/* Floating Navbar Link Sliding Underline */
-.nav-link-underline {
-  position: relative;
-}
-.nav-link-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #4f46e5 0%, #14b8a6 100%);
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 9999px;
-}
-.nav-link-underline:hover::after {
-  width: 100%;
-}
-.nav-link-underline.active::after {
-  width: 100%;
-}
+
 
 /* Nav Pill Styles for new header */
 .nav-pill {
@@ -203,8 +176,6 @@ h1, h2, h3, h4, h5, h6, .font-display {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
-  background: rgba(255, 255, 255, 0.94);
-  border-color: rgba(226, 232, 240, 0.8);
 }
 
 /* Shimmer button text animation */
@@ -227,7 +198,7 @@ h1, h2, h3, h4, h5, h6, .font-display {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .ai-cards-swiper .swiper-pagination-bullet-active {
-  background: #28d2b7;
+  background: #0b6b5f;
   width: 24px;
   border-radius: 12px;
   opacity: 1;
@@ -277,4 +248,11 @@ h1, h2, h3, h4, h5, h6, .font-display {
   transform: translateY(calc(96.15% - (0.923 * var(--value, 0%))));
   transition: transform 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+/* Instagram Hover Brand Gradient */
+.hover-instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+  border-color: transparent !important;
+}
+
 

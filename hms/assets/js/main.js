@@ -4,33 +4,84 @@ lucide.createIcons();
 // Mobile Navigation Menu Toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
 const mobileNav = document.getElementById('mobile-nav');
-const menuIcon = document.getElementById('menu-icon');
 
-mobileMenuBtn.addEventListener('click', () => {
-  mobileNav.classList.toggle('hidden');
-  const isHidden = mobileNav.classList.contains('hidden');
-  mobileMenuBtn.setAttribute('aria-expanded', (!isHidden).toString());
-  menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
-  lucide.createIcons();
-});
-
-// Close mobile nav when clicking a link
-mobileNav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileNav.classList.add('hidden');
-    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-    menuIcon.setAttribute('data-lucide', 'menu');
-    lucide.createIcons();
+if (mobileMenuBtn && mobileNav) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('hidden');
+    const isHidden = mobileNav.classList.contains('hidden');
+    mobileMenuBtn.setAttribute('aria-expanded', (!isHidden).toString());
+    const menuIcon = document.getElementById('menu-icon');
+    if (menuIcon) {
+      menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+    }
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
   });
-});
+
+  // Close mobile nav when clicking a link
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      const menuIcon = document.getElementById('menu-icon');
+      if (menuIcon) {
+        menuIcon.setAttribute('data-lucide', 'menu');
+      }
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    });
+  });
+
+  // Mobile Sub-menu Accordion Toggle
+  mobileNav.querySelectorAll('.mobile-dropdown button').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const parent = btn.parentElement;
+      const submenu = parent.querySelector('.mobile-submenu');
+      
+      // Close other mobile submenus
+      mobileNav.querySelectorAll('.mobile-dropdown').forEach(item => {
+        if (item !== parent) {
+          const otherSub = item.querySelector('.mobile-submenu');
+          if (otherSub) otherSub.classList.add('hidden');
+          const otherChevron = item.querySelector('[data-lucide="chevron-down"]');
+          if (otherChevron) {
+            otherChevron.style.transform = 'rotate(0deg)';
+          }
+        }
+      });
+
+      if (submenu) {
+        submenu.classList.toggle('hidden');
+        const isClosed = submenu.classList.contains('hidden');
+        const chevron = btn.querySelector('[data-lucide="chevron-down"]');
+        if (chevron) {
+          chevron.style.transform = isClosed ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+      }
+    });
+  });
+}
 
 // Scroll-triggered navbar compact state
 const mainNavbar = document.getElementById('main-navbar');
 window.addEventListener('scroll', () => {
+  const isDark = document.documentElement.classList.contains('dark');
   if (window.scrollY > 40) {
     mainNavbar.classList.add('scrolled');
+    if (isDark) {
+      mainNavbar.style.backgroundColor = 'rgba(15, 23, 42, 0.94)';
+      mainNavbar.style.borderColor = 'rgba(30, 41, 59, 0.8)';
+    } else {
+      mainNavbar.style.backgroundColor = 'rgba(255, 255, 255, 0.94)';
+      mainNavbar.style.borderColor = 'rgba(226, 232, 240, 0.8)';
+    }
   } else {
     mainNavbar.classList.remove('scrolled');
+    mainNavbar.style.backgroundColor = '';
+    mainNavbar.style.borderColor = '';
   }
 }, { passive: true });
 
@@ -179,13 +230,13 @@ function switchModule(tabId) {
   let featuresHtml = '';
   data.features.forEach(f => {
     featuresHtml += `
-      <div class="flex items-start space-x-3 p-3 rounded-2xl bg-slate-50/70 border border-slate-100 hover:border-brand-200 hover:bg-brand-50/30 transition-all duration-200">
+      <div class="flex items-start space-x-3 p-3 rounded-2xl bg-slate-50/70 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-brand-200 hover:bg-brand-50/30 transition-all duration-200">
         <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm shadow-brand-500/20">
           <i data-lucide="check" class="w-3.5 h-3.5"></i>
         </div>
         <div>
-          <h6 class="text-xs font-bold text-slate-800">${f.name}</h6>
-          <p class="text-[0.6875rem] text-slate-500 mt-0.5 leading-relaxed">${f.desc}</p>
+          <h6 class="text-xs font-bold text-slate-800 dark:text-white">${f.name}</h6>
+          <p class="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">${f.desc}</p>
         </div>
       </div>
     `;
@@ -196,41 +247,41 @@ function switchModule(tabId) {
     <div class="space-y-5">
       <div class="flex items-start justify-between gap-4">
         <div>
-          <span class="inline-flex items-center space-x-1 text-[0.625rem] font-bold text-brand-600 tracking-widest uppercase bg-brand-50 border border-brand-100 px-2.5 py-0.5 rounded-md mb-2">
+          <span class="inline-flex items-center space-x-1 text-[0.625rem] font-bold text-brand-600 tracking-widest uppercase bg-brand-50 dark:bg-slate-800 border border-brand-100 dark:border-slate-700 px-2.5 py-0.5 rounded-md mb-2">
             <i data-lucide="layers" class="w-3 h-3"></i>
             <span>Module Detail</span>
           </span>
-          <h3 class="text-2xl font-display font-extrabold text-slate-900">${data.title}</h3>
+          <h3 class="text-2xl font-display font-extrabold text-slate-900 dark:text-white">${data.title}</h3>
         </div>
-        <div class="flex items-center space-x-1.5 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl">
+        <div class="flex items-center space-x-1.5 bg-emerald-50 dark:bg-slate-800 border border-emerald-200 dark:border-slate-700 px-3 py-1.5 rounded-xl">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span class="text-xs font-bold text-emerald-700">Active</span>
+          <span class="text-xs font-bold text-emerald-700 dark:text-emerald-400">Active</span>
         </div>
       </div>
 
       <div class="space-y-2">
         <h6 class="text-[0.625rem] font-bold text-slate-400 uppercase tracking-widest">Overview</h6>
-        <p class="text-slate-600 text-sm leading-relaxed">${data.desc}</p>
+        <p class="text-slate-600 dark:text-slate-350 text-sm leading-relaxed">${data.desc}</p>
       </div>
 
       <div>
         <h5 class="text-[0.625rem] font-bold uppercase tracking-widest text-slate-400 mb-3 flex items-center space-x-2">
-          <span class="flex-1 h-px bg-slate-100"></span>
+          <span class="flex-1 h-px bg-slate-100 dark:bg-slate-800"></span>
           <span>Key Features</span>
-          <span class="flex-1 h-px bg-slate-100"></span>
+          <span class="flex-1 h-px bg-slate-100 dark:bg-slate-800"></span>
         </h5>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           ${featuresHtml}
         </div>
       </div>
 
-      <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-indigo-50 to-brand-50/50 border border-indigo-100">
+      <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-indigo-50 dark:from-slate-800 to-brand-50/50 dark:to-slate-800/50 border border-indigo-100 dark:border-slate-700">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-indigo-500/25">
           <i data-lucide="trending-up" class="w-5 h-5"></i>
         </div>
         <div>
-          <h6 class="text-[0.625rem] font-bold text-indigo-900 uppercase tracking-wider">Business Benefits</h6>
-          <p class="text-xs text-indigo-800 mt-0.5 leading-relaxed">${data.benefits}</p>
+          <h6 class="text-[0.625rem] font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">Business Benefits</h6>
+          <p class="text-xs text-indigo-800 dark:text-indigo-200 mt-0.5 leading-relaxed">${data.benefits}</p>
         </div>
       </div>
     </div>
@@ -240,105 +291,27 @@ function switchModule(tabId) {
   lucide.createIcons();
 }
 
-// 2. AI Intelligence Sandbox Simulator
-const aiSimulations = {
-  'ai-reminder': `
-    <div class="space-y-3">
-      <div class="flex items-center justify-between pb-2 border-b border-slate-200/80">
-        <div class="flex items-center space-x-2.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span class="text-xs font-bold text-slate-800">WhatsApp Patient Assistant</span>
-        </div>
-        <span class="text-[0.625rem] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full">Confirmed</span>
-      </div>
-      <div class="p-4 bg-emerald-50/70 border-l-4 border-emerald-500 rounded-r-2xl text-xs text-slate-700 space-y-1.5">
-        <p><strong class="text-emerald-900">Hospital System:</strong> "Hi Rohit! Confirming your appointment with Dr. Gupta tomorrow at 10:00 AM. Reply 1 to confirm, 2 to reschedule."</p>
-        <p><strong class="text-slate-900">Patient Response:</strong> "1 (Confirmed)"</p>
-      </div>
-      <p class="text-xs text-emerald-600 font-semibold flex items-center gap-1">
-        <i data-lucide="check" class="w-3.5 h-3.5"></i> Appointment automatically added to doctor's schedule.
-      </p>
-    </div>
-  `,
-  'ai-discharge': `
-    <div class="space-y-3">
-      <div class="flex items-center justify-between pb-2 border-b border-slate-200/80">
-        <div class="flex items-center space-x-2.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-teal-500 animate-pulse"></span>
-          <span class="text-xs font-bold text-slate-800">Automated Discharge Summary</span>
-        </div>
-        <span class="text-[0.625rem] font-bold text-teal-700 bg-teal-50 px-2.5 py-0.5 rounded-full">Ready for Doctor</span>
-      </div>
-      <div class="p-4 bg-teal-50/60 border-l-4 border-teal-500 rounded-r-2xl text-xs text-slate-700 space-y-2">
-        <div class="flex justify-between items-center font-bold">
-          <span>Patient: Suman Roy (Ward B-12)</span>
-          <span class="text-emerald-700 font-extrabold text-[0.6875rem]">Fit for Discharge</span>
-        </div>
-        <p class="text-slate-600 leading-relaxed">Summary: Recovered well. Vitals are completely normal. Take-home medications and schedule successfully attached.</p>
-      </div>
-      <p class="text-xs text-teal-600 font-semibold flex items-center gap-1">
-        <i data-lucide="file-check" class="w-3.5 h-3.5"></i> Summary compiled and sent to the billing desk to speed up exit.
-      </p>
-    </div>
-  `,
-  'ai-procedure': `
-    <div class="space-y-3">
-      <div class="flex items-center justify-between pb-2 border-b border-slate-200/80">
-        <div class="flex items-center space-x-2.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-purple-500 animate-pulse"></span>
-          <span class="text-xs font-bold text-slate-800">Voice Consultation Notes</span>
-        </div>
-        <span class="text-[0.625rem] font-bold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full">Speech-to-Text</span>
-      </div>
-      <div class="p-4 bg-purple-50/60 border-l-4 border-purple-500 rounded-r-2xl text-xs text-slate-700 space-y-2">
-        <p class="italic text-slate-500 text-xs">Doctor dictated: "Prescribe Cefuroxime 500mg, twice a day for 5 days after meals."</p>
-        <div class="pt-2 border-t border-purple-100 flex items-center justify-between font-bold text-purple-900">
-          <span>Cefuroxime 500mg (Morning & Night, 5 Days)</span>
-          <span class="text-emerald-600 text-[0.625rem] bg-emerald-50 px-2 py-0.5 rounded-md">Auto-written</span>
-        </div>
-      </div>
-      <p class="text-xs text-purple-600 font-semibold flex items-center gap-1">
-        <i data-lucide="mic" class="w-3.5 h-3.5"></i> Notes added directly to patient's digital record.
-      </p>
-    </div>
-  `,
-  'ai-suggestions': `
-    <div class="space-y-3">
-      <div class="flex items-center justify-between pb-2 border-b border-slate-200/80">
-        <div class="flex items-center space-x-2.5">
-          <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-          <span class="text-xs font-bold text-slate-800">Drug Conflict Check</span>
-        </div>
-        <span class="text-[0.625rem] font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full">Safety Alert</span>
-      </div>
-      <div class="p-4 bg-amber-50/70 border-l-4 border-amber-500 rounded-r-2xl text-xs text-amber-900 space-y-1.5">
-        <p><strong class="text-rose-600">Warning:</strong> Warfarin conflicts with Ibuprofen (increased bleeding risk).</p>
-        <p><strong class="text-emerald-800">Suggested Alternative:</strong> Paracetamol 500mg.</p>
-      </div>
-      <p class="text-xs text-amber-700 font-semibold flex items-center gap-1">
-        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Conflict safety check complete.
-      </p>
-    </div>
-  `
-};
-
 let activeAISimulator = 'ai-reminder';
 
 function toggleAISandbox(aiId) {
   document.querySelectorAll('.ai-tab-btn').forEach(btn => {
-    btn.classList.remove('active', 'bg-[#4f46e5]', 'text-white', 'shadow-xs');
+    btn.classList.remove('active', 'bg-[#4f46e5]', 'bg-brand-600', 'text-white', 'shadow-xs');
     btn.classList.add('text-slate-600');
   });
   const selectedBtn = document.getElementById('btn-' + aiId);
   if (selectedBtn) {
-    selectedBtn.classList.add('active', 'bg-[#4f46e5]', 'text-white', 'shadow-xs');
+    selectedBtn.classList.add('active', 'bg-brand-600', 'text-white', 'shadow-xs');
     selectedBtn.classList.remove('text-slate-600');
   }
 
   activeAISimulator = aiId;
-  document.getElementById('ai-sandbox-output').innerHTML = aiSimulations[aiId];
-  if (typeof lucide !== 'undefined') {
-    lucide.createIcons();
+  
+  document.querySelectorAll('.ai-sandbox-content').forEach(content => {
+    content.classList.add('hidden');
+  });
+  const selectedContent = document.getElementById('sandbox-' + aiId);
+  if (selectedContent) {
+    selectedContent.classList.remove('hidden');
   }
 }
 
@@ -599,3 +572,115 @@ if (document.readyState !== 'loading') {
 } else {
   document.addEventListener('DOMContentLoaded', initApp);
 }
+
+// 4. Dark Mode Toggle Logic
+function initDarkMode() {
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
+
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+
+    // Update scrolled navbar color immediately if scrolled
+    if (mainNavbar && mainNavbar.classList.contains('scrolled')) {
+      if (isDark) {
+        mainNavbar.style.backgroundColor = 'rgba(15, 23, 42, 0.94)';
+        mainNavbar.style.borderColor = 'rgba(30, 41, 59, 0.8)';
+      } else {
+        mainNavbar.style.backgroundColor = 'rgba(255, 255, 255, 0.94)';
+        mainNavbar.style.borderColor = 'rgba(226, 232, 240, 0.8)';
+      }
+    }
+  }
+
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+  }
+  if (darkModeToggleMobile) {
+    darkModeToggleMobile.addEventListener('click', toggleDarkMode);
+  }
+
+  // Inject Tailwind Dark Mode Classes dynamically on load
+  function injectTailwindDarkClasses() {
+    // 1. Sections
+    document.querySelectorAll("section").forEach(sec => {
+      sec.classList.add("dark:bg-[#090d16]", "dark:text-slate-100");
+    });
+    const impact = document.getElementById("hms-impact");
+    if (impact) {
+      impact.classList.add("dark:bg-[#050811]");
+    }
+    
+    // 2. Footer
+    document.querySelectorAll("footer").forEach(foot => {
+      foot.classList.add("dark:bg-[#050811]", "dark:text-slate-200");
+    });
+
+    // 3. Cards & Mockups
+    document.querySelectorAll(".bg-white, .bg-white\\/90, .bg-white\\/95, .bg-white\\/80, .hover-glow-card").forEach(el => {
+      el.classList.add("dark:bg-slate-900", "dark:border-slate-800", "dark:from-slate-900", "dark:via-slate-900", "dark:to-slate-900");
+    });
+
+    // 4. Nested cards & blocks
+    document.querySelectorAll(".bg-slate-50, .bg-slate-100, [class*='bg-slate-50'], [class*='bg-slate-100']").forEach(el => {
+      el.classList.add("dark:bg-slate-800", "dark:border-slate-700");
+    });
+
+    // 5. Header Titles
+    document.querySelectorAll(".text-slate-900, .text-slate-800").forEach(el => {
+      el.classList.add("dark:text-white");
+    });
+
+    // 6. Paragraphs & descriptions
+    document.querySelectorAll(".text-slate-700, .text-slate-600, .text-slate-500").forEach(el => {
+      el.classList.add("dark:text-slate-300");
+    });
+
+    // 7. Badge & Pill variants
+    document.querySelectorAll("[class*='bg-tealAccent-50'], [class*='bg-purple-50'], [class*='bg-amber-50'], [class*='bg-teal-50'], [class*='bg-emerald-50'], [class*='bg-blue-50'], [class*='bg-cyan-50'], [class*='bg-sky-50'], [class*='bg-rose-50']").forEach(el => {
+      el.classList.add("dark:bg-slate-800", "dark:border-slate-700");
+    });
+
+    // 8. Sidebar tab buttons hover/active selectors
+    document.querySelectorAll('.module-tab-btn').forEach(btn => {
+      btn.classList.add("dark:bg-slate-900/40", "dark:border-slate-800/80", "dark:hover:lg:bg-slate-800", "dark:group-[.active]:bg-slate-900");
+    });
+
+    // 9. FAQ border
+    document.querySelectorAll('.faq-item').forEach(el => {
+      el.classList.add("dark:border-slate-800", "dark:bg-slate-900");
+    });
+
+    // 10. Card watermarks & Progress Bar tracks/fills
+    document.querySelectorAll(".text-slate-100").forEach(el => {
+      el.classList.add("dark:text-slate-800");
+    });
+    document.querySelectorAll(".w-full.h-1\\.5, .h-1\\.5").forEach(el => {
+      el.classList.add("dark:bg-slate-800");
+      const fill = el.querySelector("div");
+      if (fill) {
+        fill.classList.add("dark:bg-[#10b981]");
+      }
+    });
+  }
+
+  // Run class injection
+  if (document.readyState !== 'loading') {
+    injectTailwindDarkClasses();
+  } else {
+    document.addEventListener('DOMContentLoaded', injectTailwindDarkClasses);
+  }
+
+  // Apply dark mode on initial load if previously selected
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.documentElement.classList.add('dark');
+    if (mainNavbar && window.scrollY > 40) {
+      mainNavbar.classList.add('scrolled');
+      mainNavbar.style.backgroundColor = 'rgba(15, 23, 42, 0.94)';
+      mainNavbar.style.borderColor = 'rgba(30, 41, 59, 0.8)';
+    }
+  }
+}
+initDarkMode();
