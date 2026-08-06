@@ -334,6 +334,7 @@ const savingsDisplay = document.getElementById('savings-display');
 const hoursDisplay = document.getElementById('hours-display');
 
 function calculateSavings() {
+  if (!opdSlider || !bedsSlider || !opdValue || !bedsValue || !savingsDisplay || !hoursDisplay) return;
   const opd = parseInt(opdSlider.value);
   const beds = parseInt(bedsSlider.value);
 
@@ -356,11 +357,12 @@ function calculateSavings() {
   hoursDisplay.textContent = totalHours.toLocaleString('en-US') + " Hours";
 }
 
-opdSlider.addEventListener('input', calculateSavings);
-bedsSlider.addEventListener('input', calculateSavings);
-
-// Run initial calculation
-calculateSavings();
+if (opdSlider && bedsSlider) {
+  opdSlider.addEventListener('input', calculateSavings);
+  bedsSlider.addEventListener('input', calculateSavings);
+  // Run initial calculation
+  calculateSavings();
+}
 
 // 4. Demo Submit Handler
 function handleDemoRequest(event) {
@@ -578,6 +580,11 @@ function initDarkMode() {
   const darkModeToggle = document.getElementById('dark-mode-toggle');
   const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
 
+  // Apply dark mode on initial load if previously selected
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.documentElement.classList.add('dark');
+  }
+
   function toggleDarkMode() {
     document.documentElement.classList.toggle('dark');
     const isDark = document.documentElement.classList.contains('dark');
@@ -593,6 +600,17 @@ function initDarkMode() {
         mainNavbar.style.borderColor = 'rgba(226, 232, 240, 0.8)';
       }
     }
+
+    // Dynamic footer bg-image toggle
+    document.querySelectorAll("footer").forEach(foot => {
+      if (isDark) {
+        foot.style.backgroundImage = 'none';
+        foot.style.backgroundColor = '#050811';
+      } else {
+        foot.style.backgroundImage = '';
+        foot.style.backgroundColor = '';
+      }
+    });
   }
 
   if (darkModeToggle) {
@@ -616,6 +634,10 @@ function initDarkMode() {
     // 2. Footer
     document.querySelectorAll("footer").forEach(foot => {
       foot.classList.add("dark:bg-[#050811]", "dark:text-slate-200");
+      if (document.documentElement.classList.contains('dark')) {
+        foot.style.backgroundImage = 'none';
+        foot.style.backgroundColor = '#050811';
+      }
     });
 
     // 3. Cards & Mockups
@@ -673,9 +695,8 @@ function initDarkMode() {
     document.addEventListener('DOMContentLoaded', injectTailwindDarkClasses);
   }
 
-  // Apply dark mode on initial load if previously selected
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    document.documentElement.classList.add('dark');
+  // Apply scrolled state styling on initial load if scrolled
+  if (document.documentElement.classList.contains('dark')) {
     if (mainNavbar && window.scrollY > 40) {
       mainNavbar.classList.add('scrolled');
       mainNavbar.style.backgroundColor = 'rgba(15, 23, 42, 0.94)';
@@ -684,3 +705,31 @@ function initDarkMode() {
   }
 }
 initDarkMode();
+
+// Initialize AOS (Animate on Scroll) - only on desktop (lg screens)
+if (typeof AOS !== 'undefined') {
+  // Inject data-aos attributes dynamically to sections
+  document.querySelectorAll('section').forEach((sec) => {
+    if (!sec.hasAttribute('data-aos')) {
+      sec.setAttribute('data-aos', 'fade-up');
+    }
+  });
+
+  // Inject data-aos and staggered delays dynamically to feature cards
+  document.querySelectorAll('.hover-glow-card, .bg-white.border.rounded-3xl, .grid > div').forEach((card, idx) => {
+    if (!card.hasAttribute('data-aos')) {
+      card.setAttribute('data-aos', 'fade-up');
+      card.setAttribute('data-aos-delay', ((idx % 3) * 100).toString());
+    }
+  });
+
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false,
+    disable: function() {
+      return window.innerWidth < 1024;
+    }
+  });
+}

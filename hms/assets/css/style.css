@@ -163,7 +163,6 @@ html.dark .grid-lines::before {
 }
 
 
-
 /* Nav Pill Styles for new header */
 .nav-pill {
   position: relative;
@@ -253,6 +252,46 @@ html.dark .grid-lines::before {
 .hover-instagram:hover {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
   border-color: transparent !important;
+}
+
+/* Creative & Advanced Hover Effects specifically for desktop (lg screens: 1024px and up) */
+@media (min-width: 1024px) {
+  /* 1. Creative Scale and Gradient border shadow for Glow Cards */
+  .hover-glow-card {
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .hover-glow-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 60px -15px rgba(79, 70, 229, 0.18), 0 0 30px -5px rgba(20, 184, 166, 0.1);
+  }
+  
+  html.dark .hover-glow-card:hover {
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.8), 0 0 35px -5px rgba(99, 102, 241, 0.15);
+  }
+
+  /* 2. Interactive navigation pill hover line reveal */
+  .nav-pill {
+    position: relative;
+  }
+  .nav-pill::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4f46e5, #14b8a6);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-50%);
+  }
+  .nav-pill:hover::after {
+    width: 80%;
+  }
+  
+  /* 3. Book a demo button pulse/glow movement sweep */
+  .group.relative.inline-flex.items-center:hover {
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4), 0 8px 10px -6px rgba(20, 184, 166, 0.2);
+  }
 }
 
 
