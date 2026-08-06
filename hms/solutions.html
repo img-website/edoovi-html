@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon & Apple Touch Icons -->
+  <meta name="color-scheme" content="light">
+  <meta name="cookie-consent" content="privacy.html">
+  <meta name="privacy-policy" content="privacy.html">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#0b6b5f">
+  <link rel="shortcut icon" href="assets/images/edooviHmsFavicon.png">
+  <meta name="msapplication-TileColor" content="#0b6b5f">
+  <meta name="msapplication-TileImage" content="assets/images/mstile-144x144.png">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="theme-color" content="#0b6b5f">
+
+  <!-- SEO & Optimization Meta Tags -->
+  <title>Clinical Solutions & Pricing Packages | Edoovi HMS</title>
+  <meta name="description"
+    content="Discover Edoovi solutions built for clinics, mid-size hospitals, and multi-facility enterprise networks. View features, database compliance, and pricing.">
+  <meta name="keywords"
+    content="OPD clinical solutions, IPD ward setups, multi-hospital system admin, clinic HMS packages">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Edoovi HMS - Clinical Operating Solutions">
+  <meta property="og:description"
+    content="Tailored clinical workflows and secure cloud databases. Find the right package for your healthcare network.">
+  <meta property="og:type" content="website">
+
+  <!-- Preloads & Font Pre-fetching -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: [
+              'Google Sans',
+              'Plus Jakarta Sans',
+              '-apple-system',
+              'BlinkMacSystemFont',
+              'Segoe UI',
+              'Roboto',
+              'sans-serif',
+            ],
+            sans: [
+              'Google Sans',
+              'Plus Jakarta Sans',
+              '-apple-system',
+              'BlinkMacSystemFont',
+              'Segoe UI',
+              'Roboto',
+              'sans-serif',
+            ],
+          },
+          colors: {
+            brand: {
+              50: '#eafbf7',
+              100: '#cbf5ee',
+              500: '#155aa9', /* Secondary Accent */
+              600: '#0b6b5f', /* Primary Accent */
+              700: '#1eab94', /* Hover Primary */
+            },
+            tealAccent: {
+              50: '#eef2ff',
+              500: '#155aa9',
+              600: '#0e4685',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- AOS CSS CDN -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#fafafa] dark:bg-slate-950 antialiased text-slate-800 dark:text-slate-100 font-sans leading-relaxed transition-colors duration-300">
+
+  <!-- Skip to Main Content Link for Keyboard Accessibility -->
+  <a href="#main-content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-5 focus:py-3 focus:bg-brand-600 focus:text-white focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none">
+    Skip to main content
+  </a>
+
+  <!-- ═══ FLOATING ISLAND CAPSULE NAVBAR ═══ -->
+  <header role="banner" aria-label="Header Navigation"
+    class="fixed top-3 inset-x-0 z-50 px-3 sm:px-6 pointer-events-none">
+    <div class="mx-auto max-w-7xl pointer-events-auto">
+      <div id="main-navbar"
+        class="bg-white/90 backdrop-blur-2xl border border-slate-200/50 rounded-full shadow-[0_8px_32px_rgba(15,23,42,0.06),0_1px_2px_rgba(15,23,42,0.02)] relative overflow-visible flex items-center justify-between px-4 sm:px-6 py-3 transition-all duration-500">
+
+        <!-- Inner Glow Overlay -->
+        <div
+          class="absolute -top-12 left-1/2 -translate-x-1/2 w-80 h-16 bg-gradient-to-r from-brand-500/15 via-purple-500/10 to-tealAccent-500/15 blur-3xl pointer-events-none">
+        </div>
+
+        <!-- ═══ LOGO BRANDING ═══ -->
+        <a href="index.html" aria-label="Edoovi HMS Homepage" class="flex items-center group z-10">
+          <div
+            class="flex items-center space-x-2 bg-slate-50/80 border border-slate-200/60 px-3 py-1 rounded-full shadow-2xs group-hover:lg:bg-slate-100/90 group-hover:lg:border-slate-300/80 transition-all duration-300">
+            <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo"
+              title="Edoovi HMS - Clinical AI Operating System"
+              class="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:lg:scale-105 dark:hidden">
+            <img src="assets/images/edooviHmsDarkLogo.webp" alt="Edoovi HMS Logo"
+              title="Edoovi HMS - Clinical AI Operating System"
+              class="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:lg:scale-105 hidden dark:block">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse flex-shrink-0"
+              title="System Operational"></span>
+          </div>
+        </a>
+
+        <!-- ═══ DESKTOP NAV LINKS ═══ -->
+        <nav role="navigation" aria-label="Desktop Main Navigation"
+          class="hidden lg:flex items-center space-x-1.5 text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 z-10 whitespace-nowrap">
+
+          <!-- Dropdown: Solutions -->
+          <div class="relative group py-2">
+            <button
+              class="nav-pill group flex items-center space-x-1 px-3 py-1.5 rounded-full hover:lg:bg-brand-50/60 dark:hover:lg:bg-slate-800 hover:lg:text-brand-700 dark:hover:lg:text-white transition-all duration-200"
+              aria-expanded="false" aria-haspopup="true">
+              <i data-lucide="info" class="w-3.5 h-3.5 text-brand-500 opacity-70"></i>
+              <span>Solutions</span>
+              <i data-lucide="chevron-down"
+                class="w-3 h-3 opacity-60 group-hover:lg:rotate-180 transition-transform duration-300"></i>
+            </button>
+            <div
+              class="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-60 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-850 shadow-2xl opacity-0 pointer-events-none group-hover:lg:opacity-100 group-hover:lg:pointer-events-auto transition-all duration-300 transform translate-y-2 group-hover:lg:translate-y-0 z-50 p-2.5 space-y-1">
+              <div class="h-[0.125rem] w-full bg-gradient-to-r from-brand-500 to-tealAccent-500 rounded-full mb-1">
+              </div>
+              <a href="solutions.html#opd"
+                class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold hover:lg:bg-brand-50/50 dark:hover:lg:bg-slate-800 text-slate-700 dark:text-slate-300 hover:lg:text-brand-700 dark:hover:lg:text-white rounded-xl transition-all">
+                <i data-lucide="layout-dashboard" class="w-4 h-4 text-brand-500"></i>
+                <span>OPD consultation Suites</span>
+              </a>
+              <a href="solutions.html#ipd"
+                class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold hover:lg:bg-teal-50/50 dark:hover:lg:bg-slate-800 text-slate-700 dark:text-slate-300 hover:lg:text-brand-700 dark:hover:lg:text-white rounded-xl transition-all">
+                <i data-lucide="bed" class="w-4 h-4 text-teal-500"></i>
+                <span>IPD clinical setup</span>
+              </a>
+              <a href="solutions.html#multihospital"
+                class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold hover:lg:bg-purple-50/50 dark:hover:lg:bg-slate-800 text-slate-700 dark:text-slate-300 hover:lg:text-brand-700 dark:hover:lg:text-white rounded-xl transition-all">
+                <i data-lucide="globe" class="w-4 h-4 text-purple-500"></i>
+                <span>Multi-Hospital Admin</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Dropdown: Features -->
+          <div class="relative group py-2">
+            <button
+              class="nav-pill group flex items-center space-x-1 px-3 py-1.5 rounded-full hover:lg:bg-brand-50/60 dark:hover:lg:bg-slate-800 hover:lg:text-brand-700 dark:hover:lg:text-white transition-all duration-200"
+              aria-expanded="false" aria-haspopup="true">
+              <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-brand-500 opacity-70"></i>
+              <span>Features</span>
+              <i data-lucide="chevron-down"
+                class="w-3 h-3 opacity-60 group-hover:lg:rotate-180 transition-transform duration-300"></i>
+            </button>
+            <div
+              class="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-60 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-850 shadow-2xl opacity-0 pointer-events-none group-hover:lg:opacity-100 group-hover:lg:pointer-events-auto transition-all duration-300 transform translate-y-2 group-hover:lg:translate-y-0 z-50 p-2.5 space-y-1">
+              <div class="h-[0.125rem] w-full bg-gradient-to-r from-tealAccent-500 to-purple-500 rounded-full mb-1">
+              </div>
+              <a href="features.html#clinical"
+                class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold hover:lg:bg-brand-50/50 dark:hover:lg:bg-slate-800 text-slate-700 dark:text-slate-300 hover:lg:text-brand-700 dark:hover:lg:text-white rounded-xl transition-all">
+                <i data-lucide="clipboard-list" class="w-4 h-4 text-brand-500"></i>
+                <span>Clinical Registry</span>
+              </a>
+              <a href="features.html#billing"
+                class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold hover:lg:bg-emerald-50/50 dark:hover:lg:bg-slate-800 text-slate-700 dark:text-slate-300 hover:lg:text-emerald-700 dark:hover:lg:text-white rounded-xl transition-all">
+                <i data-lucide="receipt" class="w-4 h-4 text-emerald-500"></i>
+                <span>Smart Billing system</span>
+              </a>
+              <a href="features.html#ai-suite"
+                class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold hover:lg:bg-purple-50/50 dark:hover:lg:bg-slate-800 text-slate-700 dark:text-slate-300 hover:lg:text-purple-700 dark:hover:lg:text-white rounded-xl transition-all">
+                <i data-lucide="sparkles" class="w-4 h-4 text-purple-500"></i>
+                <span>AI Suite Intelligence</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Dropdown: Integrations -->
+          <div class="relative group py-2">
+            <button
+              class="nav-pill group flex items-center space-x-1 px-3 py-1.5 rounded-full hover:lg:bg-brand-50/60 dark:hover:lg:bg-slate-800 hover:lg:text-brand-700 dark:hover:lg:text-white transition-all duration-200"
+              aria-expanded="false" aria-haspopup="true">
+              <i data-lucide="credit-card" class="w-3.5 h-3.5 text-brand-500 opacity-70"></i>
+              <span>Integrations</span>
+              <i data-lucide="chevron-down"
+                class="w-3 h-3 opacity-60 group-hover:lg:rotate-180 transition-transform duration-300"></i>
+            </button>
+            <div
+              class="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-60 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-850 shadow-2xl opacity-0 pointer-events-none group-hover:lg:opacity-100 group-hover:lg:pointer-events-auto transition-all duration-300 transform translate-y-2 group-hover:lg:translate-y-0 z-50 p-2.5 space-y-1">
+              <div class="h-[0.125rem] w-full bg-gradient-to-r from-purple-500 to-tealAccent-500 rounded-full mb-1">
+              </div>
+              <a href="integrations.html#pacs"
+                class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold hover:lg:bg-brand-50/50 dark:hover:lg:bg-slate-800 text-slate-700 dark:text-slate-300 hover:lg:text-brand-700 dark:hover:lg:text-white rounded-xl transition-all">
+                <i data-lucide="scan" class="w-4 h-4 text-brand-500"></i>
+                <span>PACS DICOM Radiology</span>
+              </a>
+              <a href="integrations.html#insurance"
+                class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold hover:lg:bg-teal-50/50 dark:hover:lg:bg-slate-800 text-slate-700 dark:text-slate-300 hover:lg:text-teal-700 dark:hover:lg:text-white rounded-xl transition-all">
+                <i data-lucide="shield-alert" class="w-4 h-4 text-teal-500"></i>
+                <span>Insurance Gateway</span>
+              </a>
+              <a href="integrations.html#whatsapp"
+                class="flex items-center gap-2.5 px-3 py-2 text-xs font-semibold hover:lg:bg-purple-50/50 dark:hover:lg:bg-slate-800 text-slate-700 dark:text-slate-300 hover:lg:text-purple-700 dark:hover:lg:text-white rounded-xl transition-all">
+                <i data-lucide="message-square" class="w-4 h-4 text-purple-500"></i>
+                <span>WhatsApp reminder API</span>
+              </a>
+            </div>
+          </div>
+
+          <a href="help.html"
+            class="nav-pill px-3 py-1.5 rounded-full hover:lg:bg-slate-100/90 dark:hover:lg:bg-slate-800 hover:lg:text-slate-900 dark:hover:lg:text-white transition-all duration-200 whitespace-nowrap">
+            Help Center
+          </a>
+        </nav>
+
+        <!-- ═══ DESKTOP CTAs ═══ -->
+        <div class="hidden lg:flex items-center space-x-1.5 xl:space-x-2.5 z-10 whitespace-nowrap">
+          <a href="help.html#contact"
+            class="px-3 xl:px-4 py-1.5 rounded-full text-xs xl:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:lg:bg-slate-100/80 dark:hover:lg:bg-slate-800 hover:lg:text-slate-900 dark:hover:lg:text-white transition-all duration-200 whitespace-nowrap"
+            aria-label="Login to portal">
+            Login
+          </a>
+          <!-- Primary CTA Button -->
+          <a href="help.html#contact"
+            class="group relative inline-flex items-center space-x-1.5 xl:space-x-2 px-4 xl:px-5 py-2 rounded-full text-xs xl:text-sm font-bold text-white bg-brand-600 hover:lg:bg-brand-700 shadow-md shadow-brand-500/25 hover:lg:shadow-xl hover:lg:shadow-brand-500/40 hover:lg:-translate-y-0.5 transition-all duration-300 overflow-hidden whitespace-nowrap"
+            aria-label="Request a sandbox demo walkthrough">
+            <span class="relative whitespace-nowrap">Book a Demo</span>
+            <i data-lucide="arrow-right"
+              class="w-3.5 h-3.5 relative group-hover:lg:translate-x-0.5 transition-transform" aria-hidden="true"></i>
+          </a>
+          <!-- Dark Mode Toggle Button (Desktop) -->
+          <button id="dark-mode-toggle" aria-label="Toggle Dark Mode"
+            class="p-2 rounded-full border border-slate-200/60 bg-slate-50/80 hover:lg:bg-slate-100/90 text-slate-600 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-300 dark:hover:lg:bg-slate-800 dark:hover:lg:text-white transition-all duration-200">
+            <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+          </button>
+        </div>
+
+        <!-- ═══ MOBILE MENU BUTTON ═══ -->
+        <div class="flex items-center space-x-2 lg:hidden">
+          <!-- Dark Mode Toggle Button (Mobile) -->
+          <button id="dark-mode-toggle-mobile" aria-label="Toggle Dark Mode Mobile"
+            class="p-2 rounded-full border border-slate-200/60 bg-slate-50/80 text-slate-700 dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-300 dark:hover:lg:bg-slate-800 dark:hover:lg:text-white transition-all duration-200">
+            <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+          </button>
+          <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false"
+            aria-controls="mobile-nav"
+            class="relative p-2.5 rounded-full bg-slate-100/80 hover:lg:bg-slate-200/80 text-slate-700 transition-all duration-200 group">
+            <i data-lucide="menu" id="menu-icon" class="w-5 h-5 transition-transform group-hover:lg:scale-110"
+              aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ═══ MOBILE NAV DRAWER ═══ -->
+      <div id="mobile-nav" role="navigation" aria-label="Mobile Navigation Menu"
+        class="hidden lg:hidden mt-2 w-full bg-white/95 backdrop-blur-xl border border-slate-200/80 shadow-2xl shadow-brand-500/5 rounded-[1.5rem] overflow-hidden pointer-events-auto transition-all duration-300">
+
+        <!-- Drawer top gradient banner -->
+        <div class="h-1 bg-gradient-to-r from-brand-600 via-purple-500 to-tealAccent-500"></div>
+
+        <div class="p-5 space-y-1">
+          <!-- Branding mini header inside drawer -->
+          <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
+            <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS Navigation Menu"
+              class="h-4 sm:h-4.5 w-auto object-contain">
+            <span class="text-[0.625rem] font-bold text-slate-400 uppercase tracking-widest">Navigation</span>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button
+              class="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-slate-700 hover:lg:bg-brand-50 rounded-2xl transition-all duration-200">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="info" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                <span>Solutions</span>
+              </div>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-submenu hidden pl-11 pr-4 pb-2 space-y-2">
+              <a href="solutions.html#opd" class="block py-1 text-xs font-semibold text-slate-600 hover:lg:text-brand-600">OPD consultation Suites</a>
+              <a href="solutions.html#ipd" class="block py-1 text-xs font-semibold text-slate-600 hover:lg:text-brand-600">IPD clinical setup</a>
+              <a href="solutions.html#multihospital" class="block py-1 text-xs font-semibold text-slate-600 hover:lg:text-brand-600">Multi-Hospital Admin</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button
+              class="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-slate-700 hover:lg:bg-brand-50 rounded-2xl transition-all duration-200">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="layout-grid" class="w-4 h-4 text-brand-500 flex-shrink-0"></i>
+                <span>Core Modules</span>
+              </div>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-submenu hidden pl-11 pr-4 pb-2 space-y-2">
+              <a href="features.html#clinical" class="block py-1 text-xs font-semibold text-slate-600 hover:lg:text-brand-600">Clinical Registry</a>
+              <a href="features.html#billing" class="block py-1 text-xs font-semibold text-slate-600 hover:lg:text-brand-600">Smart Billing system</a>
+              <a href="features.html#ai-suite" class="block py-1 text-xs font-semibold text-slate-600 hover:lg:text-brand-600">AI Suite Intelligence</a>
+            </div>
+          </div>
+
+          <div class="mobile-dropdown">
+            <button
+              class="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-slate-700 hover:lg:bg-brand-50 rounded-2xl transition-all duration-200">
+              <div class="flex items-center space-x-3">
+                <i data-lucide="sparkles" class="w-4 h-4 text-purple-500 flex-shrink-0"></i>
+                <span>Integrations Suite</span>
+              </div>
+              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform duration-300"></i>
+            </button>
+            <div class="mobile-submenu hidden pl-11 pr-4 pb-2 space-y-2">
+              <a href="integrations.html#pacs" class="block py-1 text-xs font-semibold text-slate-600 hover:lg:text-brand-600">PACS DICOM Radiology</a>
+              <a href="integrations.html#insurance" class="block py-1 text-xs font-semibold text-slate-600 hover:lg:text-brand-600">Insurance Gateway</a>
+              <a href="integrations.html#whatsapp" class="block py-1 text-xs font-semibold text-slate-600 hover:lg:text-brand-600">WhatsApp reminder API</a>
+            </div>
+          </div>
+
+          <a href="help.html"
+            class="flex items-center space-x-3 px-4 py-3 text-sm font-semibold text-slate-700 hover:lg:text-slate-900 hover:lg:bg-slate-100 rounded-2xl transition-all duration-200 group">
+            <i data-lucide="help-circle" class="w-4 h-4 text-slate-400 flex-shrink-0"></i>
+            <span>Help Center</span>
+          </a>
+
+          <div class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-3">
+            <a href="solutions.html#pricing"
+              class="text-center py-3 rounded-2xl text-sm font-semibold text-brand-600 border border-brand-200 hover:lg:bg-brand-50 transition-all">
+              Pricing
+            </a>
+            <a href="help.html#contact"
+              class="text-center py-3 rounded-2xl text-sm font-bold text-white bg-brand-600 hover:lg:bg-brand-700 shadow-md transition-all">
+              Book a Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ MAIN CONTENT ═══ -->
+  <main id="main-content" role="main" class="pt-24 sm:pt-32 pb-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 space-y-20">
+
+      <!-- Hero Header -->
+      <section class="text-center space-y-6 max-w-3xl mx-auto">
+        <div
+          class="inline-flex items-center space-x-2 bg-brand-50 border border-brand-100 text-brand-700 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+          <i data-lucide="info" class="w-4 h-4" aria-hidden="true"></i>
+          <span>Clinical Solutions</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-display font-extrabold text-slate-900 leading-tight">
+          Clinical systems designed for <span class="text-brand-600">modern healthcare</span>
+        </h1>
+        <p class="text-lg text-slate-600">
+          Edoovi HMS integrates patient consults, lab reports, and clinic operations into a secure and easy-to-use
+          platform.
+        </p>
+      </section>
+
+      <!-- Solutions Grid -->
+      <section class="space-y-16">
+        <!-- OPD -->
+        <div id="opd" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs font-black uppercase text-brand-600 tracking-wider">Outpatient Services</span>
+            <h2 class="text-3xl font-display font-extrabold text-slate-900">OPD Consultation Suites</h2>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Enable doctors to easily write consultation notes, check patient medical history, and issue digital
+              prescriptions in seconds. Prescription details are automatically sent to the hospital pharmacy and billing
+              counter to save time and reduce errors.
+            </p>
+            <div class="flex items-center gap-3">
+              <span
+                class="flex items-center gap-1.5 text-xs font-bold text-slate-700 bg-slate-100 px-3 py-1.5 rounded-lg"><i
+                  data-lucide="clock" class="w-3.5 h-3.5 text-brand-500"></i> Quick Prescriptions</span>
+              <span
+                class="flex items-center gap-1.5 text-xs font-bold text-slate-700 bg-slate-100 px-3 py-1.5 rounded-lg"><i
+                  data-lucide="smartphone" class="w-3.5 h-3.5 text-teal-500"></i> Digital Prescriptions</span>
+            </div>
+          </div>
+          <div
+            class="lg:col-span-6 bg-white border border-slate-200 rounded-3xl p-8 shadow-sm space-y-4 hover:lg:scale-[1.01] transition-transform duration-300">
+            <h4 class="text-xs font-black uppercase text-slate-400 tracking-wider">OPD Consultation Example</h4>
+            <div class="border border-slate-100 rounded-2xl p-4 bg-slate-50 space-y-3 font-mono text-xs">
+              <div class="flex justify-between border-b border-slate-200 pb-2">
+                <span class="font-bold">Consultation #92011</span>
+                <span class="text-brand-600">Patient: John Doe</span>
+              </div>
+              <div class="space-y-1">
+                <p class="text-slate-500">Symptom check: Chronic headache & fatigue</p>
+                <p class="text-slate-500">Diagnosis: Tension Migraine</p>
+                <p class="text-slate-800 font-bold">Prescription: Sumatriptan 50mg (Once daily after dinner)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IPD -->
+        <div id="ipd" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8">
+          <div class="lg:col-span-6 lg:order-2 space-y-6">
+            <span class="text-xs font-black uppercase text-tealAccent-600 tracking-wider">Inpatient Wards</span>
+            <h2 class="text-3xl font-display font-extrabold text-slate-900">IPD Clinical Wards Setup</h2>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Manage patient admissions, assign nurse duties to specific beds, and generate patient discharge summaries
+              automatically. Doctors and nurses can access patient records and updates directly from tablets at the
+              bedside.
+            </p>
+          </div>
+          <div class="lg:col-span-6 lg:order-1 bg-white border border-slate-200 rounded-3xl p-8 shadow-sm space-y-4">
+            <h4 class="text-xs font-black uppercase text-slate-400 tracking-wider">Ward Bed Allocations</h4>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="p-3 border border-emerald-100 dark:border-emerald-800/30 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-xl text-center space-y-1">
+                <span class="text-xs font-bold text-emerald-800 dark:text-emerald-300 block">Bed A-12</span>
+                <span class="text-[0.5625rem] uppercase font-bold text-emerald-600 dark:text-emerald-400">Available</span>
+              </div>
+              <div class="p-3 border border-red-100 dark:border-red-800/30 bg-red-50/50 dark:bg-red-950/20 rounded-xl text-center space-y-1">
+                <span class="text-xs font-bold text-red-800 dark:text-red-300 block">Bed A-13</span>
+                <span class="text-[0.5625rem] uppercase font-bold text-red-600 dark:text-red-400">Occupied</span>
+              </div>
+              <div class="p-3 border border-emerald-100 dark:border-emerald-800/30 bg-emerald-50/50 dark:bg-emerald-950/20 rounded-xl text-center space-y-1">
+                <span class="text-xs font-bold text-emerald-800 dark:text-emerald-300 block">Bed A-14</span>
+                <span class="text-[0.5625rem] uppercase font-bold text-emerald-600 dark:text-emerald-400">Available</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multi-Hospital -->
+        <div id="multihospital" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8">
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs font-black uppercase text-purple-600 tracking-wider">Hospital Networks</span>
+            <h2 class="text-3xl font-display font-extrabold text-slate-900">Multi-Hospital Administration</h2>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Easily manage multiple hospital branches from one central login. Control stock distribution centrally,
+              monitor staff schedules, and view consolidated billing reports for the entire network.
+            </p>
+          </div>
+          <div class="lg:col-span-6 bg-white border border-slate-200 rounded-3xl p-8 shadow-sm space-y-4">
+            <h4 class="text-xs font-black uppercase text-slate-400 tracking-wider">Super Admin Central Dashboard</h4>
+            <div class="space-y-2 text-xs font-semibold text-slate-600">
+              <div class="flex justify-between p-2.5 bg-slate-50 border border-slate-100 rounded-xl">
+                <span>Bengaluru Hub (Active)</span>
+                <span class="text-emerald-600">SLA: 99.98%</span>
+              </div>
+              <div class="flex justify-between p-2.5 bg-slate-50 border border-slate-100 rounded-xl">
+                <span>Mumbai Center (Active)</span>
+                <span class="text-emerald-600">SLA: 99.96%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Packages & Pricing Table -->
+      <section id="pricing" class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 space-y-8 shadow-xs">
+        <div class="text-center space-y-2 max-w-xl mx-auto">
+          <h2 class="text-3xl font-display font-extrabold text-slate-900">HMS Software Packages</h2>
+          <p class="text-slate-500 text-sm font-medium">Simple, flat pricing with zero setup fees.</p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs font-semibold text-slate-600 min-w-[37.5rem]"
+            aria-label="Edoovi packages comparison table">
+            <thead>
+              <tr class="border-b border-slate-200 text-[0.625rem] text-slate-400 uppercase tracking-wider">
+                <th class="pb-3 font-black">Plan Tier</th>
+                <th class="pb-3 font-black">Monthly Price</th>
+                <th class="pb-3 font-black">Bed Limit</th>
+                <th class="pb-3 font-black">Core Modules</th>
+                <th class="pb-3 font-black">AI Suite</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-4 font-bold text-slate-900 text-sm">Growth Plan</td>
+                <td class="py-4 font-bold text-slate-900 text-sm">$199 /mo</td>
+                <td class="py-4">Up to 25 beds</td>
+                <td class="py-4">OPD Registry & Rx</td>
+                <td class="py-4 text-slate-300">Not Included</td>
+              </tr>
+              <tr>
+                <td class="py-4 font-bold text-slate-900 text-sm flex items-center gap-1.5">
+                  Professional Plan
+                  <span
+                    class="text-[0.5rem] font-black uppercase bg-brand-50 border border-brand-200 text-brand-700 px-1.5 py-0.5 rounded-full">Popular</span>
+                </td>
+                <td class="py-4 font-bold text-slate-900 text-sm">$499 /mo</td>
+                <td class="py-4">Up to 150 beds</td>
+                <td class="py-4">OPD, IPD Wards, Billing</td>
+                <td class="py-4 text-brand-600">Standard AI Suite</td>
+              </tr>
+              <tr>
+                <td class="py-4 font-bold text-slate-900 text-sm">Enterprise Plan</td>
+                <td class="py-4 font-bold text-slate-900 text-sm">Custom Price</td>
+                <td class="py-4">Unlimited capacity</td>
+                <td class="py-4">Full Module Directory</td>
+                <td class="py-4 text-purple-600 font-extrabold">Complete AI Suite + Lab Sync</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER (Light Theme) ===== -->
+  <footer role="contentinfo" aria-label="Site Footer" class="relative bg-slate-50 overflow-hidden"
+    style="border-top: 2px solid transparent; background-image: linear-gradient(#f8fafc, #f8fafc), linear-gradient(90deg,#155aa9 0%,#0b6b5f 50%,#155aa9 100%); background-origin: border-box; background-clip: padding-box, border-box;">
+
+    <!-- Soft decorative blobs -->
+    <div
+      class="absolute top-0 left-0 w-[31.25rem] h-[31.25rem] bg-brand-500/5 rounded-full blur-[7.5rem] pointer-events-none -translate-x-1/2 -translate-y-1/2">
+    </div>
+    <div
+      class="absolute bottom-0 right-0 w-[25rem] h-[25rem] bg-tealAccent-500/5 rounded-full blur-[6.25rem] pointer-events-none translate-x-1/3 translate-y-1/3">
+    </div>
+    <div class="absolute inset-0 pointer-events-none"
+      style="background-image:linear-gradient(rgba(148,163,184,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,0.07) 1px,transparent 1px);background-size:48px 48px;">
+    </div>
+
+    <!-- ─── CTA Banner ─── -->
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 pt-16 pb-12">
+      <div
+        class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-brand-600 via-indigo-600 to-tealAccent-600 p-10 sm:p-14 flex flex-col sm:flex-row items-center justify-between gap-8 shadow-2xl shadow-brand-500/20">
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div
+          class="absolute right-24 bottom-0 w-40 h-40 bg-tealAccent-500/30 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="relative text-white max-w-xl">
+          <span
+            class="inline-flex items-center gap-1.5 text-[0.625rem] font-bold uppercase tracking-widest text-white/60 mb-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-tealAccent-400 animate-pulse"></span>
+            Ready to Deploy
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-display font-extrabold leading-tight mb-3">
+            Transform Your Hospital<br class="hidden sm:block"> Into a Smart Clinic — Today
+          </h2>
+          <p class="text-sm text-white/80 leading-relaxed">
+            Join 500+ hospitals already running on Edoovi HMS. AI-powered, HIPAA compliant, and ready in 48 hours.
+          </p>
+        </div>
+
+        <div class="relative flex flex-col sm:flex-row gap-3 shrink-0">
+          <a href="#contact"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white text-slate-900 text-sm font-bold shadow-lg hover:lg:bg-slate-50 transition-all duration-300 hover:lg:-translate-y-0.5 hover:lg:shadow-xl">
+            <i data-lucide="calendar-check" class="w-4 h-4 text-brand-600"></i>
+            Book Free Demo
+          </a>
+          <a href="#pricing"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-white/30 text-white text-sm font-semibold hover:lg:bg-white/15 transition-all duration-300">
+            <i data-lucide="info" class="w-4 h-4"></i>
+            View Pricing
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── ECG Heartbeat Divider ─── -->
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-2">
+      <div class="flex items-center gap-4">
+        <div class="flex-1 h-px bg-slate-200"></div>
+        <svg viewBox="0 0 300 40" class="w-64 sm:w-80 h-8 shrink-0" fill="none">
+          <path class="ecg-path"
+            d="M0,20 L40,20 L55,20 L65,2 L75,38 L85,10 L95,28 L105,20 L115,20 L125,20 L135,20 L145,20 L165,20 L175,4 L185,36 L193,14 L201,26 L210,20 L260,20 L300,20"
+            stroke="url(#ecgGradLight)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <defs>
+            <linearGradient id="ecgGradLight" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#155aa9" />
+              <stop offset="50%" stop-color="#0b6b5f" />
+              <stop offset="100%" stop-color="#155aa9" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+    </div>
+
+    <!-- ─── Main Footer Grid ─── -->
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 pt-12 pb-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+
+        <!-- Brand Column (spans 4) -->
+        <div class="lg:col-span-4 space-y-7">
+          <!-- Logo -->
+          <a href="index.html" aria-label="Edoovi HMS Homepage" class="inline-flex items-center gap-2.5 group">
+            <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS - Official Logo"
+              class="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:lg:scale-[1.03]">
+          </a>
+
+          <p class="text-sm text-slate-600 leading-relaxed max-w-xs font-medium">
+            A next-generation cloud-native hospital operating system built for modern healthcare — powered by AI,
+            secured by HIPAA compliance.
+          </p>
+
+          <!-- Live Status Card (light) -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-4 space-y-3 shadow-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-[0.625rem] font-bold text-slate-500 uppercase tracking-widest">System Status</span>
+              <span
+                class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[0.5625rem] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                <span class="w-1 h-1 rounded-full bg-emerald-500 animate-ping"></span>
+                All Systems Operational
+              </span>
+            </div>
+            <!-- Mini sparkline -->
+            <svg viewBox="0 0 120 24" class="w-full h-6" fill="none">
+              <path d="M0,18 L12,15 L24,20 L36,9 L48,16 L60,21 L72,13 L84,4 L96,14 L108,16 L120,6" stroke="#155aa9"
+                stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7" />
+              <path d="M0,18 L12,15 L24,20 L36,9 L48,16 L60,21 L72,13 L84,4 L96,14 L108,16 L120,6 L120,24 L0,24 Z"
+                fill="url(#sparkFillLight)" opacity="0.15" />
+              <defs>
+                <linearGradient id="sparkFillLight" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#155aa9" />
+                  <stop offset="100%" stop-color="transparent" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div class="grid grid-cols-3 gap-2 pt-1">
+              <div class="text-center">
+                <div class="text-sm font-extrabold text-brand-600">99.9%</div>
+                <div class="text-[0.5625rem] text-slate-400 uppercase font-semibold">Uptime</div>
+              </div>
+              <div class="text-center border-x border-slate-100">
+                <div class="text-sm font-extrabold text-brand-600">34ms</div>
+                <div class="text-[0.5625rem] text-slate-400 uppercase font-semibold">Latency</div>
+              </div>
+              <div class="text-center">
+                <div class="text-sm font-extrabold text-brand-600">500+</div>
+                <div class="text-[0.5625rem] text-slate-400 uppercase font-semibold">Hospitals</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Icons (light style) -->
+          <div class="flex items-center gap-2.5">
+            <a href="#" aria-label="instagram"
+              class="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:lg:text-white hover-instagram hover:lg:scale-110 hover:lg:shadow-md hover:lg:shadow-brand-500/20 transition-all duration-300 shadow-sm">
+              <svg class="size-4" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn"
+              class="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:lg:text-white hover:lg:bg-[#0a66c2] hover:lg:border-[#0a66c2] hover:lg:scale-110 hover:lg:shadow-md hover:lg:shadow-brand-500/20 transition-all duration-300 shadow-sm">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube"
+              class="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:lg:text-white hover:lg:bg-red-500 hover:lg:border-red-500 hover:lg:scale-110 hover:lg:shadow-md hover:lg:shadow-red-500/20 transition-all duration-300 shadow-sm">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="WhatsApp"
+              class="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:lg:text-white hover:lg:bg-emerald-500 hover:lg:border-emerald-500 hover:lg:scale-110 hover:lg:shadow-md hover:lg:shadow-emerald-500/20 transition-all duration-300 shadow-sm">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Columns (spans 8) -->
+        <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
+
+          <!-- Column: Product -->
+          <div class="space-y-5">
+            <h4
+              class="text-[0.6875rem] font-black text-slate-900 uppercase tracking-[0.15em] pb-2 border-b border-slate-200">
+              Product</h4>
+            <ul class="space-y-3">
+              <li><a href="features.html#opd"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="layout-dashboard"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  OPD Management
+                </a></li>
+              <li><a href="features.html#ipd"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="bed"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  IPD Clinical Wards
+                </a></li>
+              <li><a href="features.html#registry"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="users"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  Patient Registry
+                </a></li>
+              <li><a href="features.html#billing"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="receipt"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  Smart Billing
+                </a></li>
+              <li><a href="features.html#lab"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="flask-conical"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  Lab & Pathology
+                </a></li>
+              <li><a href="features.html#radiology"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="scan"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  Radiology PACS
+                </a></li>
+            </ul>
+          </div>
+
+          <!-- Column: AI Suite -->
+          <div class="space-y-5">
+            <h4
+              class="text-[0.6875rem] font-black text-slate-900 uppercase tracking-[0.15em] pb-2 border-b border-slate-200">
+              AI Suite</h4>
+            <ul class="space-y-3">
+              <li><a href="features.html#ai-appointment"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="bell-ring"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  <span>AI Appointment</span>
+                  <span
+                    class="ml-auto text-[0.5rem] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200 shrink-0">Bot</span>
+                </a></li>
+              <li><a href="features.html#ai-discharge"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="file-text"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  <span>AI Discharge Sum.</span>
+                  <span
+                    class="ml-auto text-[0.5rem] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200 shrink-0">AI</span>
+                </a></li>
+              <li><a href="features.html#ai-procedure"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="clipboard-list"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  AI Procedure Module
+                </a></li>
+              <li><a href="features.html#ai-medication"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="pill"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  <span>AI Med. Suggestions</span>
+                  <span
+                    class="ml-auto text-[0.5rem] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-purple-50 text-purple-700 border border-purple-200 shrink-0">New</span>
+                </a></li>
+              <li><a href="features.html#clinical-analytics"
+                  class="group flex items-center gap-2 text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1">
+                  <i data-lucide="brain"
+                    class="w-3.5 h-3.5 text-slate-400 group-hover:lg:text-brand-600 shrink-0 transition-colors"></i>
+                  Clinical Analytics
+                </a></li>
+            </ul>
+          </div>
+
+          <!-- Column: Company -->
+          <div class="space-y-5">
+            <h4
+              class="text-[0.6875rem] font-black text-slate-900 uppercase tracking-[0.15em] pb-2 border-b border-slate-200">
+              Company</h4>
+            <ul class="space-y-3">
+              <li><a href="solutions.html"
+                  class="text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1 flex items-center gap-1">Solutions</a>
+              </li>
+              <li><a href="solutions.html#network"
+                  class="text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1 flex items-center gap-1">Hospital
+                  Network</a></li>
+              <li><a href="help.html#blog"
+                  class="text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1 flex items-center gap-1">Blog
+                  & Insights</a></li>
+              <li><a href="help.html#press"
+                  class="text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1 flex items-center gap-1">Press
+                  & Media</a></li>
+              <li><a href="help.html#careers"
+                  class="text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1 flex items-center gap-2">
+                  Careers
+                  <span
+                    class="text-[0.5rem] font-extrabold uppercase px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Hiring</span>
+                </a></li>
+              <li><a href="help.html#contact"
+                  class="text-sm text-slate-600 hover:lg:text-brand-600 font-medium transition-all duration-200 hover:lg:translate-x-1 flex items-center gap-1">Contact
+                  Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column: Live Activity Ticker (keep terminal feel but with light border) -->
+          <div class="space-y-5">
+            <h4
+              class="text-[0.6875rem] font-black text-slate-900 uppercase tracking-[0.15em] pb-2 border-b border-slate-200">
+              Live Feed</h4>
+            <div
+              class="bg-slate-900 border border-slate-700 rounded-2xl p-3 font-mono text-[0.625rem] leading-relaxed shadow-md">
+              <div class="flex items-center gap-2 pb-2 mb-2 border-b border-slate-800">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-yellow-500"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-slate-500 text-[0.5625rem] ml-1 uppercase tracking-widest">Sandbox · Live</span>
+              </div>
+              <div class="ticker-wrap">
+                <div class="ticker-inner space-y-2">
+                  <div class="text-emerald-400"><span class="text-slate-600">[12:41]</span> UHID #9281 Created</div>
+                  <div class="text-indigo-400"><span class="text-slate-600">[12:41]</span> AI Discharge compiled</div>
+                  <div class="text-cyan-400"><span class="text-slate-600">[12:42]</span> Rx → Pharmacy</div>
+                  <div class="text-yellow-400"><span class="text-slate-600">[12:42]</span> Bed IPD Ward-B alloc.</div>
+                  <div class="text-purple-400"><span class="text-slate-600">[12:43]</span> WhatsApp reminder sent</div>
+                  <div class="text-teal-400"><span class="text-slate-600">[12:43]</span> Lab report generated</div>
+                  <!-- Repeat for seamless loop -->
+                  <div class="text-emerald-400"><span class="text-slate-600">[12:41]</span> UHID #9281 Created</div>
+                  <div class="text-indigo-400"><span class="text-slate-600">[12:41]</span> AI Discharge compiled</div>
+                  <div class="text-cyan-400"><span class="text-slate-600">[12:42]</span> Rx → Pharmacy</div>
+                  <div class="text-yellow-400"><span class="text-slate-600">[12:42]</span> Bed IPD Ward-B alloc.</div>
+                  <div class="text-purple-400"><span class="text-slate-600">[12:43]</span> WhatsApp reminder sent</div>
+                  <div class="text-teal-400"><span class="text-slate-600">[12:43]</span> Lab report generated</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── Trust / Certification Strip ─── -->
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-6 border-t border-slate-200">
+      <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+        <div
+          class="flex items-center gap-2 text-slate-500 hover:lg:text-emerald-600 transition-colors duration-300 cursor-default">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-500"></i>
+          <span class="text-xs font-semibold">HIPAA Compliant</span>
+        </div>
+        <div
+          class="flex items-center gap-2 text-slate-500 hover:lg:text-brand-600 transition-colors duration-300 cursor-default">
+          <i data-lucide="lock" class="w-4 h-4 text-brand-600"></i>
+          <span class="text-xs font-semibold">ISO 27001 Certified</span>
+        </div>
+        <div
+          class="flex items-center gap-2 text-slate-500 hover:lg:text-tealAccent-600 transition-colors duration-300 cursor-default">
+          <i data-lucide="cloud" class="w-4 h-4 text-tealAccent-500"></i>
+          <span class="text-xs font-semibold">AWS / Azure Cloud</span>
+        </div>
+        <div
+          class="flex items-center gap-2 text-slate-500 hover:lg:text-indigo-600 transition-colors duration-300 cursor-default">
+          <i data-lucide="wifi" class="w-4 h-4 text-indigo-500"></i>
+          <span class="text-xs font-semibold">99.9% SLA Uptime</span>
+        </div>
+        <div
+          class="flex items-center gap-2 text-slate-500 hover:lg:text-purple-600 transition-colors duration-300 cursor-default">
+          <i data-lucide="globe" class="w-4 h-4 text-purple-500"></i>
+          <span class="text-xs font-semibold">Multi-region Deployment</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SEO Index Links ─── -->
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-4 border-t border-slate-200">
+      <div class="flex flex-wrap items-center gap-2 text-[0.6875rem] text-slate-500">
+        <span class="flex items-center gap-1 font-bold text-slate-600 mr-1">
+          <i data-lucide="folder-search" class="w-3.5 h-3.5 text-slate-400"></i> Directories:
+        </span>
+        <a href="https://example.com/hms-software" target="_blank" rel="noopener"
+          class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:lg:border-brand-300 hover:lg:text-brand-600 hover:lg:bg-brand-50 transition-all shadow-sm">Hospital
+          Software Directory</a>
+        <a href="https://example.com/medical-reminders" target="_blank" rel="noopener"
+          class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:lg:border-brand-300 hover:lg:text-brand-600 hover:lg:bg-brand-50 transition-all shadow-sm">AI
+          Clinical Reminders Hub</a>
+        <a href="https://example.com/medical-softwares" target="_blank" rel="noopener"
+          class="px-2.5 py-1 rounded-lg bg-white border border-slate-200 hover:lg:border-brand-300 hover:lg:text-brand-600 hover:lg:bg-brand-50 transition-all shadow-sm">Top
+          Medical SaaS List</a>
+      </div>
+    </div>
+
+    <!-- ─── Bottom Bar ─── -->
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 py-5 border-t border-slate-200">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+
+        <p class="text-xs text-slate-500 font-medium">
+          © 2026 <span class="text-slate-800 font-bold">Edoovi HMS Inc.</span> All rights reserved. Made with
+          <span class="text-rose-500">♥</span> for healthcare.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-6 sm:gap-8">
+          <div class="flex items-center gap-5 text-xs text-slate-500 font-medium">
+            <a href="privacy.html" class="hover:lg:text-brand-600 hover:lg:underline transition-colors">Privacy
+              Policy</a>
+            <a href="terms.html" class="hover:lg:text-brand-600 hover:lg:underline transition-colors">Terms of
+              Service</a>
+            <a href="terms.html#sla" class="hover:lg:text-brand-600 hover:lg:underline transition-colors">SLA
+              Commitments</a>
+            <a href="privacy.html#cookies" class="hover:lg:text-brand-600 hover:lg:underline transition-colors">Cookie
+              Settings</a>
+          </div>
+
+          <!-- Scroll to top (light) -->
+          <button onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top"
+            class="w-9 h-9 rounded-xl bg-white border border-slate-200 text-slate-500 flex items-center justify-center hover:lg:bg-brand-600 hover:lg:border-brand-600 hover:lg:text-white transition-all duration-300 hover:lg:scale-110 hover:lg:shadow-lg hover:lg:shadow-brand-500/25 shadow-sm">
+            <i data-lucide="chevron-up" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- AOS JS CDN -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
