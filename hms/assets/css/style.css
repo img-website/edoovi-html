@@ -1,13 +1,10 @@
-/* Google Sans (fallback to Plus Jakarta Sans) */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+/* Premium Healthcare Typography (Manrope for crisp corporate headings, Plus Jakarta Sans for clean modern body readability) */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* Base Styles & Custom Font Families */
 :root {
-  --font-display: 'Google Sans', 'Plus Jakarta Sans', -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-  --font-sans: 'Google Sans', 'Plus Jakarta Sans', -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
@@ -15,6 +12,8 @@ body {
   background-color: #fafafa;
   color: #0f172a;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6, .font-display {
@@ -226,25 +225,25 @@ html.dark .grid-lines::before {
 }
 
 /* Waving Liquid Animation for HMS Impact Section */
-@keyframes waveMoveHorizontal1 {
+@keyframes waveMoveHorizontal {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-360px); }
 }
-@keyframes waveMoveHorizontal2 {
-  0% { transform: translateX(-50%); }
+@keyframes waveMoveHorizontalRev {
+  0% { transform: translateX(-360px); }
   100% { transform: translateX(0); }
 }
 .wave-animation-1 {
-  animation: waveMoveHorizontal1 4s linear infinite;
+  animation: waveMoveHorizontal 3s linear infinite;
 }
 .wave-animation-2 {
-  animation: waveMoveHorizontal2 6s linear infinite;
+  animation: waveMoveHorizontalRev 4.5s linear infinite;
   opacity: 0.6;
 }
 
 /* Dynamic wave height controller based on --value percentage */
 .wave-mover {
-  transform: translateY(calc(96.15% - (0.923 * var(--value, 0%))));
+  transform: translateY(calc(130px - (1.3px * var(--value, 0))));
   transition: transform 1.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -287,11 +286,7 @@ html.dark .grid-lines::before {
   .nav-pill:hover::after {
     width: 80%;
   }
-  
   /* 3. Book a demo button pulse/glow movement sweep */
-  .group.relative.inline-flex.items-center:hover {
-    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4), 0 8px 10px -6px rgba(20, 184, 166, 0.2);
-  }
 }
 
 

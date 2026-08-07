@@ -535,14 +535,8 @@ const initApp = () => {
             const startTime = performance.now();
             const hasDecimal = targetStr.includes('.');
 
-            // Set dynamic wave --value variable on scroll to trigger CSS transition
             const card = target.closest('.group');
-            if (card) {
-              const waveMover = card.querySelector('.wave-mover');
-              if (waveMover) {
-                waveMover.style.setProperty('--value', targetStr + '%');
-              }
-            }
+            const waveMover = card ? card.querySelector('.wave-mover') : null;
 
             function updateCount(timestamp) {
               const progress = Math.min((timestamp - startTime) / duration, 1);
@@ -552,10 +546,19 @@ const initApp = () => {
               } else {
                 target.textContent = Math.floor(currentVal);
               }
+
+              // Animate wave height in sync with counter
+              if (waveMover) {
+                waveMover.style.setProperty('--value', currentVal.toString());
+              }
+
               if (progress < 1) {
                 requestAnimationFrame(updateCount);
               } else {
                 target.textContent = targetStr;
+                if (waveMover) {
+                  waveMover.style.setProperty('--value', targetStr);
+                }
               }
             }
             requestAnimationFrame(updateCount);
@@ -733,3 +736,155 @@ if (typeof AOS !== 'undefined') {
     }
   });
 }
+
+// Interactive Telemetry Tabs handler
+function switchTelemetryTab(tabId, imgSrc, titleText) {
+  // Update active state class on tab buttons
+  document.querySelectorAll('.telemetry-tab-btn').forEach(btn => {
+    btn.classList.remove('active', 'bg-[#0b6b5f]/5', 'border-[#0b6b5f]', 'shadow-xs');
+    btn.classList.add('bg-white', 'dark:bg-slate-900/40', 'border-slate-300', 'dark:border-slate-700');
+    
+    // Reset border styling classes
+    btn.style.borderLeftColor = '';
+    
+    // Reset icon color wrapper classes
+    const iconContainer = btn.querySelector('.flex.items-center');
+    if (iconContainer) {
+      iconContainer.classList.remove('text-[#0b6b5f]');
+      iconContainer.classList.add('text-slate-500');
+    }
+  });
+
+  const activeBtn = document.getElementById('btn-' + tabId);
+  if (activeBtn) {
+    activeBtn.classList.add('active', 'bg-[#0b6b5f]/5', 'border-[#0b6b5f]', 'shadow-xs');
+    activeBtn.classList.remove('bg-white', 'dark:bg-slate-900/40', 'border-slate-300', 'dark:border-slate-700');
+    
+    // Explicitly enforce brand color on border-left
+    activeBtn.style.borderLeftColor = '#0b6b5f';
+    
+    const iconContainer = activeBtn.querySelector('.flex.items-center');
+    if (iconContainer) {
+      iconContainer.classList.remove('text-slate-500');
+      iconContainer.classList.add('text-[#0b6b5f]');
+    }
+  }
+
+  // Update center mockup image and title
+  const imgElement = document.getElementById('telemetry-display-image');
+  const titleElement = document.getElementById('telemetry-display-title');
+  
+  if (imgElement) {
+    imgElement.style.opacity = '0';
+    setTimeout(() => {
+      imgElement.src = imgSrc;
+      imgElement.style.opacity = '1';
+    }, 150);
+  }
+  
+  if (titleElement) {
+    titleElement.textContent = titleText;
+  }
+}
+
+// ═══ Initialize Hospital Logos Marquee Swiper ═══
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof Swiper !== 'undefined' && document.querySelector('.hospital-logos-swiper')) {
+    new Swiper('.hospital-logos-swiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 40,
+      loop: true,
+      speed: 4000,
+      allowTouchMove: false,
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+      },
+    });
+  }
+});
+
+// ═══ Initialize Pricing Toggle & FAQs ═══
+document.addEventListener('DOMContentLoaded', () => {
+  const billingToggle = document.getElementById('billing-toggle');
+  const toggleIndicator = document.getElementById('toggle-indicator');
+  const monthlyLabel = document.getElementById('monthly-label');
+  const annualLabel = document.getElementById('annual-label');
+  const priceValues = document.querySelectorAll('.price-value');
+  const billingTexts = document.querySelectorAll('.billing-text');
+
+  let isAnnual = true; // default to annual as structured in HTML
+
+  function updateBillingCycle() {
+    if (isAnnual) {
+      toggleIndicator.classList.remove('translate-x-0');
+      toggleIndicator.classList.add('translate-x-6');
+      annualLabel.className = 'text-xs sm:text-sm font-bold text-slate-900 dark:text-white';
+      monthlyLabel.className = 'text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400';
+      
+      priceValues.forEach(el => {
+        el.textContent = el.getAttribute('data-annual');
+      });
+      if (billingTexts.length >= 2) {
+        billingTexts[0].textContent = 'Billed annually ($1,908/yr)';
+        billingTexts[1].textContent = 'Billed annually ($4,788/yr)';
+      }
+    } else {
+      toggleIndicator.classList.remove('translate-x-6');
+      toggleIndicator.classList.add('translate-x-0');
+      monthlyLabel.className = 'text-xs sm:text-sm font-bold text-slate-900 dark:text-white';
+      annualLabel.className = 'text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400';
+
+      priceValues.forEach(el => {
+        el.textContent = el.getAttribute('data-monthly');
+      });
+      if (billingTexts.length >= 2) {
+        billingTexts[0].textContent = 'Billed monthly ($199/mo)';
+        billingTexts[1].textContent = 'Billed monthly ($499/mo)';
+      }
+    }
+  }
+
+  if (billingToggle) {
+    // Initial call to ensure classes are aligned
+    updateBillingCycle();
+    
+    billingToggle.addEventListener('click', () => {
+      isAnnual = !isAnnual;
+      updateBillingCycle();
+    });
+  }
+
+  // FAQ Accordion
+  const faqBtns = document.querySelectorAll('.faq-btn');
+  faqBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+      
+      // Close other FAQs
+      document.querySelectorAll('.faq-item').forEach(otherItem => {
+        if (otherItem !== item) {
+          const otherContent = otherItem.querySelector('.faq-content');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+          otherContent.style.maxHeight = null;
+          otherIcon.classList.remove('rotate-180');
+          otherItem.classList.remove('border-brand-500', 'dark:border-brand-500');
+        }
+      });
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.classList.remove('rotate-180');
+        item.classList.remove('border-brand-500', 'dark:border-brand-500');
+      } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.classList.add('rotate-180');
+        item.classList.add('border-brand-500', 'dark:border-brand-500');
+      }
+    });
+  });
+});
+
+
