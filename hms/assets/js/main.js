@@ -802,6 +802,29 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   }
+
+  // ═══ Initialize Hero Slider Swiper ═══
+  if (typeof Swiper !== 'undefined' && document.querySelector('.hero-swiper')) {
+    new Swiper('.hero-swiper', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      speed: 800,
+      effect: 'slide',
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.hero-swiper-section .swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.hero-swiper-section .hero-next',
+        prevEl: '.hero-swiper-section .hero-prev',
+      },
+    });
+  }
 });
 
 // ═══ Initialize Pricing Toggle & FAQs ═══
