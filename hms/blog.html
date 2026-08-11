@@ -119,10 +119,10 @@
         <!-- ═══ LOGO BRANDING ═══ -->
         <a href="index.html" aria-label="Edoovi HMS Homepage" class="flex items-center group z-10">
           <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo"
-            title="Edoovi HMS - Clinical AI Operating System" fetchpriority="high"
+            title="Edoovi HMS - Clinical AI Operating System" loading="eager" fetchpriority="high"
             class="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:lg:scale-105 dark:hidden">
           <img src="assets/images/edooviHmsDarkLogo.webp" alt="Edoovi HMS Logo"
-            title="Edoovi HMS - Clinical AI Operating System" fetchpriority="high"
+            title="Edoovi HMS - Clinical AI Operating System" loading="eager" fetchpriority="high"
             class="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:lg:scale-105 hidden dark:block">
         </a>
 
@@ -420,9 +420,9 @@
           <!-- Branding mini header inside drawer -->
           <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
             <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS Navigation Menu"
-              class="h-4 sm:h-4.5 w-auto object-contain dark:hidden">
+              fetchpriority="high" class="h-4 sm:h-4.5 w-auto object-contain dark:hidden">
             <img src="assets/images/edooviHmsDarkLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS Navigation Menu"
-              class="h-4 sm:h-4.5 w-auto object-contain hidden dark:block">
+              fetchpriority="high" class="h-4 sm:h-4.5 w-auto object-contain hidden dark:block">
             <span class="text-[0.625rem] font-bold text-slate-400 uppercase tracking-widest">Navigation</span>
           </div>
 
@@ -548,7 +548,8 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
           <div class="lg:col-span-7 relative overflow-hidden h-[18rem] lg:h-auto">
             <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80"
-              alt="Clinical Artificial Intelligence Integration"
+              alt="Clinical Artificial Intelligence Integration" title="Clinical Artificial Intelligence Integration"
+              fetchpriority="high"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:lg:scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
             <span
@@ -625,7 +626,8 @@
                 <div class="space-y-4">
                   <div class="relative overflow-hidden h-[12rem]">
                     <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80"
-                      alt="Hospital cloud encryption logs"
+                      alt="Hospital cloud encryption logs" title="Hospital cloud encryption logs" loading="lazy"
+                      fetchpriority="low"
                       class="w-full h-full object-cover transition-transform duration-700 group-hover:lg:scale-105">
                   </div>
                   <div class="p-6 space-y-3">
@@ -663,7 +665,8 @@
                   <div class="relative overflow-hidden h-[12rem]">
                     <img
                       src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80"
-                      alt="Single sync billing data grid"
+                      alt="Single sync billing data grid" title="Single sync billing data grid" loading="lazy"
+                      fetchpriority="low"
                       class="w-full h-full object-cover transition-transform duration-700 group-hover:lg:scale-105">
                   </div>
                   <div class="p-6 space-y-3">
@@ -701,7 +704,7 @@
                   <div class="relative overflow-hidden h-[12rem]">
                     <img
                       src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80"
-                      alt="Doctor typing note"
+                      alt="Doctor typing note" title="Doctor typing note" loading="lazy" fetchpriority="low"
                       class="w-full h-full object-cover transition-transform duration-700 group-hover:lg:scale-105">
                   </div>
                   <div class="p-6 space-y-3">
@@ -875,8 +878,10 @@
             <!-- Logo (Renders light logo on dark mode wrapper, otherwise standard brand logo matching header setup) -->
             <a href="index.html" aria-label="Edoovi HMS Homepage" class="inline-flex items-center gap-2.5 group">
               <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS - Official Logo"
+                loading="lazy" fetchpriority="low"
                 class="h-9 w-auto object-contain transition-transform group-hover:lg:scale-[1.03] dark:hidden">
               <img src="assets/images/edooviHmsDarkLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS - Official Logo"
+                loading="lazy" fetchpriority="low"
                 class="h-9 w-auto object-contain transition-transform group-hover:lg:scale-[1.03] hidden dark:block">
             </a>
 
@@ -994,7 +999,8 @@
             <div class="flex items-center justify-between w-full pt-2">
               <div class="flex items-center gap-3">
                 <img src="assets/images/logo-light.webp" alt="Edoovi ERP Logo"
-                  title="Edoovi ERP - Institution Management Platform" loading="lazy" class="h-5 w-auto object-contain">
+                  title="Edoovi ERP - Institution Management Platform" loading="lazy" fetchpriority="low"
+                  class="h-5 w-auto object-contain">
                 <div>
                   <span class="text-xs font-bold text-white block">Edoovi ERP</span>
                   <span class="text-[0.6875rem] text-slate-400">School management software</span>
@@ -1013,7 +1019,8 @@
             <div class="flex items-center justify-between w-full pt-2">
               <div class="flex items-center gap-3">
                 <img src="assets/images/edoovi-finder-light.webp" alt="Edoovi Logo"
-                  title="Edoovi Finder - School Discovery Platform" loading="lazy" class="h-5 w-auto object-contain">
+                  title="Edoovi Finder - School Discovery Platform" loading="lazy" fetchpriority="low"
+                  class="h-5 w-auto object-contain">
                 <div>
                   <span class="text-xs font-bold text-white block">Edoovi</span>
                   <span class="text-[0.6875rem] text-slate-400">Find the best school for your child</span>
@@ -1031,8 +1038,9 @@
             class="p-6 rounded-2xl border border-slate-800 bg-[#082a25]/20 hover:lg:bg-[#082a25]/30 transition-all duration-300 flex flex-col justify-between min-h-[120px] group">
             <div class="flex items-center justify-between w-full pt-2">
               <div class="flex items-center gap-3">
-                <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo"
-                  title="Edoovi HMS - Smart Hospital Operating System" loading="lazy" class="h-5 w-auto object-contain">
+                <img src="assets/images/edooviHmsDarkLogo.webp" alt="Edoovi HMS Logo"
+                  title="Edoovi HMS - Smart Hospital Operating System" loading="lazy" fetchpriority="low"
+                  class="h-5 w-auto object-contain">
                 <div>
                   <span class="text-xs font-bold text-white block">Edoovi HMS</span>
                   <span class="text-[0.6875rem] text-slate-400">Smart hospital management system</span>

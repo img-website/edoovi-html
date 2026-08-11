@@ -212,12 +212,12 @@ const modulesData = {
 function switchModule(tabId) {
   // Toggle button highlights
   document.querySelectorAll('.module-tab-btn').forEach(btn => {
-    btn.classList.remove('active', 'border-slate-200', 'bg-white', 'shadow-sm');
+    btn.classList.remove('active', 'border-slate-200', 'bg-white', 'shadow-sm', 'dark:bg-slate-800', 'dark:border-slate-700');
     btn.classList.add('border-slate-100');
   });
   const selectedBtn = document.getElementById('btn-' + tabId);
   if (selectedBtn) {
-    selectedBtn.classList.add('active', 'border-slate-200', 'bg-white', 'shadow-sm');
+    selectedBtn.classList.add('active', 'border-slate-200', 'bg-white', 'shadow-sm', 'dark:bg-slate-800', 'dark:border-slate-700');
     selectedBtn.classList.remove('border-slate-100');
   }
 
@@ -253,8 +253,8 @@ function switchModule(tabId) {
           </span>
           <h3 class="text-2xl font-display font-extrabold text-slate-900 dark:text-white">${data.title}</h3>
         </div>
-        <div class="flex items-center space-x-1.5 bg-emerald-50 dark:bg-slate-800 border border-emerald-200 dark:border-slate-700 px-3 py-1.5 rounded-xl">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <div class="flex items-center space-x-1.5 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 px-3 py-1.5 rounded-xl">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
           <span class="text-xs font-bold text-emerald-700 dark:text-emerald-400">Active</span>
         </div>
       </div>
@@ -295,13 +295,13 @@ let activeAISimulator = 'ai-reminder';
 
 function toggleAISandbox(aiId) {
   document.querySelectorAll('.ai-tab-btn').forEach(btn => {
-    btn.classList.remove('active', 'bg-[#4f46e5]', 'bg-brand-600', 'text-white', 'shadow-xs');
-    btn.classList.add('text-slate-600');
+    btn.classList.remove('active', 'bg-[#4f46e5]', 'bg-brand-600', 'dark:bg-[#10b981]', 'text-white', 'shadow-xs');
+    btn.classList.add('text-slate-650', 'dark:text-slate-300');
   });
   const selectedBtn = document.getElementById('btn-' + aiId);
   if (selectedBtn) {
-    selectedBtn.classList.add('active', 'bg-brand-600', 'text-white', 'shadow-xs');
-    selectedBtn.classList.remove('text-slate-600');
+    selectedBtn.classList.add('active', 'bg-brand-600', 'dark:bg-[#10b981]', 'text-white', 'shadow-xs');
+    selectedBtn.classList.remove('text-slate-650', 'dark:text-slate-300');
   }
 
   activeAISimulator = aiId;
@@ -367,14 +367,60 @@ if (opdSlider && bedsSlider) {
 // 4. Demo Submit Handler
 function handleDemoRequest(event) {
   event.preventDefault();
-  const email = document.getElementById('demo-email').value;
-  const hospital = document.getElementById('demo-hospital').value;
   
-  if (email && hospital) {
-    document.getElementById('demo-status').classList.remove('hidden');
+  const emailInput = document.getElementById('demo-email');
+  const hospitalInput = document.getElementById('demo-hospital');
+  
+  const errorEmail = document.getElementById('error-email');
+  const errorHospital = document.getElementById('error-hospital');
+  const demoStatus = document.getElementById('demo-status');
+  
+  // Reset error displays
+  errorEmail.classList.add('hidden');
+  errorEmail.textContent = '';
+  errorHospital.classList.add('hidden');
+  errorHospital.textContent = '';
+  demoStatus.classList.add('hidden');
+  
+  emailInput.classList.remove('border-rose-500');
+  hospitalInput.classList.remove('border-rose-500');
+  
+  let isValid = true;
+  
+  // Validate Email
+  const emailVal = emailInput.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailVal) {
+    errorEmail.textContent = 'Email address is required.';
+    errorEmail.classList.remove('hidden');
+    emailInput.classList.add('border-rose-500');
+    isValid = false;
+  } else if (!emailRegex.test(emailVal)) {
+    errorEmail.textContent = 'Please enter a valid work email address.';
+    errorEmail.classList.remove('hidden');
+    emailInput.classList.add('border-rose-500');
+    isValid = false;
+  }
+  
+  // Validate Hospital/Clinic Name
+  const hospitalVal = hospitalInput.value.trim();
+  if (!hospitalVal) {
+    errorHospital.textContent = 'Hospital or Clinic name is required.';
+    errorHospital.classList.remove('hidden');
+    hospitalInput.classList.add('border-rose-500');
+    isValid = false;
+  } else if (hospitalVal.length < 3) {
+    errorHospital.textContent = 'Name must be at least 3 characters long.';
+    errorHospital.classList.remove('hidden');
+    hospitalInput.classList.add('border-rose-500');
+    isValid = false;
+  }
+  
+  if (isValid) {
+    demoStatus.classList.remove('hidden');
     event.target.reset();
     setTimeout(() => {
-      document.getElementById('demo-status').classList.add('hidden');
+      demoStatus.classList.add('hidden');
     }, 5000);
   }
 }
@@ -664,7 +710,7 @@ function initDarkMode() {
     });
 
     // 7. Badge & Pill variants
-    document.querySelectorAll("[class*='bg-tealAccent-50'], [class*='bg-purple-50'], [class*='bg-amber-50'], [class*='bg-teal-50'], [class*='bg-emerald-50'], [class*='bg-blue-50'], [class*='bg-cyan-50'], [class*='bg-sky-50'], [class*='bg-rose-50']").forEach(el => {
+    document.querySelectorAll("[class*='bg-brand-50'], [class*='bg-tealAccent-50'], [class*='bg-purple-50'], [class*='bg-amber-50'], [class*='bg-teal-50'], [class*='bg-emerald-50'], [class*='bg-blue-50'], [class*='bg-cyan-50'], [class*='bg-sky-50'], [class*='bg-rose-50']").forEach(el => {
       el.classList.add("dark:bg-slate-800", "dark:border-slate-700");
     });
 
@@ -679,7 +725,7 @@ function initDarkMode() {
     });
 
     // 10. Card watermarks & Progress Bar tracks/fills
-    document.querySelectorAll(".text-slate-100").forEach(el => {
+    document.querySelectorAll(".text-slate-100.text-6xl").forEach(el => {
       el.classList.add("dark:text-slate-800");
     });
     document.querySelectorAll(".w-full.h-1\\.5, .h-1\\.5").forEach(el => {

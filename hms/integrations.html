@@ -118,10 +118,10 @@
         <!-- ═══ LOGO BRANDING ═══ -->
         <a href="index.html" aria-label="Edoovi HMS Homepage" class="flex items-center group z-10">
           <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo"
-            title="Edoovi HMS - Clinical AI Operating System" fetchpriority="high"
+            title="Edoovi HMS - Clinical AI Operating System" fetchpriority="high" loading="eager"
             class="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:lg:scale-105 dark:hidden">
           <img src="assets/images/edooviHmsDarkLogo.webp" alt="Edoovi HMS Logo"
-            title="Edoovi HMS - Clinical AI Operating System" fetchpriority="high"
+            title="Edoovi HMS - Clinical AI Operating System" fetchpriority="high" loading="eager"
             class="h-6 sm:h-7 w-auto object-contain transition-transform duration-300 group-hover:lg:scale-105 hidden dark:block">
         </a>
 
@@ -419,9 +419,9 @@
           <!-- Branding mini header inside drawer -->
           <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
             <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS Navigation Menu"
-              class="h-4 sm:h-4.5 w-auto object-contain dark:hidden">
+              fetchpriority="high" class="h-4 sm:h-4.5 w-auto object-contain dark:hidden">
             <img src="assets/images/edooviHmsDarkLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS Navigation Menu"
-              class="h-4 sm:h-4.5 w-auto object-contain hidden dark:block">
+              fetchpriority="high" class="h-4 sm:h-4.5 w-auto object-contain hidden dark:block">
             <span class="text-[0.625rem] font-bold text-slate-400 uppercase tracking-widest">Navigation</span>
           </div>
 
@@ -609,12 +609,13 @@
       <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- PACS DICOM -->
         <div id="pacs"
-          class="bg-white border border-slate-200 rounded-3xl p-8 hover:lg:shadow-xl transition-all duration-300 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center text-brand-600">
+          class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:lg:shadow-xl transition-all duration-300 space-y-4">
+          <div
+            class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-slate-800 flex items-center justify-center text-brand-600 dark:text-emerald-400">
             <i data-lucide="scan" class="w-6 h-6"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900">Medical Scans Sync</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">Medical Scans Sync</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
             View patient X-rays, MRIs, and CT scans directly inside the patient's record on any web browser, without
             needing extra software.
           </p>
@@ -622,12 +623,13 @@
 
         <!-- HL7 Lab -->
         <div id="insurance"
-          class="bg-white border border-slate-200 rounded-3xl p-8 hover:lg:shadow-xl transition-all duration-300 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-tealAccent-50 flex items-center justify-center text-tealAccent-600">
+          class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:lg:shadow-xl transition-all duration-300 space-y-4">
+          <div
+            class="w-12 h-12 rounded-2xl bg-tealAccent-50 dark:bg-slate-800 flex items-center justify-center text-tealAccent-600 dark:text-sky-400">
             <i data-lucide="shield-alert" class="w-6 h-6"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900">Insurance Gateway</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">Insurance Gateway</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
             Check insurance coverage instantly, request approvals, and file patient claims electronically to reduce
             paperwork.
           </p>
@@ -635,12 +637,13 @@
 
         <!-- WhatsApp API -->
         <div id="whatsapp"
-          class="bg-white border border-slate-200 rounded-3xl p-8 hover:lg:shadow-xl transition-all duration-300 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-600">
+          class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 hover:lg:shadow-xl transition-all duration-300 space-y-4">
+          <div
+            class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-slate-800 flex items-center justify-center text-purple-600 dark:text-purple-400">
             <i data-lucide="message-square" class="w-6 h-6"></i>
           </div>
-          <h3 class="text-xl font-bold text-slate-900">WhatsApp reminders</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">WhatsApp reminders</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
             Send digital prescriptions, appointment cards, and payment receipts directly to your patients' WhatsApp for
             their convenience.
           </p>
@@ -686,7 +689,8 @@
             <div class="text-center space-y-2 z-10">
               <div
                 class="w-14 h-14 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center text-brand-400 mx-auto">
-                <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi Logo" class="h-6 w-auto object-contain">
+                <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi Logo" title="Edoovi HMS Integration Node Logo"
+                  loading="lazy" fetchpriority="low" class="h-6 w-auto object-contain">
               </div>
               <span class="text-[0.625rem] font-black uppercase text-slate-400 tracking-wider">Patient Record</span>
             </div>
@@ -826,9 +830,9 @@
             <!-- Logo (Renders light logo on dark mode wrapper, otherwise standard brand logo matching header setup) -->
             <a href="index.html" aria-label="Edoovi HMS Homepage" class="inline-flex items-center gap-2.5 group">
               <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS - Official Logo"
-                class="h-9 w-auto object-contain transition-transform group-hover:lg:scale-[1.03] dark:hidden">
+                loading="lazy" fetchpriority="low" class="h-9 w-auto object-contain transition-transform group-hover:lg:scale-[1.03] dark:hidden">
               <img src="assets/images/edooviHmsDarkLogo.webp" alt="Edoovi HMS Logo" title="Edoovi HMS - Official Logo"
-                class="h-9 w-auto object-contain transition-transform group-hover:lg:scale-[1.03] hidden dark:block">
+                loading="lazy" fetchpriority="low" class="h-9 w-auto object-contain transition-transform group-hover:lg:scale-[1.03] hidden dark:block">
             </a>
 
             <p class="text-sm text-slate-300 leading-relaxed max-w-xs font-medium">
@@ -837,7 +841,7 @@
             </p>
 
             <!-- Login Column -->
-            <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 max-w-[240px] space-y-3 shadow-xs">
+            <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 max-w-[15rem] space-y-3 shadow-xs">
               <div class="flex items-center justify-between gap-2">
                 <span class="text-[0.625rem] font-bold text-slate-400 uppercase tracking-widest">Portal</span>
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -932,7 +936,7 @@
 
           <!-- Card 1: Edoovi ERP -->
           <a href="https://edoovierp.com" target="_blank"
-            class="relative p-6 rounded-2xl border border-slate-800 bg-[#082a25]/20 hover:lg:bg-[#082a25]/30 transition-all duration-300 flex flex-col justify-between min-h-[120px] group">
+            class="relative p-6 rounded-2xl border border-slate-800 bg-[#082a25]/20 hover:lg:bg-[#082a25]/30 transition-all duration-300 flex flex-col justify-between min-h-[7.5rem] group">
             <div class="absolute -top-3 left-6">
               <span
                 class="text-[0.625rem] font-bold text-white bg-sky-500 px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">You
@@ -941,7 +945,7 @@
             <div class="flex items-center justify-between w-full pt-2">
               <div class="flex items-center gap-3">
                 <img src="assets/images/logo-light.webp" alt="Edoovi ERP Logo"
-                  title="Edoovi ERP - Institution Management Platform" loading="lazy" class="h-5 w-auto object-contain">
+                  title="Edoovi ERP - Institution Management Platform" loading="lazy" fetchpriority="low" class="h-5 w-auto object-contain">
                 <div>
                   <span class="text-xs font-bold text-white block">Edoovi ERP</span>
                   <span class="text-[0.6875rem] text-slate-400">School management software</span>
@@ -956,11 +960,11 @@
 
           <!-- Card 2: Edoovi -->
           <a href="https://edoovi.com" target="_blank"
-            class="p-6 rounded-2xl border border-slate-800 bg-[#082a25]/20 hover:lg:bg-[#082a25]/30 transition-all duration-300 flex flex-col justify-between min-h-[120px] group">
+            class="p-6 rounded-2xl border border-slate-800 bg-[#082a25]/20 hover:lg:bg-[#082a25]/30 transition-all duration-300 flex flex-col justify-between min-h-[7.5rem] group">
             <div class="flex items-center justify-between w-full pt-2">
               <div class="flex items-center gap-3">
                 <img src="assets/images/edoovi-finder-light.webp" alt="Edoovi Logo"
-                  title="Edoovi Finder - School Discovery Platform" loading="lazy" class="h-5 w-auto object-contain">
+                  title="Edoovi Finder - School Discovery Platform" loading="lazy" fetchpriority="low" class="h-5 w-auto object-contain">
                 <div>
                   <span class="text-xs font-bold text-white block">Edoovi</span>
                   <span class="text-[0.6875rem] text-slate-400">Find the best school for your child</span>
@@ -975,11 +979,11 @@
 
           <!-- Card 3: Edoovi HMS -->
           <a href="https://hms.edoovi.com" target="_blank"
-            class="p-6 rounded-2xl border border-slate-800 bg-[#082a25]/20 hover:lg:bg-[#082a25]/30 transition-all duration-300 flex flex-col justify-between min-h-[120px] group">
+            class="p-6 rounded-2xl border border-slate-800 bg-[#082a25]/20 hover:lg:bg-[#082a25]/30 transition-all duration-300 flex flex-col justify-between min-h-[7.5rem] group">
             <div class="flex items-center justify-between w-full pt-2">
               <div class="flex items-center gap-3">
-                <img src="assets/images/edooviHmsLightLogo.webp" alt="Edoovi HMS Logo"
-                  title="Edoovi HMS - Smart Hospital Operating System" loading="lazy" class="h-5 w-auto object-contain">
+                <img src="assets/images/edooviHmsDarkLogo.webp" alt="Edoovi HMS Logo"
+                  title="Edoovi HMS - Smart Hospital Operating System" loading="lazy" fetchpriority="low" class="h-5 w-auto object-contain">
                 <div>
                   <span class="text-xs font-bold text-white block">Edoovi HMS</span>
                   <span class="text-[0.6875rem] text-slate-400">Smart hospital management system</span>

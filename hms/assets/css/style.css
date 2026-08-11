@@ -231,3 +231,15 @@ h1, h2, h3, h4, h5, h6, .font-display {
   }
 }
 
+
+/* Ensure primary brand green text becomes a bright, highly readable emerald green in dark mode headings/spans */
+html.dark .text-brand-600,
+html.dark .text-\[\#0b6b5f\] {
+  color: #10b981 !important;
+}
+
+/* Prevent CTA bullet separator dots from turning dark in dark mode */
+html.dark .rounded-full.bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
