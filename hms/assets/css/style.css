@@ -19,6 +19,7 @@ body {
 h1, h2, h3, h4, h5, h6, .font-display {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
+  line-height: 1.1 !important;
 }
 
 /* Micro-animations for high-fidelity interface design elements */
@@ -242,4 +243,3 @@ html.dark .text-\[\#0b6b5f\] {
 html.dark .rounded-full.bg-white\/80 {
   background-color: rgba(255, 255, 255, 0.8) !important;
 }
-
