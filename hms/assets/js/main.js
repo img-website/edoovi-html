@@ -1,3 +1,10 @@
+// Immediate Theme Check/Apply to avoid layout shifts as early as possible
+if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+} else {
+  document.documentElement.classList.remove('dark');
+}
+
 // Initialize Lucide Icons
 lucide.createIcons();
 
@@ -630,14 +637,16 @@ function initDarkMode() {
   const darkModeToggleMobile = document.getElementById('dark-mode-toggle-mobile');
 
   // Apply dark mode on initial load if previously selected
-  if (localStorage.getItem('darkMode') === 'enabled') {
+  if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
   }
 
   function toggleDarkMode() {
     document.documentElement.classList.toggle('dark');
     const isDark = document.documentElement.classList.contains('dark');
-    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
     // Update scrolled navbar color immediately if scrolled
     if (mainNavbar && mainNavbar.classList.contains('scrolled')) {
@@ -782,63 +791,16 @@ if (typeof AOS !== 'undefined') {
     }
   });
 }
-
-// Interactive Telemetry Tabs handler
 function switchTelemetryTab(tabId, imgSrc, titleText) {
-  // Update active state class on tab buttons using pure Tailwind CSS
   document.querySelectorAll('.telemetry-tab-btn').forEach(btn => {
-    // Reset all buttons to default inactive Tailwind classes
-    btn.classList.remove(
-      'active', 
-      'bg-[#0b6b5f]', 'dark:bg-[#0b6b5f]',
-      'border-r-4', 'border-r-[#0b6b5f]', 'dark:border-r-emerald-500',
-      'border-l-4', 'border-l-[#0b6b5f]', 'dark:border-l-emerald-500',
-      'shadow-md', 'translate-x-1', '-translate-x-1'
-    );
-    btn.classList.add('bg-white', 'dark:bg-slate-900', 'shadow-sm');
-
-    // Inactive text colors
-    const iconContainer = btn.querySelector('.flex.items-center');
-    if (iconContainer) {
-      iconContainer.classList.remove('text-teal-200');
-      iconContainer.classList.add('text-slate-500');
-    }
-    const heading = btn.querySelector('h4');
-    if (heading) {
-      heading.classList.remove('text-white', 'font-black');
-      heading.classList.add('text-slate-900', 'dark:text-white', 'font-bold');
-    }
-    const paragraph = btn.querySelector('p');
-    if (paragraph) {
-      paragraph.classList.remove('text-teal-100');
-      paragraph.classList.add('text-slate-500', 'dark:text-slate-400');
-    }
+    btn.classList.remove('active');
   });
 
   const activeBtn = document.getElementById('btn-' + tabId);
   if (activeBtn) {
-    activeBtn.classList.add('active', 'bg-[#0b6b5f]', 'dark:bg-[#0b6b5f]', 'shadow-md');
-    activeBtn.classList.remove('bg-white', 'dark:bg-slate-900', 'shadow-sm');
-
-
-
-    // Active text/icon colors
-    const iconContainer = activeBtn.querySelector('.flex.items-center');
-    if (iconContainer) {
-      iconContainer.classList.remove('text-slate-500');
-      iconContainer.classList.add('text-teal-200');
-    }
-    const heading = activeBtn.querySelector('h4');
-    if (heading) {
-      heading.classList.remove('text-slate-900', 'dark:text-white', 'font-bold');
-      heading.classList.add('text-white', 'font-black');
-    }
-    const paragraph = activeBtn.querySelector('p');
-    if (paragraph) {
-      paragraph.classList.remove('text-slate-500', 'dark:text-slate-400');
-      paragraph.classList.add('text-teal-100');
-    }
+    activeBtn.classList.add('active');
   }
+
   // Update center mockup image and title
   const imgElement = document.getElementById('telemetry-display-image');
   const titleElement = document.getElementById('telemetry-display-title');
