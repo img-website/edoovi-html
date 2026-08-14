@@ -423,6 +423,30 @@ textarea:focus,
   border-radius: 10px;
 }
 
+/* Force all section headings (excluding small subtitle headers and hero h1s) to be uniform on mobile view */
+@media (max-width: 767px) {
+  h2:not(.text-xs):not(.text-sm):not(.text-base) {
+    font-size: 1.625rem !important; /* Consistent 26px rendering */
+    line-height: 1.25 !important;
+  }
+}
+
+/* Adjust rounded-full capsule badge tags dynamically on small screens to prevent text wrap */
+@media (max-width: 640px) {
+  .inline-flex.rounded-full {
+    font-size: 0.65rem !important; /* Shrink font to ~10px */
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+  .inline-flex.rounded-full span {
+    font-size: 0.65rem !important;
+  }
+}
+
+
+
 
 
 
