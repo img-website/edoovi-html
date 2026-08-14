@@ -243,3 +243,186 @@ html.dark .text-\[\#0b6b5f\] {
 html.dark .rounded-full.bg-white\/80 {
   background-color: rgba(255, 255, 255, 0.8) !important;
 }
+
+/* Redesign Creative Background Floating Blob Animations */
+@keyframes blob-float-slow {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.15);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes blob-float-reverse {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 40px) scale(0.9);
+  }
+  66% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+}
+
+.animate-blob-1 {
+  animation: blob-float-slow 20s infinite ease-in-out;
+}
+.animate-blob-2 {
+  animation: blob-float-reverse 25s infinite ease-in-out;
+}
+.animate-blob-3 {
+  animation: blob-float-slow 22s infinite ease-in-out 3s;
+}
+
+/* Single solid brand color */
+.text-gradient-brand {
+  color: #0b6b5f;
+}
+html.dark .text-gradient-brand {
+  color: #10b981;
+}
+
+/* Unified Creative Brand Background */
+.hero-creative-bg {
+  background: 
+    linear-gradient(to right, rgba(11, 107, 95, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 107, 95, 0.05) 1px, transparent 1px),
+    linear-gradient(135deg, #fafafa 0%, #eafbf7 50%, #fafafa 100%);
+  background-size: 50px 50px, 50px 50px, 100% 100%;
+}
+html.dark .hero-creative-bg {
+  background: 
+    linear-gradient(to right, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+    linear-gradient(135deg, #090d16 0%, #052a23 50%, #090d16 100%);
+  background-size: 50px 50px, 50px 50px, 100% 100%;
+}
+
+/* intl-tel-input dark theme custom styles */
+.iti {
+  width: 100%;
+}
+
+.iti__dropdown-content,
+.iti__country-list {
+  background-color: #090d16 !important;
+  /* Deep dark slate-950 */
+  border: 1px solid #1e293b !important;
+  /* border-slate-800 */
+  border-radius: 0.85rem !important;
+  color: #f8fafc !important;
+  /* text-slate-50 */
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5) !important;
+  padding: 6px !important;
+  font-family: sans-serif;
+}
+
+.iti__country {
+  padding: 10px 14px !important;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.iti__country:hover,
+.iti__country.iti__highlight {
+  background-color: #1e293b !important;
+  /* hover:bg-slate-800 */
+}
+
+.iti__selected-flag {
+  border-radius: 0.75rem 0 0 0.75rem;
+  background-color: transparent !important;
+  padding-left: 14px !important;
+}
+
+.iti__selected-flag:hover {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.iti__selected-dial-code {
+  color: #cbd5e1 !important;
+  /* text-slate-300 */
+  font-size: 0.875rem !important;
+  font-weight: 600;
+  margin-left: 6px !important;
+}
+
+.iti__country-name {
+  color: #94a3b8 !important;
+  /* text-slate-400 */
+  font-size: 0.8125rem !important;
+}
+
+.iti__dial-code {
+  color: #64748b !important;
+  /* text-slate-500 */
+  font-size: 0.8125rem !important;
+}
+
+.iti__arrow {
+  border-top-color: #64748b !important;
+}
+
+.iti__arrow--up {
+  border-bottom-color: #64748b !important;
+}
+
+/* Country list search bar styling override */
+.iti__search-input {
+  background-color: #0f172a !important;
+  border: 1px solid #1e293b !important;
+  color: #f1f5f9 !important;
+  border-radius: 0.5rem !important;
+  padding: 10px 14px !important;
+  outline: none !important;
+  margin: 8px !important;
+  width: calc(100% - 16px) !important;
+  font-size: 0.8125rem !important;
+}
+
+.iti__search-input:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 1px #10b981 !important;
+}
+
+/* Form Fields Styling Enhancements */
+html.dark input[type="text"],
+html.dark input[type="email"],
+html.dark input[type="tel"],
+html.dark textarea,
+html.dark .custom-select-container button {
+  background-color: #090d16 !important;
+  border-color: #1e293b !important;
+  transition: all 0.3s ease !important;
+}
+
+input:focus,
+textarea:focus,
+.custom-select-container button:focus-visible,
+.custom-select-container button.border-brand-500 {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.12) !important;
+}
+
+/* Custom Select scrollbars */
+.custom-select-options::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-select-options::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+
+
+
+

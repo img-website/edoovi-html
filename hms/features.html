@@ -502,18 +502,31 @@
     </div>
   </header>
 
-  <main id="main-content" class="pt-28 pb-16">
-    <!-- Hero Header -->
-    <section class="relative py-12 max-w-7xl mx-auto px-4 sm:px-6 text-center space-y-4">
+  <main id="main-content" class="pt-28 pb-16 relative overflow-hidden">
+    <!-- Premium Ambient Lighting Effects for Features Page -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
       <div
-        class="inline-flex items-center space-x-2 bg-brand-50 dark:bg-slate-900 border border-brand-100 dark:border-slate-800 text-brand-600 dark:text-emerald-400 px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider">
-        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        class="absolute -top-40 left-1/4 w-[30rem] h-[30rem] bg-[#0b6b5f]/5 dark:bg-[#0b6b5f]/3 rounded-full blur-[100px]">
+      </div>
+      <div
+        class="absolute top-10 right-1/4 w-[25rem] h-[25rem] bg-indigo-500/5 dark:bg-indigo-500/3 rounded-full blur-[100px]">
+      </div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(rgba(11,107,95,0.07)_1.5px,transparent_1.5px)] dark:bg-[radial-gradient(rgba(16,185,129,0.04)_1.5px,transparent_1.5px)] bg-[size:24px_24px] opacity-100">
+      </div>
+    </div>
+
+    <!-- Hero Header -->
+    <section class="relative py-16 max-w-7xl mx-auto px-4 sm:px-6 text-center space-y-5 z-10">
+      <div
+        class="inline-flex items-center space-x-2 bg-[#0b6b5f]/5 border border-[#0b6b5f]/15 text-[#0b6b5f] dark:text-emerald-450 dark:bg-slate-900/60 dark:border-slate-800 px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-sm">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#0b6b5f] dark:text-emerald-400"></i>
         <span>Advanced Operating Platform</span>
       </div>
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-slate-950 dark:text-white leading-tight">
-        Edoovi HMS <span class="text-brand-600 dark:text-emerald-400">Core Features</span>
+        Edoovi HMS <span class="text-[#0b6b5f] dark:text-emerald-400">Core Features</span>
       </h1>
-      <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+      <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
         Explore clinical excellence, secure patient records, and robust AI integrations built for high-performance
         hospital setups.
       </p>
@@ -532,100 +545,128 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- OPD Management Card -->
         <div id="opd"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-[#0b6b5f] dark:hover:lg:border-emerald-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/30 flex items-center justify-center text-brand-600 dark:text-[#6de7d5]">
-            <i data-lucide="calendar" class="w-6 h-6"></i>
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0b6b5f] to-teal-500 text-white flex items-center justify-center shadow-lg shadow-teal-500/25">
+            <i data-lucide="stethoscope" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">OPD Management Suite</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Handle outpatient consultations, digital prescription logs, vital tracking, templates, and referral sheets
               instantly within a streamlined tab environment.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Easy Prescription Builder</li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Vital Signs Dashboard</li>
+            </ul>
           </div>
           <div class="flex flex-wrap gap-2 pt-2">
             <span
-              class="text-[0.625rem] font-bold text-slate-600 dark:text-slate-355 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200/50 dark:border-slate-700">Prescription
+              class="text-[0.625rem] font-bold text-[#0b6b5f] dark:text-emerald-300 bg-[#0b6b5f]/5 dark:bg-slate-800 px-3 py-1 rounded-full border border-[#0b6b5f]/10 dark:border-slate-700">Prescription
               Builder</span>
             <span
-              class="text-[0.625rem] font-bold text-slate-600 dark:text-slate-355 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200/50 dark:border-slate-700">Digital
+              class="text-[0.625rem] font-bold text-[#0b6b5f] dark:text-emerald-300 bg-[#0b6b5f]/5 dark:bg-slate-800 px-3 py-1 rounded-full border border-[#0b6b5f]/10 dark:border-slate-700">Digital
               Consent</span>
           </div>
         </div>
 
         <!-- IPD Wards Card -->
         <div id="ipd"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-[#0b6b5f] dark:hover:lg:border-emerald-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/30 flex items-center justify-center text-brand-600 dark:text-[#6de7d5]">
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0b6b5f] to-teal-500 text-white flex items-center justify-center shadow-lg shadow-teal-500/25">
             <i data-lucide="bed" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">IPD Wards & Admissions</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Track live ward occupancy, allocate beds, configure admission grids, record clinical rounds data, and
               manage nursing duties with automated alarms.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Interactive Bed Allocation Grid
+              </li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Daily Nursing Treatment Rounds</li>
+            </ul>
           </div>
           <div class="flex flex-wrap gap-2 pt-2">
             <span
-              class="text-[0.625rem] font-bold text-slate-600 dark:text-slate-355 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200/50 dark:border-slate-700">Ward
+              class="text-[0.625rem] font-bold text-[#0b6b5f] dark:text-emerald-300 bg-[#0b6b5f]/5 dark:bg-slate-800 px-3 py-1 rounded-full border border-[#0b6b5f]/10 dark:border-slate-700">Ward
               Allocator</span>
             <span
-              class="text-[0.625rem] font-bold text-slate-600 dark:text-slate-355 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200/50 dark:border-slate-700">Nurse
+              class="text-[0.625rem] font-bold text-[#0b6b5f] dark:text-emerald-300 bg-[#0b6b5f]/5 dark:bg-slate-800 px-3 py-1 rounded-full border border-[#0b6b5f]/10 dark:border-slate-700">Nurse
               Dashboard</span>
           </div>
         </div>
 
         <!-- Lab & Pathology Card -->
         <div id="lab"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-[#0b6b5f] dark:hover:lg:border-emerald-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/30 flex items-center justify-center text-brand-600 dark:text-[#6de7d5]">
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0b6b5f] to-teal-500 text-white flex items-center justify-center shadow-lg shadow-teal-500/25">
             <i data-lucide="beaker" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">Lab & Pathology Workflow</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Pathological sample collections, tracking barcoded containers, inputting test values, and generating
               structured digital signatures reports instantly.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Barcode Sample Route Management
+              </li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Pathologist Digital Sign-off
+                Verification</li>
+            </ul>
           </div>
           <div class="flex flex-wrap gap-2 pt-2">
             <span
-              class="text-[0.625rem] font-bold text-slate-600 dark:text-slate-355 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200/50 dark:border-slate-700">Barcoded
+              class="text-[0.625rem] font-bold text-[#0b6b5f] dark:text-emerald-300 bg-[#0b6b5f]/5 dark:bg-slate-800 px-3 py-1 rounded-full border border-[#0b6b5f]/10 dark:border-slate-700">Barcoded
               Samples</span>
             <span
-              class="text-[0.625rem] font-bold text-slate-600 dark:text-slate-355 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200/50 dark:border-slate-700">PDF
+              class="text-[0.625rem] font-bold text-[#0b6b5f] dark:text-emerald-300 bg-[#0b6b5f]/5 dark:bg-slate-800 px-3 py-1 rounded-full border border-[#0b6b5f]/10 dark:border-slate-700">PDF
               Generator</span>
           </div>
         </div>
 
         <!-- Radiology PACS Card -->
         <div id="radiology"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-[#0b6b5f] dark:hover:lg:border-emerald-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/30 flex items-center justify-center text-brand-600 dark:text-[#6de7d5]">
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0b6b5f] to-teal-500 text-white flex items-center justify-center shadow-lg shadow-teal-500/25">
             <i data-lucide="scan" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">Radiology PACS System</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Integrate diagnostic radiology reports, scan attachments, and DICOM medical file views mapped directly
               inside patient historical records.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Seamless DICOM Image Preview</li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Direct Patient File Association
+              </li>
+            </ul>
           </div>
           <div class="flex flex-wrap gap-2 pt-2">
             <span
-              class="text-[0.625rem] font-bold text-slate-600 dark:text-slate-355 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200/50 dark:border-slate-700">DICOM
+              class="text-[0.625rem] font-bold text-[#0b6b5f] dark:text-emerald-300 bg-[#0b6b5f]/5 dark:bg-slate-800 px-3 py-1 rounded-full border border-[#0b6b5f]/10 dark:border-slate-700">DICOM
               Viewer</span>
             <span
-              class="text-[0.625rem] font-bold text-slate-600 dark:text-slate-355 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full border border-slate-200/50 dark:border-slate-700">Radiology
+              class="text-[0.625rem] font-bold text-[#0b6b5f] dark:text-emerald-300 bg-[#0b6b5f]/5 dark:bg-slate-800 px-3 py-1 rounded-full border border-[#0b6b5f]/10 dark:border-slate-700">Radiology
               PACS</span>
           </div>
         </div>
@@ -645,18 +686,24 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- AI Appointment Bot -->
         <div id="ai-appointment"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-indigo-500 dark:hover:lg:border-indigo-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/30 flex items-center justify-center text-indigo-600 dark:text-[#a5b4fc]">
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 to-indigo-650 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25">
             <i data-lucide="message-square" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">AI Appointment WhatsApp Bot</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Autonomously manages patient scheduling, sends reminders, processes rescheduling requests, and updates
               wait lists in real-time.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-indigo-500 dark:text-indigo-400"></i> Automated Booking Confirmation</li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-indigo-500 dark:text-indigo-400"></i> Live WhatsApp Roster Updates</li>
+            </ul>
           </div>
           <div class="flex flex-wrap gap-2 pt-2">
             <span
@@ -670,18 +717,26 @@
 
         <!-- AI Discharge Summary -->
         <div id="ai-discharge"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-indigo-500 dark:hover:lg:border-indigo-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/30 flex items-center justify-center text-indigo-600 dark:text-[#a5b4fc]">
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 to-indigo-650 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25">
             <i data-lucide="file-text" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">AI Discharge Summarization</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Generate structured, reviewable discharge notes instantly from inpatient templates, prescriptions, and lab
               records.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-indigo-500 dark:text-indigo-400"></i> Multi-Department Data Aggregation
+              </li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-indigo-500 dark:text-indigo-400"></i> Instant discharge draft creation
+              </li>
+            </ul>
           </div>
           <div class="flex flex-wrap gap-2 pt-2">
             <span
@@ -695,18 +750,26 @@
 
         <!-- AI Procedure Module -->
         <div id="ai-procedure"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-indigo-500 dark:hover:lg:border-indigo-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/30 flex items-center justify-center text-indigo-600 dark:text-[#a5b4fc]">
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 to-indigo-650 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25">
             <i data-lucide="activity" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">AI Procedure Guidelines</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Provides checklists, billing entries, and clinical pre-op warnings based on standard healthcare
               infrastructure models.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-indigo-500 dark:text-indigo-400"></i> Adaptive clinical checklist guide
+              </li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-indigo-500 dark:text-indigo-400"></i> Direct pre-op risk assessment
+                warnings</li>
+            </ul>
           </div>
           <div class="flex flex-wrap gap-2 pt-2">
             <span
@@ -719,19 +782,27 @@
 
         <!-- AI Med Suggestions -->
         <div id="ai-safety"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-indigo-500 dark:hover:lg:border-indigo-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/30 flex items-center justify-center text-indigo-600 dark:text-[#a5b4fc]">
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 to-indigo-650 text-white flex items-center justify-center shadow-lg shadow-indigo-500/25">
             <i data-lucide="shield-alert" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">AI Clinical Safety & Contraindications
             </h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Real-time cross-checking of active prescription drugs against patient history for allergy warnings and
               interaction risks.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-indigo-500 dark:text-indigo-400"></i> Live Allergy & Drug Conflict check
+              </li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-indigo-500 dark:text-indigo-400"></i> Continuous prescription security
+                check</li>
+            </ul>
           </div>
           <div class="flex flex-wrap gap-2 pt-2">
             <span
@@ -758,35 +829,51 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Smart Billing -->
         <div id="billing"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-[#0b6b5f] dark:hover:lg:border-emerald-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/30 flex items-center justify-center text-brand-600 dark:text-[#6de7d5]">
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0b6b5f] to-teal-500 text-white flex items-center justify-center shadow-lg shadow-teal-500/25">
             <i data-lucide="credit-card" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">Smart Invoicing & Billing Panel</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Consolidate consultation billing, pharmacy bills, diagnostic reports, and procedure charges into a single,
               secure super-panel.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Automated Multi-Department
+                Consolidation</li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Clean single unified ledger
+                printout</li>
+            </ul>
           </div>
         </div>
 
         <!-- Insurance Gateway -->
         <div id="insurance"
-          class="p-8 rounded-[2rem] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-lg transition-all"
+          class="p-8 rounded-[2rem] bg-white/90 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 space-y-6 shadow-sm hover:lg:shadow-xl hover:lg:border-[#0b6b5f] dark:hover:lg:border-emerald-400 hover:lg:-translate-y-1 transition-all duration-300"
           data-aos="fade-up">
           <div
-            class="w-12 h-12 rounded-2xl bg-brand-50 dark:bg-brand-950/30 flex items-center justify-center text-brand-600 dark:text-[#6de7d5]">
+            class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#0b6b5f] to-teal-500 text-white flex items-center justify-center shadow-lg shadow-teal-500/25">
             <i data-lucide="database" class="w-6 h-6"></i>
           </div>
-          <div class="space-y-2">
+          <div class="space-y-3">
             <h3 class="text-xl font-extrabold text-slate-950 dark:text-white">Insurance TPA Gateways</h3>
             <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               Automate claim files, manage corporate discount models, track policies, and sync insurance parameters
               smoothly.
             </p>
+            <ul class="text-xs text-slate-550 dark:text-slate-400 space-y-2 pt-2">
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Seamless TPA Digital Claim
+                Submissions</li>
+              <li class="flex items-center"><i data-lucide="check"
+                  class="w-3.5 h-3.5 mr-2 text-[#0b6b5f] dark:text-emerald-400"></i> Automated Policy Co-pay
+                calculations</li>
+            </ul>
           </div>
         </div>
       </div>

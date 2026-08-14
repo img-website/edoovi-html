@@ -99,6 +99,11 @@
   <!-- AOS CSS CDN -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+  <!-- intl-tel-input (Flags) CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/css/intlTelInput.css">
+
+
+
   <!-- Custom Stylesheet Link -->
   <link rel="stylesheet" href="assets/css/style.css">
 
@@ -575,51 +580,40 @@
 
   <!-- ═══ HERO SECTION ═══ -->
   <section
-    class="hero-swiper-section relative pt-28 overflow-hidden dark:bg-[#090d16] group [&_.swiper-pagination-bullet]:w-2 [&_.swiper-pagination-bullet]:h-2 [&_.swiper-pagination-bullet]:bg-[#cbd5e1] [&_.swiper-pagination-bullet]:opacity-70 [&_.swiper-pagination-bullet]:rounded-full [&_.swiper-pagination-bullet]:transition-all [&_.swiper-pagination-bullet]:duration-400 [&_.swiper-pagination-bullet]:cursor-pointer [&_.swiper-pagination-bullet]:inline-block [&_.swiper-pagination-bullet]:relative [&_.swiper-pagination-bullet:hover]:scale-[1.3] [&_.swiper-pagination-bullet:hover]:opacity-90 [&_.swiper-pagination-bullet-active]:!bg-[#0b6b5f] [&_.swiper-pagination-bullet-active]:!opacity-100 [&_.swiper-pagination-bullet-active]:shadow-[0_0_10px_rgba(11,107,95,0.3)] [&_.swiper-pagination-bullet-active::after]:content-[''] [&_.swiper-pagination-bullet-active::after]:absolute [&_.swiper-pagination-bullet-active::after]:inset-[-4px] [&_.swiper-pagination-bullet-active::after]:border-[1.5px] [&_.swiper-pagination-bullet-active::after]:border-[#0b6b5f] [&_.swiper-pagination-bullet-active::after]:rounded-full [&_.swiper-pagination-bullet-active::after]:animate-[bulletPulse_2s_infinite_ease-in-out] dark:[&_.swiper-pagination-bullet]:bg-[#475569] dark:[&_.swiper-pagination-bullet-active]:!bg-[#10b981] dark:[&_.swiper-pagination-bullet-active]:shadow-[0_0_12px_rgba(16,185,129,0.5)] dark:[&_.swiper-pagination-bullet-active::after]:border-[#10b981]">
-    <!-- Premium Ambient Lighting Effects -->
-    <div class="absolute inset-0 pointer-events-none overflow-hidden">
-      <div
-        class="absolute -top-40 left-1/4 w-[31.25rem] h-[31.25rem] bg-brand-500/10 rounded-full blur-[6.25rem] dark:bg-brand-500/5">
-      </div>
-      <div
-        class="absolute top-10 right-1/4 w-[25rem] h-[25rem] bg-tealAccent-500/10 rounded-full blur-[6.25rem] dark:bg-tealAccent-500/5">
-      </div>
-      <div
-        class="absolute inset-0 bg-[radial-gradient(rgba(11,107,95,0.12)_1.5px,transparent_1.5px)] dark:bg-[radial-gradient(rgba(16,185,129,0.08)_1.5px,transparent_1.5px)] bg-[size:24px_24px] opacity-100">
-      </div>
+    class="hero-swiper-section hero-creative-bg relative pt-16 lg:pt-12 pb-12 lg:pb-16 overflow-hidden lg:h-[calc(100vh-5rem)] lg:min-h-[700px] lg:max-h-[850px] flex items-center group [&_.swiper-pagination-bullet]:w-2.5 [&_.swiper-pagination-bullet]:h-2.5 [&_.swiper-pagination-bullet]:bg-[#cbd5e1] [&_.swiper-pagination-bullet]:opacity-70 [&_.swiper-pagination-bullet]:rounded-full [&_.swiper-pagination-bullet]:transition-all [&_.swiper-pagination-bullet]:duration-400 [&_.swiper-pagination-bullet]:cursor-pointer [&_.swiper-pagination-bullet]:inline-block [&_.swiper-pagination-bullet]:relative [&_.swiper-pagination-bullet:hover]:scale-[1.3] [&_.swiper-pagination-bullet:hover]:opacity-90 [&_.swiper-pagination-bullet-active]:!bg-[#0b6b5f] [&_.swiper-pagination-bullet-active]:!opacity-100 [&_.swiper-pagination-bullet-active]:shadow-[0_0_10px_rgba(11,107,95,0.3)] [&_.swiper-pagination-bullet-active::after]:content-[''] [&_.swiper-pagination-bullet-active::after]:absolute [&_.swiper-pagination-bullet-active::after]:inset-[-4px] [&_.swiper-pagination-bullet-active::after]:border-[1.5px] [&_.swiper-pagination-bullet-active::after]:border-[#0b6b5f] [&_.swiper-pagination-bullet-active::after]:rounded-full [&_.swiper-pagination-bullet-active::after]:animate-[bulletPulse_2s_infinite_ease-in-out] dark:[&_.swiper-pagination-bullet]:bg-[#475569] dark:[&_.swiper-pagination-bullet-active]:!bg-[#10b981] dark:[&_.swiper-pagination-bullet-active]:shadow-[0_0_12px_rgba(16,185,129,0.5)] dark:[&_.swiper-pagination-bullet-active::after]:border-[#10b981]">
+
+    <!-- Creative Background Bottom Wave -->
+    <div class="absolute bottom-0 inset-x-0 w-full pointer-events-none z-10">
+      <svg class="w-full h-16 min-h-[4rem] text-white dark:text-slate-950 fill-current" viewBox="0 0 1440 74"
+        preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,32 C240,70 480,70 720,40 C960,10 1200,10 1440,32 L1440,74 L0,74 Z"></path>
+      </svg>
     </div>
 
     <!-- Outer Centered Grid Container for layout grid alignment -->
-    <div class="mx-auto max-w-7xl relative z-10 px-4 sm:px-6">
+    <div class="mx-auto max-w-7xl relative w-full z-20 px-4 sm:px-6">
 
-      <!-- Swiper Control Panel (Vertical Stacked Arrows + Dots on Right Margin) -->
-      <div class="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-50 flex flex-col items-center gap-5">
-        <!-- Arrows Group (Visible on Desktop/lg+, Hidden on Mobile) -->
-        <div class="hidden lg:flex flex-col gap-2">
-          <!-- Prev Arrow -->
-          <button
-            class="hero-prev w-12 h-12 rounded-full border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-center text-slate-800 dark:text-slate-200 shadow-lg hover:bg-[#0b6b5f] dark:hover:bg-[#10b981] hover:text-white hover:border-[#0b6b5f] dark:hover:border-[#10b981] hover:scale-110 transition-all duration-300 pointer-events-auto">
-            <i data-lucide="chevron-up" class="w-6 h-6"></i>
-          </button>
-          <!-- Next Arrow -->
-          <button
-            class="hero-next w-12 h-12 rounded-full border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-center text-slate-800 dark:text-slate-200 shadow-lg hover:bg-[#0b6b5f] dark:hover:bg-[#10b981] hover:text-white hover:border-[#0b6b5f] dark:hover:border-[#10b981] hover:scale-110 transition-all duration-300 pointer-events-auto">
-            <i data-lucide="chevron-down" class="w-6 h-6"></i>
-          </button>
-        </div>
-
+      <!-- Swiper Navigation Arrows (Floating at Container Edges with high transparency) -->
+      <div class="hidden lg:block">
+        <button aria-label="Previous Slide"
+          class="hero-prev absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full border border-slate-300/30 dark:border-slate-700/20 bg-slate-500/5 dark:bg-slate-400/5 backdrop-blur-[3px] flex items-center justify-center text-slate-700 dark:text-slate-350 hover:bg-[#0b6b5f] dark:hover:bg-[#10b981] hover:text-white hover:border-[#0b6b5f] dark:hover:border-[#10b981] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer">
+          <i data-lucide="chevron-left" class="w-5 h-5"></i>
+        </button>
+        <button aria-label="Next Slide"
+          class="hero-next absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full border border-slate-300/30 dark:border-slate-700/20 bg-slate-500/5 dark:bg-slate-400/5 backdrop-blur-[3px] flex items-center justify-center text-slate-700 dark:text-slate-350 hover:bg-[#0b6b5f] dark:hover:bg-[#10b981] hover:text-white hover:border-[#0b6b5f] dark:hover:border-[#10b981] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer">
+          <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        </button>
       </div>
 
-
-      <!-- Swiper Hero Wrapper (Clean full-width container for exact layout grid matching) -->
+      <!-- Swiper Hero Wrapper -->
       <div class="swiper hero-swiper w-full overflow-hidden">
         <div class="swiper-wrapper">
 
           <!-- Slide 1: Smart Hospital OS -->
-          <div class="swiper-slide pb-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-6 items-center">
+          <div class="swiper-slide pb-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pt-4 items-center">
               <!-- Hero Text content -->
-              <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+              <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
                 <div
                   class="inline-flex items-center space-x-2 bg-[#0b6b5f]/5 border border-[#0b6b5f]/20 text-[#0b6b5f] dark:text-emerald-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                   <span class="w-2 h-2 rounded-full bg-[#0b6b5f] dark:bg-emerald-300 animate-pulse"></span>
@@ -628,15 +622,14 @@
 
                 <h1
                   class="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-slate-900 dark:text-white leading-tight">
-                  The intelligent software for <span class="text-brand-600">modern hospitals</span>
+                  The intelligent software for <span class="text-gradient-brand">modern hospitals</span>
                 </h1>
 
                 <p
                   class="text-sm sm:text-base text-slate-655 dark:text-slate-350 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
                   Edoovi HMS integrates daily operations, digital documentation, and real-time medical intelligence.
                   Streamline OPD consultations, centralize pharmacy & billing, and use advanced AI agents to run
-                  error-free
-                  care workflows.
+                  error-free care workflows.
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -654,42 +647,80 @@
 
                 <!-- statistics grid -->
                 <div
-                  class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/60 dark:border-slate-800 max-w-lg mx-auto lg:mx-0">
+                  class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200/60 dark:border-slate-800 max-w-lg mx-auto lg:mx-0">
                   <div>
-                    <p class="text-3xl font-display font-black text-slate-900 dark:text-white">50+</p>
+                    <p class="text-2xl sm:text-3xl font-display font-black text-slate-900 dark:text-white">50+</p>
                     <p class="text-[0.625rem] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                       Hospitals Live</p>
                   </div>
                   <div>
-                    <p class="text-3xl font-display font-black text-slate-900 dark:text-white">40%</p>
+                    <p class="text-2xl sm:text-3xl font-display font-black text-slate-900 dark:text-white">40%</p>
                     <p class="text-[0.625rem] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                       Time Saved</p>
                   </div>
                   <div>
-                    <p class="text-3xl font-display font-black text-slate-900 dark:text-white">&lt;24h</p>
+                    <p class="text-2xl sm:text-3xl font-display font-black text-slate-900 dark:text-white">&lt;24h</p>
                     <p class="text-[0.625rem] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                       Setup Period</p>
                   </div>
                 </div>
               </div>
 
-              <!-- Hero Graphic Content -->
-              <div class="lg:col-span-5 relative w-full flex justify-center items-center">
+              <!-- Hero Graphic Content (Creative Layered 3D Popout Setup) -->
+              <div class="lg:col-span-5 relative w-full flex justify-center items-center h-[340px] lg:h-[400px]">
+
+
+                <!-- Floating Graphic 1: Sarah admission badge (Top Left Overlay) -->
                 <div
-                  class="relative w-full max-w-lg aspect-video sm:aspect-square md:aspect-auto rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900 animate-float z-20">
+                  class="absolute -top-2 -left-2 sm:left-4 z-30 animate-float bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-3 transition-transform hover:scale-105 duration-300">
+                  <div
+                    class="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 dark:text-emerald-300 font-bold text-xs relative">
+                    SJ
+                    <span
+                      class="absolute top-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white dark:border-slate-900 animate-ping"></span>
+                  </div>
+                  <div>
+                    <p class="text-[0.625rem] font-black text-slate-900 dark:text-white leading-none">Sarah Jenkins</p>
+                    <p class="text-[0.5rem] text-slate-500 mt-0.5 leading-none">Admission Approved (ICU)</p>
+                  </div>
+                </div>
+
+                <!-- Floating Graphic 2: Live billing summary (Bottom Right Overlay) -->
+                <div
+                  class="absolute -bottom-2 right-0 sm:right-6 z-30 animate-float-delayed bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex flex-col gap-1.5 transition-transform hover:scale-105 duration-300">
+                  <div class="flex items-center gap-2">
+                    <div class="p-1 rounded-lg bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-300">
+                      <i data-lucide="trending-down" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <span class="text-[0.5625rem] font-bold text-slate-500 uppercase tracking-wider">Queue Efficiency</span>
+                  </div>
+                  <div class="flex items-baseline gap-1">
+                    <span class="text-sm font-black text-slate-900 dark:text-white">-18.4%</span>
+                    <span class="text-[0.5rem] text-emerald-600 font-bold">Wait Time</span>
+                  </div>
+                </div>
+
+                <!-- Main Browser Mockup Container -->
+                <div
+                  class="relative w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border border-white/80 dark:border-slate-800/50 bg-white dark:bg-slate-900 transition-all duration-500 hover:rotate-1 hover:scale-[1.03] z-20 group/graphic">
+                  <div class="absolute top-3.5 left-4 flex gap-1.5 z-30">
+                    <span class="w-2 h-2 rounded-full bg-red-400/90"></span>
+                    <span class="w-2 h-2 rounded-full bg-yellow-400/90"></span>
+                    <span class="w-2 h-2 rounded-full bg-green-400/90"></span>
+                  </div>
                   <img src="assets/images/hmsDashboardV2.webp" alt="Edoovi HMS Clinical Dashboard Mockup"
-                    class="w-full h-auto object-cover max-h-[31.25rem]" title="Edoovi HMS Dashboard Mockup"
-                    fetchpriority="high" loading="eager">
+                    class="w-full h-auto object-cover max-h-[16rem] lg:max-h-[19rem] pt-8.5"
+                    title="Edoovi HMS Dashboard Mockup" fetchpriority="high" loading="eager">
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Slide 2: AI Clinical Assistant -->
-          <div class="swiper-slide pb-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-6 items-center">
+          <div class="swiper-slide pb-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pt-4 items-center">
               <!-- Hero Text content -->
-              <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+              <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
                 <div
                   class="inline-flex items-center space-x-2 bg-[#0b6b5f]/5 border border-[#0b6b5f]/20 text-[#0b6b5f] dark:text-emerald-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                   <span class="w-2 h-2 rounded-full bg-[#0b6b5f] dark:bg-emerald-300 animate-pulse"></span>
@@ -698,7 +729,7 @@
 
                 <h1
                   class="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-slate-900 dark:text-white leading-tight">
-                  The intelligent software for <span class="text-brand-600">modern hospitals</span>
+                  The intelligent software for <span class="text-gradient-brand">modern hospitals</span>
                 </h1>
 
                 <p
@@ -722,42 +753,75 @@
 
                 <!-- statistics grid -->
                 <div
-                  class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/60 dark:border-slate-800 max-w-lg mx-auto lg:mx-0">
+                  class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200/60 dark:border-slate-800 max-w-lg mx-auto lg:mx-0">
                   <div>
-                    <p class="text-3xl font-display font-black text-slate-900 dark:text-white">100k+</p>
+                    <p class="text-2xl sm:text-3xl font-display font-black text-slate-900 dark:text-white">100k+</p>
                     <p class="text-[0.625rem] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                       Summaries Drafted</p>
                   </div>
                   <div>
-                    <p class="text-3xl font-display font-black text-slate-900 dark:text-white">99.8%</p>
+                    <p class="text-2xl sm:text-3xl font-display font-black text-slate-900 dark:text-white">99.8%</p>
                     <p class="text-[0.625rem] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                       Safety Rating</p>
                   </div>
                   <div>
-                    <p class="text-3xl font-display font-black text-slate-900 dark:text-white">3 Sec</p>
+                    <p class="text-2xl sm:text-3xl font-display font-black text-slate-900 dark:text-white">3 Sec</p>
                     <p class="text-[0.625rem] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                       Generation Time</p>
                   </div>
                 </div>
               </div>
 
-              <!-- Hero Graphic Content -->
-              <div class="lg:col-span-5 relative w-full flex justify-center items-center">
+              <!-- Hero Graphic Content (Creative Layered 3D Popout Setup) -->
+              <div class="lg:col-span-5 relative w-full flex justify-center items-center h-[340px] lg:h-[400px]">
+                <!-- Floating Graphic 1: AI Prescription warning (Top Left Overlay) -->
                 <div
-                  class="relative w-full max-w-lg aspect-video sm:aspect-square md:aspect-auto rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900 animate-float z-20">
+                  class="absolute -top-2 -left-2 sm:left-4 z-30 animate-float bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-transform hover:scale-105 duration-300">
+                  <div class="p-1.5 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-300">
+                    <i data-lucide="shield-alert" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <p class="text-[0.625rem] font-black text-slate-900 dark:text-white leading-none">Drug Safety Check</p>
+                    <p class="text-[0.5rem] text-amber-600 font-bold mt-0.5 leading-none">AI Warning: Contraindication
+                      found</p>
+                  </div>
+                </div>
+
+                <!-- Floating Graphic 2: Automated summary check (Bottom Right Overlay) -->
+                <div
+                  class="absolute -bottom-2 right-0 sm:right-6 z-30 animate-float-delayed bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-transform hover:scale-105 duration-300">
+                  <div
+                    class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 dark:text-emerald-355">
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <div>
+                    <p class="text-[0.5625rem] font-bold text-slate-900 dark:text-white leading-none">Discharge Note Generated
+                    </p>
+                    <p class="text-[0.46875rem] text-slate-500 mt-0.5 leading-none">Approved by Dr. K. Miller</p>
+                  </div>
+                </div>
+
+                <!-- Main Browser Mockup Container -->
+                <div
+                  class="relative w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border border-white/80 dark:border-slate-800/50 bg-white dark:bg-slate-900 transition-all duration-500 hover:-rotate-1 hover:scale-[1.03] z-20 group/graphic">
+                  <div class="absolute top-3.5 left-4 flex gap-1.5 z-30">
+                    <span class="w-2 h-2 rounded-full bg-red-400/90"></span>
+                    <span class="w-2 h-2 rounded-full bg-yellow-400/90"></span>
+                    <span class="w-2 h-2 rounded-full bg-green-400/90"></span>
+                  </div>
                   <img src="assets/images/hms_copilot.webp" alt="Edoovi HMS Clinical Copilot Mockup"
-                    class="w-full h-auto object-cover max-h-[31.25rem]" title="Edoovi HMS AI Copilot" loading="lazy"
-                    fetchpriority="low">
+                    class="w-full h-auto object-cover max-h-[16rem] lg:max-h-[19rem] pt-8.5"
+                    title="Edoovi HMS AI Copilot" loading="lazy" fetchpriority="low">
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Slide 3: Wards & Operations -->
-          <div class="swiper-slide pb-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-6 items-center">
+          <div class="swiper-slide pb-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 pt-4 items-center">
               <!-- Hero Text content -->
-              <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+              <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
                 <div
                   class="inline-flex items-center space-x-2 bg-[#0b6b5f]/5 border border-[#0b6b5f]/20 text-[#0b6b5f] dark:text-emerald-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
                   <span class="w-2 h-2 rounded-full bg-[#0b6b5f] dark:bg-emerald-300 animate-pulse"></span>
@@ -766,7 +830,7 @@
 
                 <h1
                   class="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-slate-900 dark:text-white leading-tight">
-                  The intelligent software for <span class="text-brand-600">modern hospitals</span>
+                  The intelligent software for <span class="text-gradient-brand">modern hospitals</span>
                 </h1>
 
                 <p
@@ -790,32 +854,65 @@
 
                 <!-- statistics grid -->
                 <div
-                  class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/60 dark:border-slate-800 max-w-lg mx-auto lg:mx-0">
+                  class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200/60 dark:border-slate-800 max-w-lg mx-auto lg:mx-0">
                   <div>
-                    <p class="text-3xl font-display font-black text-slate-900 dark:text-white">Live</p>
+                    <p class="text-2xl sm:text-3xl font-display font-black text-slate-900 dark:text-white">Live</p>
                     <p class="text-[0.625rem] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Bed
                       board</p>
                   </div>
                   <div>
-                    <p class="text-3xl font-display font-black text-slate-900 dark:text-white">Auto</p>
+                    <p class="text-2xl sm:text-3xl font-display font-black text-slate-900 dark:text-white">Auto</p>
                     <p class="text-[0.625rem] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                       Stock logs</p>
                   </div>
                   <div>
-                    <p class="text-3xl font-display font-black text-slate-900 dark:text-white">Multi</p>
+                    <p class="text-2xl sm:text-3xl font-display font-black text-slate-900 dark:text-white">Multi</p>
                     <p class="text-[0.625rem] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">
                       Branch Sync</p>
                   </div>
                 </div>
               </div>
 
-              <!-- Hero Graphic Content -->
-              <div class="lg:col-span-5 relative w-full flex justify-center items-center">
+              <!-- Hero Graphic Content (Creative Layered 3D Popout Setup) -->
+              <div class="lg:col-span-5 relative w-full flex justify-center items-center h-[340px] lg:h-[400px]">
+
+                <!-- Floating Graphic 1: Bed occupancy tracker (Top Left Overlay) -->
                 <div
-                  class="relative w-full max-w-lg aspect-video sm:aspect-square md:aspect-auto rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900 animate-float z-20">
+                  class="absolute -top-2 -left-2 sm:left-4 z-30 animate-float bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex flex-col gap-1 transition-transform hover:scale-105 duration-300">
+                  <span class="text-[0.5rem] font-bold text-slate-400 uppercase tracking-widest leading-none">ICU Ward
+                    Status</span>
+                  <div class="flex items-center gap-1.5 mt-0.5">
+                    <span class="text-xs font-black text-slate-900 dark:text-white">12 / 16 Available</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                  </div>
+                  <div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-1 overflow-hidden">
+                    <div class="bg-brand-600 h-full rounded-full" style="width: 75%;"></div>
+                  </div>
+                </div>
+
+                <!-- Floating Graphic 2: Multi-branch synced (Bottom Right Overlay) -->
+                <div
+                  class="absolute -bottom-2 right-0 sm:right-6 z-30 animate-float-delayed bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-transform hover:scale-105 duration-300">
+                  <div class="p-1 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-300">
+                    <i data-lucide="cloud-lightning" class="w-3.5 h-3.5"></i>
+                  </div>
+                  <div>
+                    <p class="text-[0.5625rem] font-black text-slate-900 dark:text-white leading-none">Super Admin Console</p>
+                    <p class="text-[0.46875rem] text-slate-500 mt-0.5 leading-none">5 branches synced globally</p>
+                  </div>
+                </div>
+
+                <!-- Main Browser Mockup Container -->
+                <div
+                  class="relative w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl border border-white/80 dark:border-slate-800/50 bg-white dark:bg-slate-900 transition-all duration-500 hover:rotate-1 hover:scale-[1.03] z-20 group/graphic">
+                  <div class="absolute top-3.5 left-4 flex gap-1.5 z-30">
+                    <span class="w-2 h-2 rounded-full bg-red-400/90"></span>
+                    <span class="w-2 h-2 rounded-full bg-yellow-400/90"></span>
+                    <span class="w-2 h-2 rounded-full bg-green-400/90"></span>
+                  </div>
                   <img src="assets/images/hmsOperationsV2.webp" alt="Edoovi HMS Clinical Operations Mockup"
-                    class="w-full h-auto object-cover max-h-[31.25rem]" title="Edoovi HMS Operations Panel"
-                    loading="lazy" fetchpriority="low">
+                    class="w-full h-auto object-cover max-h-[16rem] lg:max-h-[19rem] pt-8.5"
+                    title="Edoovi HMS Operations Panel" loading="lazy" fetchpriority="low">
                 </div>
               </div>
             </div>
@@ -823,8 +920,7 @@
 
         </div>
         <!-- Single Responsive Swiper Pagination -->
-        <div
-          class="swiper-pagination lg:!absolute lg:!right-2 lg:!top-1/2 lg:!-translate-y-1/2 lg:!bottom-auto lg:!left-auto lg:!flex lg:!flex-col lg:!items-center lg:!gap-3 lg:!w-auto lg:!z-50 lg:[&_.swiper-pagination-bullet-active]:!h-6 lg:[&_.swiper-pagination-bullet-active]:!w-2">
+        <div class="swiper-pagination flex justify-center gap-2 mt-4">
         </div>
       </div>
     </div>
@@ -1339,8 +1435,10 @@
                     <i data-lucide="trending-up" class="w-5 h-5"></i>
                   </div>
                   <div>
-                    <h6 class="text-[0.625rem] font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">Business Impact</h6>
-                    <p class="text-xs text-indigo-800 dark:text-indigo-200 mt-0.5">Reduces manual administration, boosts billing clarity, and
+                    <h6 class="text-[0.625rem] font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">
+                      Business Impact</h6>
+                    <p class="text-xs text-indigo-800 dark:text-indigo-200 mt-0.5">Reduces manual administration, boosts
+                      billing clarity, and
                       helps hospital directors pinpoint service delays.</p>
                   </div>
                 </div>
@@ -1730,11 +1828,11 @@
                 </div>
                 <div class="flex items-start gap-3 justify-end">
                   <div
-                    class="bg-slate-200 dark:bg-slate-800 p-3 rounded-l-xl rounded-tr-xl text-xs text-slate-800 dark:text-slate-200 shadow-xs max-w-[85%]">
+                    class="bg-[#0b6b5f]/10 dark:bg-[#0b6b5f]/20 border border-[#0b6b5f]/20 dark:border-emerald-800/40 p-3 rounded-l-xl rounded-tr-xl text-xs text-[#0b6b5f] dark:text-[#10b981] shadow-xs max-w-[85%] font-medium">
                     "2. Can we shift it to 12:00 PM?"
                   </div>
                   <div
-                    class="w-6 h-6 rounded-full bg-slate-300 text-slate-800 flex items-center justify-center text-[0.625rem] font-bold">
+                    class="w-6 h-6 rounded-full bg-[#0b6b5f]/20 dark:bg-[#0b6b5f]/40 text-[#0b6b5f] dark:text-[#10b981] flex items-center justify-center text-[0.625rem] font-bold">
                     R</div>
                 </div>
                 <div class="flex items-start gap-3">
@@ -2994,124 +3092,301 @@
         <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-500 via-tealAccent-400 to-indigo-500">
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-          <!-- Left Column: Value Proposition & Direct Contact -->
-          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <!-- Left Column: Value Proposition & Creative Contact Grid -->
+          <div class="lg:col-span-6 space-y-8 text-center lg:text-left" data-aos="fade-right" data-aos-duration="800">
 
-            <div
-              class="inline-flex items-center space-x-2 bg-[#0b6b5f]/5 border border-[#0b6b5f]/20 text-[#10b981] px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-xs">
-              <span>14-Day Free Clinical Trial</span>
+            <div class="space-y-4">
+              <div
+                class="inline-flex items-center space-x-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-sm w-fit mx-auto lg:mx-0">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Currently Booking Slots • 14-Day Free Trial</span>
+              </div>
+
+              <h2 class="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white leading-tight">
+                Like how we think? <br>
+                <span
+                  class="bg-gradient-to-r from-emerald-400 via-teal-400 to-indigo-400 bg-clip-text text-transparent">Let's
+                  build your clinic's future.</span>
+              </h2>
+
+              <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                Let's map out your clinical requirements, analyze your daily OPD consultation volume, and configure your
+                personalized HMS trial environment in under 10 minutes.
+              </p>
             </div>
 
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white leading-tight">
-              Like how we think? <span class="text-[#10b981]">Let's build your clinic's future.</span>
-            </h2>
+            <!-- Creative 2x2 Contact Cards Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto lg:mx-0">
 
-            <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Let's map out your clinical requirements, analyze your daily OPD consultation volume, and configure your
-              personalized HMS trial environment in under 10 minutes.
-            </p>
-
-            <!-- Key Feature Proof Points -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-left max-w-lg mx-auto lg:mx-0">
-              <div
-                class="flex items-center space-x-2.5 text-xs font-medium text-slate-300 bg-slate-800/60 border border-slate-700/60 px-3.5 py-2 rounded-xl">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-tealAccent-400 flex-shrink-0"></i>
-                <span>Instant 10-Min Setup & Migration</span>
-              </div>
-              <div
-                class="flex items-center space-x-2.5 text-xs font-medium text-slate-300 bg-slate-800/60 border border-slate-700/60 px-3.5 py-2 rounded-xl">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-tealAccent-400 flex-shrink-0"></i>
-                <span>24/7 Clinical Support Specialist</span>
-              </div>
-              <div
-                class="flex items-center space-x-2.5 text-xs font-medium text-slate-300 bg-slate-800/60 border border-slate-700/60 px-3.5 py-2 rounded-xl">
-                <i data-lucide="shield-check" class="w-4 h-4 text-tealAccent-400 flex-shrink-0"></i>
-                <span>HIPAA & ABDM Level-3 Certified</span>
-              </div>
-              <div
-                class="flex items-center space-x-2.5 text-xs font-medium text-slate-300 bg-slate-800/60 border border-slate-700/60 px-3.5 py-2 rounded-xl">
-                <i data-lucide="zap" class="w-4 h-4 text-tealAccent-400 flex-shrink-0"></i>
-                <span>Zero Upfront Hardware Cost</span>
-              </div>
-            </div>
-
-            <!-- Direct Call CTAs -->
-            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-              <a href="#demo-form-anchor"
-                class="group w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-bold text-white bg-[#0b6b5f] hover:lg:bg-[#09574d] shadow-md shadow-[#0b6b5f]/20 hover:lg:shadow-xl hover:lg:shadow-[#0b6b5f]/35 hover:lg:-translate-y-0.5 transition-all duration-300 whitespace-nowrap">
-                <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
-                <span>Book Free Strategy Call</span>
-              </a>
+              <!-- Card 1: Call -->
               <a href="tel:+919876543210"
-                class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-full text-sm font-bold text-slate-200 bg-slate-800/80 border border-slate-700 hover:lg:bg-slate-800 hover:lg:text-white hover:lg:-translate-y-0.5 transition-all duration-300">
-                <i data-lucide="phone-call" class="w-4 h-4 mr-2 text-tealAccent-400"></i>
-                <span>+91 98765 43210</span>
+                class="group flex flex-col items-start p-5 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:lg:border-emerald-500/45 hover:lg:bg-slate-900/70 hover:lg:-translate-y-1 transition-all duration-300 text-left">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-3 group-hover:lg:scale-110 transition-transform">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">Call Us</span>
+                <span class="text-sm font-bold text-white mt-1 group-hover:lg:text-emerald-400 transition-colors">+91
+                  98765 43210</span>
+                <span class="text-[11px] text-slate-400 mt-1">Direct clinical sales line</span>
               </a>
+
+              <!-- Card 2: Email -->
+              <a href="mailto:support@edoovi.com"
+                class="group flex flex-col items-start p-5 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:lg:border-teal-500/45 hover:lg:bg-slate-900/70 hover:lg:-translate-y-1 transition-all duration-300 text-left">
+                <div
+                  class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-3 group-hover:lg:scale-110 transition-transform">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">Email Us</span>
+                <span
+                  class="text-sm font-bold text-white mt-1 group-hover:lg:text-teal-400 transition-colors">support@edoovi.com</span>
+                <span class="text-[11px] text-slate-400 mt-1">Get replies in under 2 hours</span>
+              </a>
+
+              <!-- Card 3: WhatsApp -->
+              <a href="https://wa.me/919876543210" target="_blank"
+                class="group flex flex-col items-start p-5 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:lg:border-green-500/45 hover:lg:bg-slate-900/70 hover:lg:-translate-y-1 transition-all duration-300 text-left">
+                <div
+                  class="w-10 h-10 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-400 mb-3 group-hover:lg:scale-110 transition-transform">
+                  <i data-lucide="message-square" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">WhatsApp</span>
+                <span class="text-sm font-bold text-white mt-1 group-hover:lg:text-green-400 transition-colors">Chat
+                  With Us</span>
+                <span class="text-[11px] text-slate-400 mt-1">Instant onboarding answers</span>
+              </a>
+
+              <!-- Card 4: Location -->
+              <div
+                class="group flex flex-col items-start p-5 rounded-2xl bg-slate-900/40 border border-slate-800/80 hover:lg:border-indigo-500/45 hover:lg:bg-slate-900/70 hover:lg:-translate-y-1 transition-all duration-300 text-left">
+                <div
+                  class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-3 group-hover:lg:scale-110 transition-transform">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">Visit HQ</span>
+                <span class="text-sm font-bold text-white mt-1">Hyderabad, TS, India</span>
+                <span class="text-[11px] text-slate-400 mt-1">AI Solution Demo center</span>
+              </div>
+
             </div>
           </div>
 
-          <!-- Right Column: Interactive Consultation Card -->
-          <div id="demo-form-anchor"
-            class="lg:col-span-5 w-full bg-slate-950/80 border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl relative backdrop-blur-xl">
+          <!-- Right Column: Interactive Consultation Card (Creative Form) -->
+          <div id="demo-form-anchor" class="lg:col-span-6 w-full relative" data-aos="fade-left" data-aos-duration="800">
 
-            <div class="mb-6 space-y-1">
-              <span class="text-[0.625rem] font-extrabold uppercase tracking-widest text-white">Personalized
-                Demo</span>
-              <h4 class="text-lg font-display font-extrabold text-white">Request Live Consultation</h4>
-              <p class="text-xs text-slate-400">Get custom ROI metrics for your bed capacity.</p>
-            </div>
-
-            <form onsubmit="handleDemoRequest(event)" class="space-y-4" novalidate>
-              <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="demo-email">Work Email</label>
-                <div class="relative">
-                  <i data-lucide="mail" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500" aria-hidden="true"></i>
-                  <input type="email" id="demo-email" placeholder="name@hospital.com" required aria-required="true"
-                    class="w-full pl-10 pr-4 py-3 rounded-xl text-white bg-slate-900 border border-slate-800 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm placeholder-slate-600 transition-all">
-                </div>
-                <p id="error-email" class="text-rose-500 text-xs mt-1.5 hidden"></p>
-              </div>
-
-              <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1.5" for="demo-hospital">Hospital / Clinic
-                  Name</label>
-                <div class="relative">
-                  <i data-lucide="building-2" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500"
-                    aria-hidden="true"></i>
-                  <input type="text" id="demo-hospital" placeholder="Apollo / Max Hospital..." required
-                    aria-required="true"
-                    class="w-full pl-10 pr-4 py-3 rounded-xl text-white bg-slate-900 border border-slate-800 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm placeholder-slate-600 transition-all">
-                </div>
-                <p id="error-hospital" class="text-rose-500 text-xs mt-1.5 hidden"></p>
-              </div>
-
-              <button type="submit"
-                class="group w-full py-3.5 rounded-full bg-brand-600 hover:lg:bg-brand-700 text-white font-bold text-sm shadow-md shadow-brand-500/25 hover:lg:shadow-xl hover:lg:shadow-brand-500/40 hover:lg:-translate-y-0.5 transition-all duration-300 flex items-center justify-center space-x-2">
-                <span>Schedule Demo Call</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </button>
-            </form>
-
-            <!-- Trust Badge Footer -->
+            <!-- Floating Creative Spinning Seal/Badge -->
             <div
-              class="mt-5 pt-4 border-t border-slate-900 flex items-center justify-between text-[0.6875rem] text-slate-500">
-              <span class="flex items-center"><i data-lucide="lock" class="w-3 h-3 mr-1 text-slate-400"></i> No Credit
-                Card Needed</span>
-              <span class="flex items-center"><i data-lucide="clock" class="w-3 h-3 mr-1 text-slate-400"></i> Reply in
-                15 mins</span>
+              class="absolute -top-6 -right-4 z-20 hidden sm:flex items-center justify-center w-20 h-20 pointer-events-none">
+              <svg class="w-full h-full animate-[spin_20s_linear_infinite]" viewBox="0 0 100 100">
+                <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                <text class="text-[7.5px] font-bold fill-slate-500 tracking-[0.16em] uppercase">
+                  <textPath href="#circlePath">Free Trial • No Card Required • Live Setup •</textPath>
+                </text>
+              </svg>
+              <div
+                class="absolute w-8 h-8 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center">
+                <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+              </div>
             </div>
 
-            <p id="demo-status" class="hidden text-xs font-medium text-tealAccent-400 mt-3 text-center">Thanks! We'll
-              reach out to schedule your demo slot.</p>
+            <div
+              class="bg-slate-950/80 border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-2xl relative backdrop-blur-xl overflow-hidden">
+              <!-- Grid background pattern only inside form -->
+              <div
+                class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none">
+              </div>
+
+              <div class="mb-6 space-y-1 relative z-10">
+                <span class="text-[0.625rem] font-extrabold uppercase tracking-widest text-[#10b981]">Interactive
+                  Setup</span>
+                <h4 class="text-xl font-display font-extrabold text-white">Tell us about your clinic</h4>
+                <p class="text-xs text-slate-400">Configure your trial & get custom ROI estimates.</p>
+              </div>
+
+              <form onsubmit="handleDemoRequest(event)" class="space-y-5 relative z-10" novalidate>
+
+                <!-- Full Name & Work Email in 2 columns -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-50">
+                  <div>
+                    <label class="block text-[11px] font-semibold text-slate-300 mb-1.5" for="demo-name">Full Name
+                      <span class="text-rose-500">*</span></label>
+                    <div class="relative">
+                      <i data-lucide="user" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500"
+                        aria-hidden="true"></i>
+                      <input type="text" id="demo-name" placeholder="John Doe" required aria-required="true"
+                        class="w-full pl-10 pr-4 py-3 rounded-xl text-white bg-slate-900 border border-slate-800 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm placeholder-slate-600 transition-all">
+                    </div>
+                    <p id="error-name" class="text-rose-500 text-xs mt-1.5 hidden"></p>
+                  </div>
+
+                  <div>
+                    <label class="block text-[11px] font-semibold text-slate-300 mb-1.5" for="demo-email">Work Email
+                      <span class="text-rose-500">*</span></label>
+                    <div class="relative">
+                      <i data-lucide="mail" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500"
+                        aria-hidden="true"></i>
+                      <input type="email" id="demo-email" placeholder="name@hospital.com" required aria-required="true"
+                        class="w-full pl-10 pr-4 py-3 rounded-xl text-white bg-slate-900 border border-slate-800 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm placeholder-slate-600 transition-all">
+                    </div>
+                    <p id="error-email" class="text-rose-500 text-xs mt-1.5 hidden"></p>
+                  </div>
+                </div>
+
+                <!-- Phone & Hospital Name in 2 columns -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-40">
+                  <div>
+                    <label class="block text-[11px] font-semibold text-slate-300 mb-1.5" for="demo-phone">Phone Number
+                      <span class="text-rose-500">*</span></label>
+                    <div class="relative w-full">
+                      <input type="tel" id="demo-phone" required aria-required="true"
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        class="w-full pr-4 py-3 rounded-xl text-white bg-slate-900 border border-slate-800 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm placeholder-slate-600 transition-all">
+                    </div>
+                    <p id="error-phone" class="text-rose-500 text-xs mt-1.5 hidden"></p>
+                  </div>
+
+                  <div>
+                    <label class="block text-[11px] font-semibold text-slate-300 mb-1.5"
+                      for="demo-hospital">Hospital/Clinic Name <span class="text-rose-500">*</span></label>
+                    <div class="relative">
+                      <i data-lucide="building-2" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500"
+                        aria-hidden="true"></i>
+                      <input type="text" id="demo-hospital" placeholder="Apollo Hospital..." required
+                        aria-required="true"
+                        class="w-full pl-10 pr-4 py-3 rounded-xl text-white bg-slate-900 border border-slate-800 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm placeholder-slate-600 transition-all">
+                    </div>
+                    <p id="error-hospital" class="text-rose-500 text-xs mt-1.5 hidden"></p>
+                  </div>
+                </div>
+
+                <!-- Bed Capacity & Clinical Speciality in 2 columns (Custom Dropdowns) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-30">
+                  <div>
+                    <label class="block text-[11px] font-semibold text-slate-300 mb-1.5" for="demo-beds-btn">Bed
+                      Capacity</label>
+                    <div class="relative custom-select-container" id="custom-select-beds-container">
+                      <i data-lucide="hotel" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500 z-10"
+                        aria-hidden="true"></i>
+                      <button type="button" id="demo-beds-btn"
+                        class="w-full pl-10 pr-10 py-3 rounded-xl text-slate-400 bg-slate-900 border border-slate-800 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-xs text-left transition-all cursor-pointer relative">
+                        <span class="selected-value block truncate pr-4">Select capacity...</span>
+                        <i data-lucide="chevron-down"
+                          class="w-4 h-4 absolute right-3.5 top-3.5 text-slate-500 transition-transform duration-300 select-chevron"></i>
+                      </button>
+                      <input type="hidden" id="demo-beds" value="">
+
+                      <!-- Custom dropdown options -->
+                      <div
+                        class="custom-select-options absolute left-0 right-0 mt-1.5 bg-white/80 dark:bg-slate-950/70 backdrop-blur-md border border-slate-200/40 dark:border-slate-800/40 rounded-xl shadow-2xl hidden z-50 overflow-hidden max-h-60 overflow-y-auto p-1.5">
+                        <div
+                          class="px-3.5 py-2.5 text-xs text-slate-650 dark:text-slate-400 hover:text-[#0b6b5f] dark:hover:text-[#10b981] rounded-lg cursor-pointer transition-all"
+                          data-value="1-10">1 - 10 Beds (Clinic)</div>
+                        <div
+                          class="px-3.5 py-2.5 text-xs text-slate-650 dark:text-slate-400 hover:text-[#0b6b5f] dark:hover:text-[#10b981] rounded-lg cursor-pointer transition-all"
+                          data-value="11-50">11 - 50 Beds (Nursing Home)</div>
+                        <div
+                          class="px-3.5 py-2.5 text-xs text-slate-650 dark:text-slate-400 hover:text-[#0b6b5f] dark:hover:text-[#10b981] rounded-lg cursor-pointer transition-all"
+                          data-value="51-200">51 - 200 Beds (Mid-size Hospital)</div>
+                        <div
+                          class="px-3.5 py-2.5 text-xs text-slate-650 dark:text-slate-400 hover:text-[#0b6b5f] dark:hover:text-[#10b981] rounded-lg cursor-pointer transition-all"
+                          data-value="200+">200+ Beds (Multi-Speciality)</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="block text-[11px] font-semibold text-slate-300 mb-1.5"
+                      for="demo-speciality-btn">Clinical Specialty</label>
+                    <div class="relative custom-select-container" id="custom-select-speciality-container">
+                      <i data-lucide="stethoscope" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500 z-10"
+                        aria-hidden="true"></i>
+                      <button type="button" id="demo-speciality-btn"
+                        class="w-full pl-10 pr-10 py-3 rounded-xl text-slate-400 bg-slate-900 border border-slate-800 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-xs text-left transition-all cursor-pointer relative">
+                        <span class="selected-value block truncate pr-4">Select specialty...</span>
+                        <i data-lucide="chevron-down"
+                          class="w-4 h-4 absolute right-3.5 top-3.5 text-slate-500 transition-transform duration-300 select-chevron"></i>
+                      </button>
+                      <input type="hidden" id="demo-speciality" value="">
+
+                      <!-- Custom dropdown options -->
+                      <div
+                        class="custom-select-options absolute left-0 right-0 mt-1.5 bg-white/80 dark:bg-slate-950/70 backdrop-blur-md border border-slate-200/40 dark:border-slate-800/40 rounded-xl shadow-2xl hidden z-50 overflow-hidden max-h-60 overflow-y-auto p-1.5">
+                        <div
+                          class="px-3.5 py-2.5 text-xs text-slate-650 dark:text-slate-400 hover:text-[#0b6b5f] dark:hover:text-[#10b981] rounded-lg cursor-pointer transition-all"
+                          data-value="general">General Practice</div>
+                        <div
+                          class="px-3.5 py-2.5 text-xs text-slate-650 dark:text-slate-400 hover:text-[#0b6b5f] dark:hover:text-[#10b981] rounded-lg cursor-pointer transition-all"
+                          data-value="multi">Multi-Speciality</div>
+                        <div
+                          class="px-3.5 py-2.5 text-xs text-slate-650 dark:text-slate-400 hover:text-[#0b6b5f] dark:hover:text-[#10b981] rounded-lg cursor-pointer transition-all"
+                          data-value="super">Super Speciality</div>
+                        <div
+                          class="px-3.5 py-2.5 text-xs text-slate-650 dark:text-slate-400 hover:text-[#0b6b5f] dark:hover:text-[#10b981] rounded-lg cursor-pointer transition-all"
+                          data-value="dental_eye">Dental / Ophthalmic</div>
+                        <div
+                          class="px-3.5 py-2.5 text-xs text-slate-650 dark:text-slate-400 hover:text-[#0b6b5f] dark:hover:text-[#10b981] rounded-lg cursor-pointer transition-all"
+                          data-value="other">Other Practice Type</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Message / Goals -->
+                <div class="relative z-20">
+                  <label class="block text-[11px] font-semibold text-slate-300 mb-1.5" for="demo-goals">Tell us about
+                    your goals</label>
+                  <div class="relative">
+                    <i data-lucide="help-circle" class="w-4 h-4 absolute left-3.5 top-3.5 text-slate-500"
+                      aria-hidden="true"></i>
+                    <textarea id="demo-goals" rows="3"
+                      placeholder="What core features do you require? (e.g. AI-reminders, billing...)"
+                      class="w-full pl-10 pr-4 py-3 rounded-xl text-white bg-slate-900 border border-slate-800 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 text-sm placeholder-slate-600 transition-all resize-none"></textarea>
+                  </div>
+                </div>
+
+                <!-- Terms & Privacy Policy checkbox -->
+                <label class="flex items-center space-x-3 cursor-pointer group mt-2 select-none">
+                  <input type="checkbox" id="demo-agree"
+                    class="rounded bg-slate-900 border-slate-800 text-brand-500 focus:ring-brand-500 focus:ring-offset-slate-950 cursor-pointer w-4 h-4 transition-colors">
+                  <span class="text-xs text-slate-400 group-hover:lg:text-slate-300 transition-colors">
+                    I agree to be contacted about my enquiry and accept the <a href="privacy.html"
+                      class="underline text-emerald-400 hover:lg:text-emerald-300">privacy policy</a>.
+                  </span>
+                </label>
+                <p id="error-agree" class="text-rose-500 text-xs hidden"></p>
+
+                <!-- Submit Button -->
+                <button type="submit"
+                  class="group w-full py-4 rounded-full bg-[#0b6b5f] hover:lg:bg-[#09574d] text-white font-bold text-sm shadow-lg shadow-brand-500/20 hover:lg:shadow-xl hover:lg:shadow-[#0b6b5f]/35 hover:lg:-translate-y-0.5 transition-all duration-300 flex items-center justify-center space-x-2">
+                  <span>Schedule Demo Call</span>
+                  <i data-lucide="send"
+                    class="w-4 h-4 transition-transform group-hover:lg:translate-x-0.5 group-hover:lg:-translate-y-0.5"></i>
+                </button>
+              </form>
+
+              <!-- Trust Badge Footer -->
+              <div
+                class="mt-5 pt-4 border-t border-slate-900 flex items-center justify-between text-[0.6875rem] text-slate-500 relative z-10">
+                <span class="flex items-center"><i data-lucide="lock" class="w-3.5 h-3.5 mr-1.5 text-slate-400"></i>
+                  Your details stay private</span>
+                <span class="flex items-center"><i data-lucide="clock" class="w-3.5 h-3.5 mr-1.5 text-slate-400"></i>
+                  Demo set up in 15 mins</span>
+              </div>
+
+              <p id="demo-status"
+                class="hidden text-xs font-semibold text-emerald-400 mt-4 text-center relative z-10 bg-emerald-500/10 border border-emerald-500/20 p-2.5 rounded-xl">
+                Thanks! We'll reach out to schedule your demo slot shortly.
+              </p>
+            </div>
+
           </div>
 
         </div>
 
       </div>
-
-    </div>
   </section>
 
   <!-- FAQ Section (Creative Tabbed Accordion Layout) -->
@@ -3754,6 +4029,8 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- AOS JS CDN -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- intl-tel-input JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/intlTelInput.min.js"></script>
   <!-- External JavaScript logic for HMS components -->
   <script src="assets/js/main.js" defer></script>
 </body>

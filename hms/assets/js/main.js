@@ -375,25 +375,53 @@ if (opdSlider && bedsSlider) {
 function handleDemoRequest(event) {
   event.preventDefault();
   
+  const nameInput = document.getElementById('demo-name');
   const emailInput = document.getElementById('demo-email');
+  const phoneInput = document.getElementById('demo-phone');
   const hospitalInput = document.getElementById('demo-hospital');
+  const agreeInput = document.getElementById('demo-agree');
   
+  const errorName = document.getElementById('error-name');
   const errorEmail = document.getElementById('error-email');
+  const errorPhone = document.getElementById('error-phone');
   const errorHospital = document.getElementById('error-hospital');
+  const errorAgree = document.getElementById('error-agree');
   const demoStatus = document.getElementById('demo-status');
   
   // Reset error displays
+  errorName.classList.add('hidden');
+  errorName.textContent = '';
   errorEmail.classList.add('hidden');
   errorEmail.textContent = '';
+  errorPhone.classList.add('hidden');
+  errorPhone.textContent = '';
   errorHospital.classList.add('hidden');
   errorHospital.textContent = '';
+  errorAgree.classList.add('hidden');
+  errorAgree.textContent = '';
   demoStatus.classList.add('hidden');
   
+  nameInput.classList.remove('border-rose-500');
   emailInput.classList.remove('border-rose-500');
+  phoneInput.classList.remove('border-rose-500');
   hospitalInput.classList.remove('border-rose-500');
   
   let isValid = true;
   
+  // Validate Full Name
+  const nameVal = nameInput.value.trim();
+  if (!nameVal) {
+    errorName.textContent = 'Name is required.';
+    errorName.classList.remove('hidden');
+    nameInput.classList.add('border-rose-500');
+    isValid = false;
+  } else if (nameVal.length < 2) {
+    errorName.textContent = 'Name must be at least 2 characters.';
+    errorName.classList.remove('hidden');
+    nameInput.classList.add('border-rose-500');
+    isValid = false;
+  }
+
   // Validate Email
   const emailVal = emailInput.value.trim();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -407,6 +435,31 @@ function handleDemoRequest(event) {
     errorEmail.classList.remove('hidden');
     emailInput.classList.add('border-rose-500');
     isValid = false;
+  }
+
+  // Validate Phone
+  const phoneVal = phoneInput.value.trim();
+  if (!phoneVal) {
+    errorPhone.textContent = 'Phone number is required.';
+    errorPhone.classList.remove('hidden');
+    phoneInput.classList.add('border-rose-500');
+    isValid = false;
+  } else if (phoneInput.iti) {
+    if (!phoneInput.iti.isValidNumber()) {
+      errorPhone.textContent = 'Please enter a valid phone number for selected country.';
+      errorPhone.classList.remove('hidden');
+      phoneInput.classList.add('border-rose-500');
+      isValid = false;
+    }
+  } else {
+    // fallback basic regex
+    const phoneRegex = /^[6-9]\d{9}$/;
+    if (!phoneRegex.test(phoneVal.replace(/\s+/g, ''))) {
+      errorPhone.textContent = 'Please enter a valid 10-digit phone number.';
+      errorPhone.classList.remove('hidden');
+      phoneInput.classList.add('border-rose-500');
+      isValid = false;
+    }
   }
   
   // Validate Hospital/Clinic Name
@@ -422,10 +475,34 @@ function handleDemoRequest(event) {
     hospitalInput.classList.add('border-rose-500');
     isValid = false;
   }
+
+  // Validate Consent Agreement
+  if (!agreeInput.checked) {
+    errorAgree.textContent = 'You must agree to the privacy policy to proceed.';
+    errorAgree.classList.remove('hidden');
+    isValid = false;
+  }
   
   if (isValid) {
     demoStatus.classList.remove('hidden');
     event.target.reset();
+    
+    // Reset custom select dropdown representations
+    document.querySelectorAll('.custom-select-container').forEach(container => {
+      const input = container.querySelector('input[type="hidden"]');
+      const span = container.querySelector('.selected-value');
+      if (input) input.value = '';
+      if (span) {
+        if (container.id === 'custom-select-beds-container') {
+          span.textContent = 'Select capacity...';
+        } else {
+          span.textContent = 'Select specialty...';
+        }
+        span.classList.remove('text-slate-950', 'dark:text-white');
+        span.classList.add('text-slate-400');
+      }
+    });
+
     setTimeout(() => {
       demoStatus.classList.add('hidden');
     }, 5000);
@@ -937,6 +1014,73 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.classList.add('rotate-180');
         item.classList.add('border-brand-500', 'dark:border-brand-500');
       }
+    });
+  });
+});
+
+// Initialize intl-tel-input flag and Custom dropdown selects
+document.addEventListener('DOMContentLoaded', () => {
+  const phoneInput = document.getElementById('demo-phone');
+  let itiInstance = null;
+  if (phoneInput && typeof window.intlTelInput !== 'undefined') {
+    itiInstance = window.intlTelInput(phoneInput, {
+      initialCountry: 'in',
+      separateDialCode: true,
+      utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@23.0.4/build/js/utils.js',
+    });
+    // Bind the instance to the DOM element
+    phoneInput.iti = itiInstance;
+  }
+
+  // Custom Dropdown select list logic
+  document.querySelectorAll('.custom-select-container').forEach(container => {
+    const btn = container.querySelector('button');
+    const optionsDiv = container.querySelector('.custom-select-options');
+    const input = container.querySelector('input[type="hidden"]');
+    const span = container.querySelector('.selected-value');
+    const chevron = container.querySelector('.select-chevron');
+    
+    if (btn && optionsDiv) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        
+        // Close all other open custom select options first
+        document.querySelectorAll('.custom-select-options').forEach(opt => {
+          if (opt !== optionsDiv) {
+            opt.classList.add('hidden');
+            const otherChevron = opt.previousElementSibling.previousElementSibling.querySelector('.select-chevron');
+            if (otherChevron) otherChevron.classList.remove('rotate-180');
+          }
+        });
+        
+        optionsDiv.classList.toggle('hidden');
+        if (chevron) chevron.classList.toggle('rotate-180');
+      });
+      
+      optionsDiv.querySelectorAll('[data-value]').forEach(option => {
+        option.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const val = option.getAttribute('data-value');
+          const text = option.textContent;
+          if (input) input.value = val;
+          if (span) {
+            span.textContent = text;
+            span.classList.remove('text-slate-400');
+            span.classList.add('text-slate-950', 'dark:text-white');
+          }
+          optionsDiv.classList.add('hidden');
+          if (chevron) chevron.classList.remove('rotate-180');
+        });
+      });
+    }
+  });
+  
+  // Global click listener to collapse open custom dropdowns on clicking outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.custom-select-options').forEach(opt => {
+      opt.classList.add('hidden');
+      const chevron = opt.previousElementSibling.previousElementSibling.querySelector('.select-chevron');
+      if (chevron) chevron.classList.remove('rotate-180');
     });
   });
 });
