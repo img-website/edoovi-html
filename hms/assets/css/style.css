@@ -15,11 +15,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+h1{
+  line-height: 1.1 !important;
+}
 
 h1, h2, h3, h4, h5, h6, .font-display {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
-  line-height: 1.1 !important;
 }
 
 /* Micro-animations for high-fidelity interface design elements */
