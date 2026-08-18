@@ -144,7 +144,18 @@ h1, h2, h3, h4, h5, h6, .font-display {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.04);
+  background-color: rgba(255, 255, 255, 0.94);
+  border-color: rgba(226, 232, 240, 0.8);
 }
+.dark #main-navbar.scrolled {
+  background-color: rgba(15, 23, 42, 0.94);
+  border-color: rgba(30, 41, 59, 0.8);
+}
+.dark footer {
+  background-image: none !important;
+  background-color: #050811 !important;
+}
+
 
 /* Shimmer button text animation */
 @keyframes text-shimmer {
@@ -289,21 +300,6 @@ html.dark .text-gradient-brand {
   color: #10b981;
 }
 
-/* Unified Creative Brand Background */
-.hero-creative-bg {
-  background: 
-    linear-gradient(to right, rgba(11, 107, 95, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(11, 107, 95, 0.05) 1px, transparent 1px),
-    linear-gradient(135deg, #fafafa 0%, #eafbf7 50%, #fafafa 100%);
-  background-size: 50px 50px, 50px 50px, 100% 100%;
-}
-html.dark .hero-creative-bg {
-  background: 
-    linear-gradient(to right, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
-    linear-gradient(135deg, #090d16 0%, #052a23 50%, #090d16 100%);
-  background-size: 50px 50px, 50px 50px, 100% 100%;
-}
 
 /* intl-tel-input dark theme custom styles */
 .iti {

@@ -576,9 +576,14 @@
 
   <!-- ═══ HERO SECTION ═══ -->
   <section
-    class="hero-swiper-section hero-creative-bg relative pt-16 lg:pt-12 pb-12 lg:pb-16 overflow-hidden lg:h-[calc(100vh-5rem)] lg:min-h-[700px] lg:max-h-[850px] flex items-center group [&_.swiper-pagination-bullet]:w-2.5 [&_.swiper-pagination-bullet]:h-2.5 [&_.swiper-pagination-bullet]:bg-[#cbd5e1] [&_.swiper-pagination-bullet]:opacity-70 [&_.swiper-pagination-bullet]:rounded-full [&_.swiper-pagination-bullet]:transition-all [&_.swiper-pagination-bullet]:duration-400 [&_.swiper-pagination-bullet]:cursor-pointer [&_.swiper-pagination-bullet]:inline-block [&_.swiper-pagination-bullet]:relative [&_.swiper-pagination-bullet:hover]:scale-[1.3] [&_.swiper-pagination-bullet:hover]:opacity-90 [&_.swiper-pagination-bullet-active]:!bg-[#0b6b5f] [&_.swiper-pagination-bullet-active]:!opacity-100 [&_.swiper-pagination-bullet-active]:shadow-[0_0_10px_rgba(11,107,95,0.3)] [&_.swiper-pagination-bullet-active::after]:content-[''] [&_.swiper-pagination-bullet-active::after]:absolute [&_.swiper-pagination-bullet-active::after]:inset-[-4px] [&_.swiper-pagination-bullet-active::after]:border-[1.5px] [&_.swiper-pagination-bullet-active::after]:border-[#0b6b5f] [&_.swiper-pagination-bullet-active::after]:rounded-full [&_.swiper-pagination-bullet-active::after]:animate-[bulletPulse_2s_infinite_ease-in-out] dark:[&_.swiper-pagination-bullet]:bg-[#475569] dark:[&_.swiper-pagination-bullet-active]:!bg-[#10b981] dark:[&_.swiper-pagination-bullet-active]:shadow-[0_0_12px_rgba(16,185,129,0.5)] dark:[&_.swiper-pagination-bullet-active::after]:border-[#10b981]">
+    class="hero-swiper-section relative pt-16 lg:pt-12 pb-12 lg:pb-16 overflow-hidden lg:h-[calc(100vh-5rem)] lg:min-h-[700px] lg:max-h-[850px] flex items-center group before:content-[''] before:absolute before:inset-0 before:bg-slate-950/85 before:backdrop-blur-[2px] before:z-10 [&_.swiper-pagination-bullet]:w-2.5 [&_.swiper-pagination-bullet]:h-2.5 [&_.swiper-pagination-bullet]:bg-[#cbd5e1] [&_.swiper-pagination-bullet]:opacity-70 [&_.swiper-pagination-bullet]:rounded-full [&_.swiper-pagination-bullet]:transition-all [&_.swiper-pagination-bullet]:duration-400 [&_.swiper-pagination-bullet]:cursor-pointer [&_.swiper-pagination-bullet]:inline-block [&_.swiper-pagination-bullet]:relative [&_.swiper-pagination-bullet:hover]:scale-[1.3] [&_.swiper-pagination-bullet:hover]:opacity-90 [&_.swiper-pagination-bullet-active]:!bg-[#0b6b5f] [&_.swiper-pagination-bullet-active]:!opacity-100 [&_.swiper-pagination-bullet-active]:shadow-[0_0_10px_rgba(11,107,95,0.3)] [&_.swiper-pagination-bullet-active::after]:content-[''] [&_.swiper-pagination-bullet-active::after]:absolute [&_.swiper-pagination-bullet-active::after]:inset-[-4px] [&_.swiper-pagination-bullet-active::after]:border-[1.5px] [&_.swiper-pagination-bullet-active::after]:border-[#0b6b5f] [&_.swiper-pagination-bullet-active::after]:rounded-full [&_.swiper-pagination-bullet-active::after]:animate-[bulletPulse_2s_infinite_ease-in-out] dark:[&_.swiper-pagination-bullet]:bg-[#475569] dark:[&_.swiper-pagination-bullet-active]:!bg-[#10b981] dark:[&_.swiper-pagination-bullet-active]:shadow-[0_0_12px_rgba(16,185,129,0.5)] dark:[&_.swiper-pagination-bullet-active::after]:border-[#10b981]">
+
+    <!-- Background Image Element -->
+    <img src="assets/images/heroBgImg2.webp" alt="Clinical Tech Background"
+      class="absolute inset-0 w-full h-full object-cover pointer-events-none z-0">
+
     <!-- Creative Background Bottom Wave -->
-    <div class="absolute bottom-0 inset-x-0 w-full pointer-events-none z-10">
+    <div class="absolute bottom-0 inset-x-0 w-full pointer-events-none z-20">
       <svg class="w-full h-16 min-h-[4rem] text-white dark:text-slate-950 fill-current" viewBox="0 0 1440 74"
         preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0,32 C240,70 480,70 720,40 C960,10 1200,10 1440,32 L1440,74 L0,74 Z"></path>
@@ -590,11 +595,11 @@
       <!-- Swiper Navigation Arrows (Floating at Container Edges with high transparency) -->
       <div class="hidden lg:block">
         <button aria-label="Previous Slide"
-          class="hero-prev absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full border border-slate-300/30 dark:border-slate-700/20 bg-slate-500/5 dark:bg-slate-400/5 backdrop-blur-[3px] flex items-center justify-center text-slate-700 dark:text-slate-350 hover:bg-[#0b6b5f] dark:hover:bg-[#10b981] hover:text-white hover:border-[#0b6b5f] dark:hover:border-[#10b981] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer">
+          class="hero-prev absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full border border-white/10 bg-white/5 backdrop-blur-[3px] flex items-center justify-center text-white/70 hover:bg-[#0b6b5f] hover:text-white hover:border-[#0b6b5f] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer">
           <i data-lucide="chevron-left" class="w-5 h-5"></i>
         </button>
         <button aria-label="Next Slide"
-          class="hero-next absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full border border-slate-300/30 dark:border-slate-700/20 bg-slate-500/5 dark:bg-slate-400/5 backdrop-blur-[3px] flex items-center justify-center text-slate-700 dark:text-slate-350 hover:bg-[#0b6b5f] dark:hover:bg-[#10b981] hover:text-white hover:border-[#0b6b5f] dark:hover:border-[#10b981] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer">
+          class="hero-next absolute right-2 lg:right-4 top-1/2 -translate-y-1/2 z-50 w-11 h-11 rounded-full border border-white/10 bg-white/5 backdrop-blur-[3px] flex items-center justify-center text-white/70 hover:bg-[#0b6b5f] hover:text-white hover:border-[#0b6b5f] hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer">
           <i data-lucide="chevron-right" class="w-5 h-5"></i>
         </button>
       </div>
@@ -608,19 +613,17 @@
               <!-- Hero Text content -->
               <div class="order-2 lg:order-1 lg:col-span-7 space-y-6 text-center lg:text-left">
                 <div
-                  class="inline-flex items-center space-x-2 bg-brand-50/50 dark:bg-brand-950/20 border border-brand-200/50 dark:border-brand-800/50 text-[#0b6b5f] dark:text-emerald-300 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
-                  <span class="w-2 h-2 rounded-full bg-brand-600 dark:bg-emerald-300 animate-pulse"></span>
+                  class="inline-flex items-center space-x-2 bg-brand-500/10 border border-brand-500/20 text-emerald-400 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   <span>Powered by Next-Gen Clinical AI</span>
                 </div>
 
-                <h1
-                  class="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-slate-900 dark:text-white leading-tight">
-                  The intelligent software <br class="hidden sm:inline">for <span
-                    class="text-[#0b6b5f] dark:text-[#6de7d5]">modern hospitals</span>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-white leading-tight">
+                  The intelligent software <br class="hidden sm:inline">for <span class="text-[#6de7d5]">modern
+                    hospitals</span>
                 </h1>
 
-                <p
-                  class="text-sm sm:text-base text-slate-600 dark:text-slate-350 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
                   Edoovi HMS integrates daily operations, digital documentation, and real-time medical intelligence.
                   Streamline OPD consultations, centralize pharmacy & billing, and use advanced AI agents to run
                   error-free care workflows.
@@ -639,8 +642,8 @@
                     <span>Schedule a Demo</span>
                   </a>
                   <a href="#ai-suite"
-                    class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:h-12 h-10 rounded-full text-sm font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:-translate-y-0.5 transition-all duration-300 shadow-sm whitespace-nowrap">
-                    <svg class="w-4 h-4 mr-2 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:h-12 h-10 rounded-full text-sm font-bold text-white bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-sm hover:-translate-y-0.5 transition-all duration-300 shadow-sm whitespace-nowrap">
+                    <svg class="w-4 h-4 mr-2 text-[#6de7d5]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                       stroke-width="2">
                       <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
@@ -649,54 +652,51 @@
                 </div>
 
                 <!-- unified features bar -->
-                <div
-                  class="grid grid-cols-3 sm:flex sm:flex-row sm:items-center gap-3 sm:gap-6 px-4 py-3.5 sm:px-5 sm:py-3.5 bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800/80 shadow-md rounded-2xl sm:rounded-3xl w-full md:w-auto  sm:max-w-max mx-auto lg:mx-0">
-                  <div class="flex items-center gap-2.5">
+                <div data-aos="none"
+                  class="grid grid-cols-3 sm:flex sm:flex-row sm:items-center gap-3 sm:gap-6 px-4 py-3.5 sm:px-5 sm:py-3.5 bg-slate-900/60 border border-white/10 shadow-xl rounded-2xl sm:rounded-3xl w-full md:w-auto sm:max-w-max mx-auto lg:mx-0 backdrop-blur-md">
+                  <div data-aos="none" class="flex items-center gap-2.5">
                     <div
-                      class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center text-brand-600 dark:text-brand-300 shrink-0">
+                      class="w-9 h-9 rounded-xl bg-brand-500/10 flex items-center justify-center text-[#6de7d5] shrink-0">
                       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 h1v5m-4 0h4">
                         </path>
                       </svg>
                     </div>
                     <div class="text-left">
-                      <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">50+</p>
-                      <p
-                        class="text-[8px] font-bold text-slate-400 dark:text-slate-555 uppercase tracking-widest mt-0.5">
+                      <p class="text-xs font-black text-white leading-tight">50+</p>
+                      <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
                         Hospitals Live</p>
                     </div>
                   </div>
                   <!-- Divider -->
-                  <div class="hidden sm:block w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
-                  <div class="flex items-center gap-2.5">
+                  <div class="hidden sm:block w-px h-6 bg-white/10"></div>
+                  <div data-aos="none" class="flex items-center gap-2.5">
                     <div
-                      class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center text-brand-600 dark:text-brand-300 shrink-0">
+                      class="w-9 h-9 rounded-xl bg-brand-500/10 flex items-center justify-center text-[#6de7d5] shrink-0">
                       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polyline points="12 6 12 12 16 14"></polyline>
                       </svg>
                     </div>
                     <div class="text-left">
-                      <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">40%</p>
-                      <p
-                        class="text-[8px] font-bold text-slate-400 dark:text-slate-555 uppercase tracking-widest mt-0.5">
+                      <p class="text-xs font-black text-white leading-tight">40%</p>
+                      <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
                         Time Saved</p>
                     </div>
                   </div>
                   <!-- Divider -->
-                  <div class="hidden sm:block w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
-                  <div class="flex items-center gap-2.5">
+                  <div class="hidden sm:block w-px h-6 bg-white/10"></div>
+                  <div data-aos="none" class="flex items-center gap-2.5">
                     <div
-                      class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center text-brand-600 dark:text-brand-300 shrink-0">
+                      class="w-9 h-9 rounded-xl bg-brand-500/10 flex items-center justify-center text-[#6de7d5] shrink-0">
                       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                       </svg>
                     </div>
                     <div class="text-left">
-                      <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">&lt;24h</p>
-                      <p
-                        class="text-[8px] font-bold text-slate-400 dark:text-slate-555 uppercase tracking-widest mt-0.5">
+                      <p class="text-xs font-black text-white leading-tight">&lt;24h</p>
+                      <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
                         Setup Period</p>
                     </div>
                   </div>
@@ -791,19 +791,17 @@
               <!-- Hero Text content -->
               <div class="order-2 lg:order-1 lg:col-span-7 space-y-6 text-center lg:text-left">
                 <div
-                  class="inline-flex items-center space-x-2 bg-brand-50/50 dark:bg-brand-950/20 border border-brand-200/50 dark:border-brand-800/50 text-[#0b6b5f] dark:text-emerald-300 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
-                  <span class="w-2 h-2 rounded-full bg-brand-600 dark:bg-emerald-300 animate-pulse"></span>
+                  class="inline-flex items-center space-x-2 bg-brand-500/10 border border-brand-500/20 text-emerald-400 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   <span>Real-Time Diagnostics Copilot</span>
                 </div>
 
-                <h1
-                  class="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-slate-900 dark:text-white leading-tight">
-                  The intelligent software <br class="hidden sm:inline">for <span
-                    class="text-[#0b6b5f] dark:text-[#6de7d5]">modern hospitals</span>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-white leading-tight">
+                  The intelligent software <br class="hidden sm:inline">for <span class="text-[#6de7d5]">modern
+                    hospitals</span>
                 </h1>
 
-                <p
-                  class="text-sm sm:text-base text-slate-600 dark:text-slate-350 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
                   Draft medical summaries in seconds, analyze scan indicators, and prevent medication errors with
                   built-in drug contraindication agents directly in consultations.
                 </p>
@@ -820,8 +818,8 @@
                     <span>Try AI Features</span>
                   </a>
                   <a href="#ai-suite"
-                    class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:h-12 h-10 rounded-full text-sm font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:-translate-y-0.5 transition-all duration-300 shadow-sm whitespace-nowrap">
-                    <svg class="w-4 h-4 mr-2 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:h-12 h-10 rounded-full text-sm font-bold text-white bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-sm hover:-translate-y-0.5 transition-all duration-300 shadow-sm whitespace-nowrap">
+                    <svg class="w-4 h-4 mr-2 text-[#6de7d5]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                       stroke-width="2">
                       <polygon points="5 3 19 12 5 21 5 3"></polygon>
                     </svg>
@@ -830,27 +828,26 @@
                 </div>
 
                 <!-- unified features bar -->
-                <div
-                  class="grid grid-cols-3 sm:flex sm:flex-row sm:items-center gap-3 sm:gap-6 px-4 py-3.5 sm:px-5 sm:py-3.5 bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800/80 shadow-md rounded-2xl sm:rounded-3xl w-full md:w-auto  sm:max-w-max mx-auto lg:mx-0">
-                  <div class="flex items-center gap-2.5">
+                <div data-aos="none"
+                  class="grid grid-cols-3 sm:flex sm:flex-row sm:items-center gap-3 sm:gap-6 px-4 py-3.5 sm:px-5 sm:py-3.5 bg-slate-900/60 border border-white/10 shadow-xl rounded-2xl sm:rounded-3xl w-full md:w-auto sm:max-w-max mx-auto lg:mx-0 backdrop-blur-md">
+                  <div data-aos="none" class="flex items-center gap-2.5">
                     <div
-                      class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center text-brand-600 dark:text-brand-300 shrink-0">
+                      class="w-9 h-9 rounded-xl bg-brand-500/10 flex items-center justify-center text-[#6de7d5] shrink-0">
                       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path d="M9 12h6M12 9v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                       </svg>
                     </div>
                     <div class="text-left">
-                      <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">100k+</p>
-                      <p
-                        class="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-0.5">
+                      <p class="text-xs font-black text-white leading-tight">100k+</p>
+                      <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
                         Summaries Drafted</p>
                     </div>
                   </div>
                   <!-- Divider -->
-                  <div class="hidden sm:block w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
-                  <div class="flex items-center gap-2.5">
+                  <div class="hidden sm:block w-px h-6 bg-white/10"></div>
+                  <div data-aos="none" class="flex items-center gap-2.5">
                     <div
-                      class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center text-brand-600 dark:text-brand-300 shrink-0">
+                      class="w-9 h-9 rounded-xl bg-brand-500/10 flex items-center justify-center text-[#6de7d5] shrink-0">
                       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path
                           d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
@@ -858,26 +855,24 @@
                       </svg>
                     </div>
                     <div class="text-left">
-                      <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">99.8%</p>
-                      <p
-                        class="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-0.5">
+                      <p class="text-xs font-black text-white leading-tight">99.8%</p>
+                      <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
                         Safety Rating</p>
                     </div>
                   </div>
                   <!-- Divider -->
-                  <div class="hidden sm:block w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
-                  <div class="flex items-center gap-2.5">
+                  <div class="hidden sm:block w-px h-6 bg-white/10"></div>
+                  <div data-aos="none" class="flex items-center gap-2.5">
                     <div
-                      class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center text-brand-600 dark:text-brand-300 shrink-0">
+                      class="w-9 h-9 rounded-xl bg-brand-500/10 flex items-center justify-center text-[#6de7d5] shrink-0">
                       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polyline points="12 6 12 12 16 14"></polyline>
                       </svg>
                     </div>
                     <div class="text-left">
-                      <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">3 Sec</p>
-                      <p
-                        class="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-0.5">
+                      <p class="text-xs font-black text-white leading-tight">3 Sec</p>
+                      <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
                         Generation Time</p>
                     </div>
                   </div>
@@ -890,8 +885,8 @@
 
                 <!-- Floating Graphic 1: AI Prescription warning (Top Right Overlay) -->
                 <div
-                  class="absolute top-0 right-4 sm:right-8 z-30 animate-float bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-transform hover:scale-105 duration-300">
-                  <div class="p-1.5 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-300">
+                  class="absolute top-0 right-4 sm:right-8 z-30 animate-float bg-slate-900/90 backdrop-blur-md border border-white/10 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-transform hover:scale-105 duration-300">
+                  <div class="p-1.5 rounded-xl bg-amber-500/20 text-amber-300">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path
                         d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
@@ -899,39 +894,36 @@
                     </svg>
                   </div>
                   <div class="text-left">
-                    <p class="text-[0.625rem] font-black text-slate-900 dark:text-white leading-none">Drug Safety Check
-                    </p>
-                    <p class="text-[0.5rem] text-amber-600 font-bold mt-0.5 leading-none">AI Warning: Contraindication
+                    <p class="text-[0.625rem] font-black text-white leading-none">Drug Safety Check</p>
+                    <p class="text-[0.5rem] text-amber-300 font-bold mt-0.5 leading-none">AI Warning: Contraindication
                     </p>
                   </div>
                 </div>
 
                 <!-- Floating Graphic 2: Automated summary check (Bottom Right Overlay) -->
                 <div
-                  class="absolute -bottom-4 right-4 sm:right-8 z-30 animate-float-delayed bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-transform hover:scale-105 duration-300">
-                  <div
-                    class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 dark:text-emerald-355">
+                  class="absolute -bottom-4 right-4 sm:right-8 z-30 animate-float-delayed bg-slate-900/90 backdrop-blur-md border border-white/10 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-transform hover:scale-105 duration-300">
+                  <div class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-300">
                     <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </div>
                   <div class="text-left">
-                    <p class="text-[0.5625rem] font-bold text-slate-900 dark:text-white leading-none">Discharge Note
-                      Generated</p>
-                    <p class="text-[0.46875rem] text-slate-500 mt-0.5 leading-none">Approved by Dr. K. Miller</p>
+                    <p class="text-[0.5625rem] font-bold text-white leading-none">Discharge Note Generated</p>
+                    <p class="text-[0.46875rem] text-slate-400 mt-0.5 leading-none">Approved by Dr. K. Miller</p>
                   </div>
                 </div>
 
                 <!-- Floating side tags (Left edge of monitor mockup) -->
                 <div class="hidden sm:flex absolute top-1/4 -left-12 z-30 flex-col gap-2.5">
                   <div
-                    class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/60 dark:border-slate-800 py-1.5 px-2.5 rounded-xl shadow-lg text-[9px] font-bold text-slate-600 dark:text-slate-350 flex items-center gap-1.5 max-w-[110px] animate-float">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-600 dark:bg-[#6de7d5]"></span>
+                    class="bg-slate-900/90 backdrop-blur-md border border-white/10 py-1.5 px-2.5 rounded-xl shadow-lg text-[9px] font-bold text-slate-200 flex items-center gap-1.5 max-w-[110px] animate-float">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#6de7d5]"></span>
                     <span>AI Copilot</span>
                   </div>
                   <div
-                    class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/60 dark:border-slate-800 py-1.5 px-2.5 rounded-xl shadow-lg text-[9px] font-bold text-slate-600 dark:text-slate-350 flex items-center gap-1.5 max-w-[110px] animate-float-delayed">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-600 dark:bg-[#6de7d5]"></span>
+                    class="bg-slate-900/90 backdrop-blur-md border border-white/10 py-1.5 px-2.5 rounded-xl shadow-lg text-[9px] font-bold text-slate-200 flex items-center gap-1.5 max-w-[110px] animate-float-delayed">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#6de7d5]"></span>
                     <span>EHR Sync</span>
                   </div>
                 </div>
@@ -973,19 +965,17 @@
               <!-- Hero Text content -->
               <div class="order-2 lg:order-1 lg:col-span-7 space-y-6 text-center lg:text-left">
                 <div
-                  class="inline-flex items-center space-x-2 bg-brand-50/50 dark:bg-brand-950/20 border border-brand-200/50 dark:border-brand-800/50 text-[#0b6b5f] dark:text-emerald-300 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
-                  <span class="w-2 h-2 rounded-full bg-brand-600 dark:bg-emerald-300 animate-pulse"></span>
+                  class="inline-flex items-center space-x-2 bg-brand-500/10 border border-brand-500/20 text-emerald-400 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   <span>Optimized Ward &amp; Operational Flow</span>
                 </div>
 
-                <h1
-                  class="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-slate-900 dark:text-white leading-tight">
-                  The intelligent software <br class="hidden sm:inline">for <span
-                    class="text-[#0b6b5f] dark:text-[#6de7d5]">modern hospitals</span>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-white leading-tight">
+                  The intelligent software <br class="hidden sm:inline">for <span class="text-[#6de7d5]">modern
+                    hospitals</span>
                 </h1>
 
-                <p
-                  class="text-sm sm:text-base text-slate-600 dark:text-slate-350 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                <p class="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
                   Keep track of ward occupancy in real-time, standardise billing grids, sync automated pharmacy
                   inventory, and manage branch networks from a central Super Admin control board.
                 </p>
@@ -1002,8 +992,8 @@
                     <span>Setup Super Admin</span>
                   </a>
                   <a href="solutions.html"
-                    class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:h-12 h-10 rounded-full text-sm font-bold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:-translate-y-0.5 transition-all duration-300 shadow-sm whitespace-nowrap">
-                    <svg class="w-4 h-4 mr-2 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 md:h-12 h-10 rounded-full text-sm font-bold text-white bg-white/10 hover:bg-white/20 border border-white/15 backdrop-blur-sm hover:-translate-y-0.5 transition-all duration-300 shadow-sm whitespace-nowrap">
+                    <svg class="w-4 h-4 mr-2 text-[#6de7d5]" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                       stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                     </svg>
@@ -1012,12 +1002,12 @@
                 </div>
 
                 <!-- unified features bar -->
-                <div
-                  class="grid grid-cols-3 sm:flex sm:flex-row sm:items-center gap-3 sm:gap-6 px-4 py-3.5 sm:px-5 sm:py-3.5 bg-white dark:bg-slate-900 border border-slate-150 dark:border-slate-800/80 shadow-md rounded-2xl sm:rounded-3xl w-full md:w-auto  sm:max-w-max mx-auto lg:mx-0">
+                <div data-aos="none"
+                  class="grid grid-cols-3 sm:flex sm:flex-row sm:items-center gap-3 sm:gap-6 px-4 py-3.5 sm:px-5 sm:py-3.5 bg-slate-900/60 border border-white/10 shadow-xl rounded-2xl sm:rounded-3xl w-full md:w-auto sm:max-w-max mx-auto lg:mx-0 backdrop-blur-md">
                   <!-- Live Bed Board -->
-                  <div class="flex items-center gap-2.5">
+                  <div data-aos="none" class="flex items-center gap-2.5">
                     <div
-                      class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center text-brand-600 dark:text-brand-300 shrink-0">
+                      class="w-9 h-9 rounded-xl bg-brand-500/10 flex items-center justify-center text-[#6de7d5] shrink-0">
                       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path
                           d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h3a1 1 0 011 1v6a1 1 0 01-1 1h-3a1 1 0 01-1-1v-6z">
@@ -1025,18 +1015,17 @@
                       </svg>
                     </div>
                     <div class="text-left">
-                      <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">Live</p>
-                      <p
-                        class="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-0.5">
+                      <p class="text-xs font-black text-white leading-tight">Live</p>
+                      <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
                         Bed Board</p>
                     </div>
                   </div>
                   <!-- Divider -->
-                  <div class="hidden sm:block w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
+                  <div class="hidden sm:block w-px h-6 bg-white/10"></div>
                   <!-- Auto Stock Logs -->
-                  <div class="flex items-center gap-2.5">
+                  <div data-aos="none" class="flex items-center gap-2.5">
                     <div
-                      class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center text-brand-600 dark:text-brand-300 shrink-0">
+                      class="w-9 h-9 rounded-xl bg-brand-500/10 flex items-center justify-center text-[#6de7d5] shrink-0">
                       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path
                           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
@@ -1044,27 +1033,25 @@
                       </svg>
                     </div>
                     <div class="text-left">
-                      <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">Auto</p>
-                      <p
-                        class="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-0.5">
+                      <p class="text-xs font-black text-white leading-tight">Auto</p>
+                      <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
                         Stock Logs</p>
                     </div>
                   </div>
                   <!-- Divider -->
-                  <div class="hidden sm:block w-px h-6 bg-slate-200 dark:bg-slate-800"></div>
+                  <div class="hidden sm:block w-px h-6 bg-white/10"></div>
                   <!-- Multi Branch Sync -->
-                  <div class="flex items-center gap-2.5">
+                  <div data-aos="none" class="flex items-center gap-2.5">
                     <div
-                      class="w-9 h-9 rounded-xl bg-brand-50 dark:bg-brand-950 flex items-center justify-center text-brand-600 dark:text-brand-300 shrink-0">
+                      class="w-9 h-9 rounded-xl bg-brand-500/10 flex items-center justify-center text-[#6de7d5] shrink-0">
                       <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z">
                         </path>
                       </svg>
                     </div>
                     <div class="text-left">
-                      <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">Multi</p>
-                      <p
-                        class="text-[8px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-0.5">
+                      <p class="text-xs font-black text-white leading-tight">Multi</p>
+                      <p class="text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
                         Branch Sync</p>
                     </div>
                   </div>
@@ -1077,24 +1064,23 @@
 
                 <!-- Floating Graphic 1: Bed occupancy tracker (Top Right Overlay) -->
                 <div
-                  class="absolute top-0 right-4 sm:right-8 z-30 animate-float bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3.5 rounded-2xl shadow-xl flex flex-col gap-1 w-44 transition-transform hover:scale-105 duration-300">
-                  <span
-                    class="text-[8px] font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest leading-none">ICU
-                    Ward Status</span>
+                  class="absolute top-0 right-4 sm:right-8 z-30 animate-float bg-slate-900/90 backdrop-blur-md border border-white/10 p-3.5 rounded-2xl shadow-xl flex flex-col gap-1 w-44 transition-transform hover:scale-105 duration-300">
+                  <span class="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none">ICU Ward
+                    Status</span>
                   <div class="flex items-center gap-1.5 justify-between mt-0.5">
-                    <span class="text-[11px] font-black text-slate-800 dark:text-white">12 / 16 Available</span>
+                    <span class="text-[11px] font-black text-white">12 / 16 Available</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                   </div>
-                  <div class="w-full bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full mt-1 overflow-hidden">
+                  <div class="w-full bg-slate-805 bg-slate-800 h-1.5 rounded-full mt-1 overflow-hidden">
                     <div class="bg-brand-600 h-full rounded-full" style="width: 75%;"></div>
                   </div>
                 </div>
 
                 <!-- Floating Graphic 2: Multi-branch synced (Bottom Right Overlay) -->
                 <div
-                  class="absolute -bottom-4 right-4 sm:right-8 z-30 animate-float-delayed bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/80 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-transform hover:scale-105 duration-300">
+                  class="absolute -bottom-4 right-4 sm:right-8 z-30 animate-float-delayed bg-slate-900/90 backdrop-blur-md border border-white/10 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 transition-transform hover:scale-105 duration-300">
                   <div
-                    class="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-emerald-950 flex items-center justify-center text-brand-600 dark:text-[#6de7d5] shrink-0">
+                    class="w-8 h-8 rounded-xl bg-emerald-500/20 flex items-center justify-center text-[#6de7d5] shrink-0">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round"
                         d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
@@ -1102,23 +1088,21 @@
                     </svg>
                   </div>
                   <div class="text-left">
-                    <p class="text-[10px] font-black text-slate-800 dark:text-white leading-none">Super Admin Console
-                    </p>
-                    <p class="text-[8px] text-slate-400 dark:text-slate-500 mt-1.5 leading-none">5 branches synced
-                      globally</p>
+                    <p class="text-[10px] font-black text-white leading-none">Super Admin Console</p>
+                    <p class="text-[8px] text-slate-400 mt-1.5 leading-none">5 branches synced globally</p>
                   </div>
                 </div>
 
                 <!-- Floating side tags (Left edge of monitor mockup) -->
                 <div class="hidden sm:flex absolute top-1/4 -left-12 z-30 flex-col gap-2.5">
                   <div
-                    class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/60 dark:border-slate-800 py-1.5 px-2.5 rounded-xl shadow-lg text-[9px] font-bold text-slate-600 dark:text-slate-350 flex items-center gap-1.5 max-w-[110px] animate-float">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-600 dark:bg-[#6de7d5]"></span>
+                    class="bg-slate-900/90 backdrop-blur-md border border-white/10 py-1.5 px-2.5 rounded-xl shadow-lg text-[9px] font-bold text-slate-200 flex items-center gap-1.5 max-w-[110px] animate-float">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#6de7d5]"></span>
                     <span>Track Wards</span>
                   </div>
                   <div
-                    class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/60 dark:border-slate-800 py-1.5 px-2.5 rounded-xl shadow-lg text-[9px] font-bold text-slate-600 dark:text-slate-350 flex items-center gap-1.5 max-w-[110px] animate-float-delayed">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-600 dark:bg-[#6de7d5]"></span>
+                    class="bg-slate-900/90 backdrop-blur-md border border-white/10 py-1.5 px-2.5 rounded-xl shadow-lg text-[9px] font-bold text-slate-200 flex items-center gap-1.5 max-w-[110px] animate-float-delayed">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#6de7d5]"></span>
                     <span>Sync Stock</span>
                   </div>
                 </div>
@@ -1324,210 +1308,180 @@
       <!-- ═══ INTERACTIVE GRID ═══ -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
 
-        <!-- ── LEFT: Vertical Tab List (All 10 Modules from PDF) ── -->
+        <!-- ── LEFT: Interactive Tab List (All 10 Modules from PDF) ── -->
         <div
-          class="lg:col-span-4 flex flex-row lg:flex-col overflow-x-auto lg:overflow-y-auto max-h-none lg:max-h-[40rem] pb-2 lg:pb-0 space-x-2 lg:space-x-0 space-y-0 lg:space-y-2 pr-1">
+          class="lg:col-span-4 bg-[#0a1122] border border-[#1e293b]/30 rounded-2xl lg:rounded-[2rem] overflow-hidden flex flex-row lg:flex-col p-3 lg:p-0">
+          <div
+            class="w-full flex flex-row lg:flex-col gap-2.5 py-0 overflow-x-auto lg:overflow-y-auto lg:max-h-[38rem] [&::-webkit-scrollbar]:h-1 lg:[&::-webkit-scrollbar]:w-1 lg:[&::-webkit-scrollbar]:h-auto [&::-webkit-scrollbar-thumb]:bg-emerald-500/30 [&::-webkit-scrollbar-thumb]:hover:bg-emerald-500/60 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent">
 
-          <!-- 1. Dashboard -->
-          <button onclick="switchModule('tab-dashboard')" id="btn-tab-dashboard"
-            class="module-tab-btn active group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent bg-white dark:bg-slate-800 shadow-sm hover:lg:shadow-md transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-indigo-500 to-brand-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-900/50 text-indigo-600 dark:text-indigo-400 group-hover:lg:bg-indigo-600 group-hover:lg:text-white dark:group-hover:lg:bg-indigo-600 dark:group-hover:lg:text-white group-[.active]:bg-indigo-600 group-[.active]:text-white dark:group-[.active]:bg-indigo-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-indigo-700 dark:group-[.active]:text-indigo-400">
-                1. Dashboard</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">Real-time KPIs & alerts</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-indigo-500 dark:group-[.active]:text-indigo-400 flex-shrink-0 transition-colors"></i>
-          </button>
+            <!-- 1. Dashboard -->
+            <button onclick="switchModule('tab-dashboard')" id="btn-tab-dashboard"
+              class="module-tab-btn active group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  Dashboard</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">Real-time KPIs
+                  &amp;
+                  alerts</p>
+              </div>
+            </button>
 
-          <!-- 2. Patient Registration -->
-          <button onclick="switchModule('tab-registration')" id="btn-tab-registration"
-            class="module-tab-btn group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent hover:lg:bg-white dark:hover:lg:bg-slate-800/40 hover:lg:shadow-sm transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-teal-400 to-teal-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-teal-50 dark:bg-teal-950/30 border border-teal-100 dark:border-teal-900/50 text-teal-600 dark:text-teal-400 group-hover:lg:bg-teal-600 group-hover:lg:text-white dark:group-hover:lg:bg-teal-600 dark:group-hover:lg:text-white group-[.active]:bg-teal-600 group-[.active]:text-white dark:group-[.active]:bg-teal-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="user-plus" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-teal-700 dark:group-[.active]:text-teal-400">
-                2. Patient Registration</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">UHID & electronic records</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-teal-500 dark:group-[.active]:text-teal-400 flex-shrink-0 transition-colors"></i>
-          </button>
+            <!-- 2. Patient Registration -->
+            <button onclick="switchModule('tab-registration')" id="btn-tab-registration"
+              class="module-tab-btn group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="user-plus" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  Patient Registration</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">UHID &amp;
+                  electronic records</p>
+              </div>
+            </button>
 
-          <!-- 3. Appointment Management -->
-          <button onclick="switchModule('tab-appointments')" id="btn-tab-appointments"
-            class="module-tab-btn group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent hover:lg:bg-white dark:hover:lg:bg-slate-800/40 hover:lg:shadow-sm transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-emerald-400 to-emerald-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 text-emerald-600 dark:text-emerald-400 group-hover:lg:bg-emerald-600 group-hover:lg:text-white dark:group-hover:lg:bg-emerald-600 dark:group-hover:lg:text-white group-[.active]:bg-emerald-600 group-[.active]:text-white dark:group-[.active]:bg-emerald-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="calendar-check" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-emerald-700 dark:group-[.active]:text-emerald-400">
-                3. Appointment Management</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">Booking, queue & token</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-emerald-500 dark:group-[.active]:text-emerald-400 flex-shrink-0 transition-colors"></i>
-          </button>
+            <!-- 3. Appointment Management -->
+            <button onclick="switchModule('tab-appointments')" id="btn-tab-appointments"
+              class="module-tab-btn group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="calendar-check" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  Appointment Management</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">Booking, queue
+                  &amp;
+                  token</p>
+              </div>
+            </button>
 
-          <!-- 4. OPD Management -->
-          <button onclick="switchModule('tab-opd')" id="btn-tab-opd"
-            class="module-tab-btn group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent hover:lg:bg-white dark:hover:lg:bg-slate-800/40 hover:lg:shadow-sm transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-amber-400 to-amber-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-100 dark:border-amber-900/50 text-amber-600 dark:text-amber-400 group-hover:lg:bg-amber-600 group-hover:lg:text-white dark:group-hover:lg:bg-amber-600 dark:group-hover:lg:text-white group-[.active]:bg-amber-600 group-[.active]:text-white dark:group-[.active]:bg-amber-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="stethoscope" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-amber-700 dark:group-[.active]:text-amber-400">
-                4. OPD Management</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">Consultation & prescriptions</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-amber-500 dark:group-[.active]:text-amber-400 flex-shrink-0 transition-colors"></i>
-          </button>
+            <!-- 4. OPD Management -->
+            <button onclick="switchModule('tab-opd')" id="btn-tab-opd"
+              class="module-tab-btn group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="stethoscope" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  OPD Management</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">Consultation
+                  &amp;
+                  prescriptions</p>
+              </div>
+            </button>
 
-          <!-- 5. IPD Management -->
-          <button onclick="switchModule('tab-ipd')" id="btn-tab-ipd"
-            class="module-tab-btn group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent hover:lg:bg-white dark:hover:lg:bg-slate-800/40 hover:lg:shadow-sm transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-blue-400 to-blue-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-100 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 group-hover:lg:bg-blue-600 group-hover:lg:text-white dark:group-hover:lg:bg-blue-600 dark:group-hover:lg:text-white group-[.active]:bg-blue-600 group-[.active]:text-white dark:group-[.active]:bg-blue-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="bed" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-blue-700 dark:group-[.active]:text-blue-400">
-                5. IPD Management</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">Admission, beds & nursing</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-blue-500 dark:group-[.active]:text-blue-400 flex-shrink-0 transition-colors"></i>
-          </button>
+            <!-- 5. IPD Management -->
+            <button onclick="switchModule('tab-ipd')" id="btn-tab-ipd"
+              class="module-tab-btn group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="bed" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  IPD Management</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">Admission,
+                  beds
+                  &amp; nursing</p>
+              </div>
+            </button>
 
-          <!-- 6. Pharmacy -->
-          <button onclick="switchModule('tab-pharmacy')" id="btn-tab-pharmacy"
-            class="module-tab-btn group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent hover:lg:bg-white dark:hover:lg:bg-slate-800/40 hover:lg:shadow-sm transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-cyan-400 to-cyan-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-cyan-50 dark:bg-cyan-950/30 border border-cyan-100 dark:border-cyan-900/50 text-cyan-600 dark:text-cyan-400 group-hover:lg:bg-cyan-600 group-hover:lg:text-white dark:group-hover:lg:bg-cyan-600 dark:group-hover:lg:text-white group-[.active]:bg-cyan-600 group-[.active]:text-white dark:group-[.active]:bg-cyan-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="pill" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-cyan-700 dark:group-[.active]:text-cyan-400">
-                6. Pharmacy</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">Inventory & dispensing</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-cyan-500 dark:group-[.active]:text-cyan-400 flex-shrink-0 transition-colors"></i>
-          </button>
+            <!-- 6. Pharmacy -->
+            <button onclick="switchModule('tab-pharmacy')" id="btn-tab-pharmacy"
+              class="module-tab-btn group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="pill" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  Pharmacy</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">Inventory
+                  &amp;
+                  dispensing</p>
+              </div>
+            </button>
 
-          <!-- 7. Laboratory -->
-          <button onclick="switchModule('tab-laboratory')" id="btn-tab-laboratory"
-            class="module-tab-btn group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent hover:lg:bg-white dark:hover:lg:bg-slate-800/40 hover:lg:shadow-sm transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-purple-400 to-purple-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-purple-50 dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/50 text-purple-600 dark:text-purple-400 group-hover:lg:bg-purple-600 group-hover:lg:text-white dark:group-hover:lg:bg-purple-600 dark:group-hover:lg:text-white group-[.active]:bg-purple-600 group-[.active]:text-white dark:group-[.active]:bg-purple-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="flask-conical" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-purple-700 dark:group-[.active]:text-purple-400">
-                7. Laboratory</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">Pathology & lab reports</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-purple-500 dark:group-[.active]:text-purple-400 flex-shrink-0 transition-colors"></i>
-          </button>
+            <!-- 7. Laboratory -->
+            <button onclick="switchModule('tab-laboratory')" id="btn-tab-laboratory"
+              class="module-tab-btn group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="flask-conical" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  Laboratory</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">Pathology
+                  &amp;
+                  lab
+                  reports</p>
+              </div>
+            </button>
 
-          <!-- 8. Billing -->
-          <button onclick="switchModule('tab-billing')" id="btn-tab-billing"
-            class="module-tab-btn group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent hover:lg:bg-white dark:hover:lg:bg-slate-800/40 hover:lg:shadow-sm transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-indigo-400 to-indigo-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-900/50 text-indigo-600 dark:text-indigo-400 group-hover:lg:bg-indigo-600 group-hover:lg:text-white dark:group-hover:lg:bg-indigo-600 dark:group-hover:lg:text-white group-[.active]:bg-indigo-600 group-[.active]:text-white dark:group-[.active]:bg-indigo-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="receipt" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-indigo-700 dark:group-[.active]:text-indigo-400">
-                8. Billing</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">Centralized accounting</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-indigo-500 dark:group-[.active]:text-indigo-400 flex-shrink-0 transition-colors"></i>
-          </button>
+            <!-- 8. Billing -->
+            <button onclick="switchModule('tab-billing')" id="btn-tab-billing"
+              class="module-tab-btn group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="receipt" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  Billing</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">Centralized
+                  accounting</p>
+              </div>
+            </button>
 
-          <!-- 9. Reports & Analytics -->
-          <button onclick="switchModule('tab-reports')" id="btn-tab-reports"
-            class="module-tab-btn group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent hover:lg:bg-white dark:hover:lg:bg-slate-800/40 hover:lg:shadow-sm transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-sky-400 to-sky-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-sky-50 dark:bg-sky-950/30 border border-sky-100 dark:border-sky-900/50 text-sky-600 dark:text-sky-400 group-hover:lg:bg-sky-600 group-hover:lg:text-white dark:group-hover:lg:bg-sky-600 dark:group-hover:lg:text-white group-[.active]:bg-sky-600 group-[.active]:text-white dark:group-[.active]:bg-sky-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-sky-700 dark:group-[.active]:text-sky-400">
-                9. Reports & Analytics</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">Operational & revenue insights</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-sky-500 dark:group-[.active]:text-sky-400 flex-shrink-0 transition-colors"></i>
-          </button>
+            <!-- 9. Reports & Analytics -->
+            <button onclick="switchModule('tab-reports')" id="btn-tab-reports"
+              class="module-tab-btn group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  Reports &amp; Analytics</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">Operational
+                  &amp;
+                  revenue insights</p>
+              </div>
+            </button>
 
-          <!-- 10. Super Admin (SaaS) -->
-          <button onclick="switchModule('tab-superadmin')" id="btn-tab-superadmin"
-            class="module-tab-btn group flex items-center space-x-3 pl-0 pr-4 py-3 rounded-2xl text-left border border-transparent hover:lg:bg-white dark:hover:lg:bg-slate-800/40 hover:lg:shadow-sm transition-all duration-200 w-full relative">
-            <div
-              class="w-1 self-stretch rounded-r-full bg-gradient-to-b from-rose-400 to-rose-600 flex-shrink-0 opacity-0 group-[.active]:opacity-100 transition-opacity">
-            </div>
-            <div
-              class="w-8 h-8 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-100 dark:border-rose-900/50 text-rose-600 dark:text-rose-400 group-hover:lg:bg-rose-600 group-hover:lg:text-white dark:group-hover:lg:bg-rose-600 dark:group-hover:lg:text-white group-[.active]:bg-rose-600 group-[.active]:text-white dark:group-[.active]:bg-rose-600 dark:group-[.active]:text-white flex items-center justify-center flex-shrink-0 transition-all duration-200 ml-2">
-              <i data-lucide="shield-check" class="w-4 h-4"></i>
-            </div>
-            <div class="flex-1 min-w-0">
-              <h4
-                class="text-xs font-bold text-slate-800 dark:text-slate-200 group-[.active]:text-rose-700 dark:group-[.active]:text-rose-400">
-                10. Super Admin (SaaS)</h4>
-              <p class="text-[0.6875rem] text-slate-400 dark:text-slate-450 truncate">Multi-hospital management</p>
-            </div>
-            <i data-lucide="chevron-right"
-              class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-[.active]:text-rose-500 dark:group-[.active]:text-rose-400 flex-shrink-0 transition-colors"></i>
-          </button>
-
+            <!-- 10. Super Admin (SaaS) -->
+            <button onclick="switchModule('tab-superadmin')" id="btn-tab-superadmin"
+              class="module-tab-btn group flex items-center space-x-3.5 px-6 py-3.5 text-left transition-all duration-300 w-max lg:w-full flex-shrink-0 bg-transparent border-none [&.active]:bg-gradient-to-r [&.active]:from-emerald-600 [&.active]:to-teal-500 hover:bg-slate-900/50 rounded-xl lg:rounded-none">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 bg-slate-900/50 border border-slate-800/85 text-slate-300 group-hover:text-white group-[.active]:bg-white/15 group-[.active]:border-white/15 group-[.active]:text-white">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+              </div>
+              <div class="flex-1 min-w-[120px] lg:min-w-0">
+                <h4
+                  class="text-xs font-semibold text-slate-200 group-[.active]:text-white group-[.active]:font-black leading-snug">
+                  Super Admin (SaaS)</h4>
+                <p class="text-[10px] text-slate-400 group-[.active]:text-white/80 leading-normal mt-0.5">Multi-hospital
+                  management</p>
+              </div>
+            </button>
+          </div>
         </div>
 
         <!-- ── RIGHT: Module Detail Panel ── -->
@@ -1567,115 +1521,171 @@
             <div id="module-display-content" class="flex-1 p-6 sm:p-8 space-y-6">
 
               <!-- Default Display: Dashboard -->
-              <div class="space-y-5">
+              <div class="space-y-6">
                 <!-- Module title row -->
-                <div class="flex items-start justify-between gap-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div>
                     <span
-                      class="inline-flex items-center space-x-1 text-[0.625rem] font-bold text-brand-600 tracking-widest uppercase bg-brand-50 dark:bg-slate-800 border border-brand-100 dark:border-slate-700 px-2 py-0.5 rounded-md mb-2">
-                      <i data-lucide="zap" class="w-2.5 h-2.5"></i>
+                      class="inline-flex items-center space-x-1.5 text-[0.625rem] font-bold text-brand-600 dark:text-[#10b981] tracking-widest uppercase bg-brand-50 dark:bg-slate-800 border border-brand-100 dark:border-slate-700 px-3 py-1 rounded-full mb-3">
+                      <i data-lucide="zap" class="w-3 h-3"></i>
                       <span>Active Module</span>
                     </span>
-                    <h3 class="text-2xl font-display font-extrabold text-slate-900 dark:text-white">Dashboard &
-                      Operational KPIs</h3>
+                    <h3
+                      class="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 dark:text-white leading-tight">
+                      Dashboard & Operational KPIs</h3>
                   </div>
-                  <div class="flex-shrink-0 flex flex-col items-end space-y-1">
+                  <div class="flex-shrink-0">
                     <div
-                      class="flex items-center space-x-1.5 bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-800 px-3 py-1.5 rounded-xl">
-                      <i data-lucide="check-circle" class="w-3.5 h-3.5 text-indigo-500 dark:text-indigo-400"></i>
-                      <span class="text-xs font-bold text-indigo-700 dark:text-indigo-400">Active</span>
+                      class="inline-flex items-center space-x-1.5 bg-brand-50 dark:bg-emerald-950/30 border border-brand-100 dark:border-emerald-800 px-3.5 py-1.5 rounded-xl shadow-xs">
+                      <i data-lucide="check-circle" class="w-4 h-4 text-brand-650 dark:text-emerald-400"></i>
+                      <span class="text-xs font-black text-brand-700 dark:text-emerald-400">Active</span>
                     </div>
                   </div>
                 </div>
 
-                <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                <p class="text-slate-650 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
                   Provides a real-time overview of hospital operations through key parameters. It rolls up
                   multi-department stats, revenue updates, active occupancy status, and pending clinical alerts onto a
                   single command dashboard.
                 </p>
 
-                <!-- Feature Grid with gradient check icons -->
+                <!-- Premium Circular Status Dials (matching screenshot) -->
                 <div>
                   <h5
-                    class="text-[0.625rem] font-bold uppercase tracking-widest text-slate-400 mb-4 flex items-center space-x-2">
-                    <span class="flex-1 h-px bg-slate-100"></span>
+                    class="text-[0.625rem] font-black uppercase tracking-widest text-slate-450 dark:text-slate-500 mb-6 flex items-center space-x-3">
+                    <span class="flex-1 h-px bg-slate-200/60 dark:bg-slate-800/80"></span>
                     <span>Key System Features</span>
-                    <span class="flex-1 h-px bg-slate-100"></span>
+                    <span class="flex-1 h-px bg-slate-200/60 dark:bg-slate-800/80"></span>
                   </h5>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
 
+                    <!-- Dial 1: Today's OPD/IPD Activity -->
                     <div
-                      class="flex items-start space-x-3 p-3 rounded-2xl bg-slate-50/70 border border-slate-100 hover:lg:border-brand-200 hover:lg:bg-brand-50/30 transition-all duration-200">
-                      <div
-                        class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm shadow-brand-500/20">
-                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                      class="bg-slate-50/60 dark:bg-slate-900/40 border border-slate-150 dark:border-slate-800/80 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-xs">
+                      <span
+                        class="text-[9px] font-black text-slate-450 dark:text-slate-300 uppercase tracking-widest mb-3">OPD/IPD
+                        Activity</span>
+                      <div class="relative w-20 h-20 flex items-center justify-center mb-3">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                          <path class="text-slate-100 dark:text-slate-850" stroke-width="2.5" stroke="currentColor"
+                            fill="none"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                          <path class="text-brand-600 dark:text-emerald-450" stroke-width="2.5"
+                            stroke-dasharray="75, 100" stroke-linecap="round" stroke="currentColor" fill="none"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="absolute text-center">
+                          <span class="text-base font-black text-slate-850 dark:text-white">256</span>
+                        </div>
                       </div>
-                      <div>
-                        <h6 class="text-xs font-bold text-slate-800">Today's OPD/IPD Activity</h6>
-                        <p class="text-[0.6875rem] text-slate-500 mt-0.5 leading-relaxed">Live indicators showing
-                          intake,
-                          active sessions, and clinical counts.</p>
+                      <div class="space-y-0.5">
+                        <p class="text-[10px] font-bold text-slate-700 dark:text-white">OPD/IPD Activity</p>
+                        <p class="text-[8px] text-slate-400 dark:text-slate-300 font-medium">Today's IPD</p>
                       </div>
                     </div>
 
+                    <!-- Dial 2: Real-time Revenue Audit -->
                     <div
-                      class="flex items-start space-x-3 p-3 rounded-2xl bg-slate-50/70 border border-slate-100 hover:lg:border-brand-200 hover:lg:bg-brand-50/30 transition-all duration-200">
-                      <div
-                        class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm shadow-brand-500/20">
-                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                      class="bg-slate-50/60 dark:bg-slate-900/40 border border-slate-150 dark:border-slate-800/80 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-xs">
+                      <span
+                        class="text-[9px] font-black text-slate-450 dark:text-slate-300 uppercase tracking-widest mb-3">Revenue
+                        Audit</span>
+                      <div class="relative w-20 h-20 flex items-center justify-center mb-3">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                          <path class="text-slate-100 dark:text-slate-850" stroke-width="2.5" stroke="currentColor"
+                            fill="none"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                          <path class="text-emerald-600 dark:text-teal-400" stroke-width="2.5"
+                            stroke-dasharray="60, 100" stroke-linecap="round" stroke="currentColor" fill="none"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="absolute text-center">
+                          <span class="text-xs font-black text-slate-850 dark:text-white">₹3.45L</span>
+                        </div>
                       </div>
-                      <div>
-                        <h6 class="text-xs font-bold text-slate-800">Real-Time Revenue Audit</h6>
-                        <p class="text-[0.6875rem] text-slate-500 mt-0.5 leading-relaxed">Continuous check-ups on
-                          incoming
-                          funds and department performance.</p>
+                      <div class="space-y-0.5">
+                        <p class="text-[10px] font-bold text-slate-700 dark:text-white">Revenue Audit</p>
+                        <p class="text-[8px] text-slate-400 dark:text-slate-300 font-medium">Today's Target</p>
                       </div>
                     </div>
 
+                    <!-- Dial 3: Bed Occupancy Management -->
                     <div
-                      class="flex items-start space-x-3 p-3 rounded-2xl bg-slate-50/70 border border-slate-100 hover:lg:border-brand-200 hover:lg:bg-brand-50/30 transition-all duration-200">
-                      <div
-                        class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm shadow-brand-500/20">
-                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                      class="bg-slate-50/60 dark:bg-slate-900/40 border border-slate-150 dark:border-slate-800/80 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-xs">
+                      <span
+                        class="text-[9px] font-black text-slate-450 dark:text-slate-300 uppercase tracking-widest mb-3">Bed
+                        Occupancy</span>
+                      <div class="relative w-20 h-20 flex items-center justify-center mb-3">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                          <path class="text-slate-100 dark:text-slate-850" stroke-width="2.5" stroke="currentColor"
+                            fill="none"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                          <path class="text-cyan-600 dark:text-cyan-400" stroke-width="2.5" stroke-dasharray="82, 100"
+                            stroke-linecap="round" stroke="currentColor" fill="none"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="absolute text-center">
+                          <span class="text-base font-black text-slate-850 dark:text-white">82%</span>
+                        </div>
                       </div>
-                      <div>
-                        <h6 class="text-xs font-bold text-slate-800">Bed Occupancy Management</h6>
-                        <p class="text-[0.6875rem] text-slate-500 mt-0.5 leading-relaxed">Visual grid of occupied vs.
-                          free
-                          beds across all wards.</p>
+                      <div class="space-y-0.5">
+                        <p class="text-[10px] font-bold text-slate-700 dark:text-white">Bed Occupancy</p>
+                        <p class="text-[8px] text-slate-400 dark:text-slate-300 font-medium">Total Wards</p>
                       </div>
                     </div>
 
+                    <!-- Dial 4: Doctor Availability Mapping -->
                     <div
-                      class="flex items-start space-x-3 p-3 rounded-2xl bg-slate-50/70 border border-slate-100 hover:lg:border-brand-200 hover:lg:bg-brand-50/30 transition-all duration-200">
-                      <div
-                        class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm shadow-brand-500/20">
-                        <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                      class="bg-slate-50/60 dark:bg-slate-900/40 border border-slate-150 dark:border-slate-800/80 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-xs">
+                      <span
+                        class="text-[9px] font-black text-slate-450 dark:text-slate-300 uppercase tracking-widest mb-3">Doctor
+                        Availability</span>
+                      <div class="relative w-20 h-20 flex items-center justify-center mb-3">
+                        <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                          <path class="text-slate-100 dark:text-slate-850" stroke-width="2.5" stroke="currentColor"
+                            fill="none"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                          <path class="text-indigo-600 dark:text-indigo-400" stroke-width="2.5"
+                            stroke-dasharray="90, 100" stroke-linecap="round" stroke="currentColor" fill="none"
+                            d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="absolute text-center">
+                          <span class="text-base font-black text-slate-850 dark:text-white">18</span>
+                        </div>
                       </div>
-                      <div>
-                        <h6 class="text-xs font-bold text-slate-800">Doctor Availability Mapping</h6>
-                        <p class="text-[0.6875rem] text-slate-500 mt-0.5 leading-relaxed">Tracking shift rosters,
-                          active
-                          consults, and leaves automatically.</p>
+                      <div class="space-y-0.5">
+                        <p class="text-[10px] font-bold text-slate-700 dark:text-white">Doctor Availability</p>
+                        <p class="text-[8px] text-slate-400 dark:text-slate-300 font-medium">On Standby</p>
                       </div>
                     </div>
 
                   </div>
                 </div>
 
-                <!-- Business Impact Banner -->
+                <!-- Business Impact Banner with dynamic bar chart (matching screenshot) -->
                 <div
-                  class="flex items-center space-x-4 p-4 rounded-2xl bg-gradient-to-r from-indigo-50 to-brand-50/50 border border-indigo-100 dark:from-slate-800 dark:to-slate-800/50 dark:border-slate-700">
-                  <div
-                    class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-indigo-500/25">
-                    <i data-lucide="trending-up" class="w-5 h-5"></i>
+                  class="flex items-center justify-between p-5 rounded-2xl bg-gradient-to-r from-brand-50 to-indigo-50/50 border border-brand-100 dark:from-slate-800 dark:to-slate-800/50 dark:border-slate-700">
+                  <div class="flex items-start space-x-4">
+                    <div
+                      class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-brand-500/25">
+                      <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <h6 class="text-[0.625rem] font-bold text-brand-900 dark:text-brand-300 uppercase tracking-wider">
+                        Business Impact</h6>
+                      <p class="text-xs text-brand-850 dark:text-slate-300 mt-0.5 leading-relaxed">Reduces manual
+                        administration, boosts billing clarity, and helps hospital directors pinpoint service delays.
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h6 class="text-[0.625rem] font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">
-                      Business Impact</h6>
-                    <p class="text-xs text-indigo-800 dark:text-indigo-200 mt-0.5">Reduces manual administration, boosts
-                      billing clarity, and
-                      helps hospital directors pinpoint service delays.</p>
+                  <!-- Floating mini dynamic bar chart -->
+                  <div class="hidden sm:flex items-end gap-1.5 h-12 shrink-0 pr-2">
+                    <div class="w-2 h-5 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs opacity-60"></div>
+                    <div class="w-2 h-8 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs opacity-80"></div>
+                    <div class="w-2 h-11 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs"></div>
+                    <div class="w-2 h-6 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs opacity-75"></div>
+                    <div class="w-2 h-9 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs opacity-90"></div>
+                    <div class="w-2 h-12 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs"></div>
                   </div>
                 </div>
 
@@ -1687,6 +1697,7 @@
       </div>
     </div>
   </section>
+
 
   <section class="relative py-24 overflow-hidden bg-[#020712] border-t border-slate-900">
 
@@ -1989,7 +2000,6 @@
   <!-- ═══ AI MEDICAL INTELLIGENCE SUITE SECTION (Redesigned Creative Sandbox Dashboard) ═══ -->
   <section id="ai-suite"
     class="relative py-24 overflow-hidden bg-slate-50/50 dark:bg-slate-950 border-t border-slate-200/80 dark:border-slate-900">
-
     <!-- Ambient Grid & Glow -->
     <div
       class="absolute inset-0 bg-[linear-gradient(to_right,rgba(11,107,95,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(11,107,95,0.03)_1px,transparent_1px)] bg-[size:32px_32px] opacity-70 pointer-events-none">
@@ -2275,6 +2285,7 @@
   </section>
 
 
+
   <!-- Patient Lifecycle Showcase Section — CREATIVE SWIPER REDESIGN -->
   <section id="workflow"
     class="relative py-20 overflow-hidden border-t border-slate-100 dark:border-slate-800 bg-gradient-to-b from-[#fafafa] via-white to-[#f8fafc] dark:from-[#090d16] dark:via-[#090d16] dark:to-[#090d16] dark:bg-[#090d16]">
@@ -2347,7 +2358,7 @@
           <!-- Step 1 -->
           <div class="swiper-slide h-auto">
             <div
-              class="bg-gradient-to-br from-white via-indigo-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 hover-glow-card transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:shadow-2xl hover:lg:-translate-y-2 h-full flex flex-col justify-between">
+              class="bg-gradient-to-br from-white via-indigo-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:-translate-y-2 h-full flex flex-col justify-between">
               <!-- Giant Watermark Step Number -->
               <span
                 class="absolute top-2 right-4 text-6xl font-display font-black text-slate-100 group-hover:lg:text-brand-100/70 transition-colors pointer-events-none select-none">01</span>
@@ -2405,7 +2416,7 @@
           <!-- Step 2 -->
           <div class="swiper-slide h-auto">
             <div
-              class="bg-gradient-to-br from-white via-teal-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 hover-glow-card transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:shadow-2xl hover:lg:-translate-y-2 h-full flex flex-col justify-between">
+              class="bg-gradient-to-br from-white via-teal-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:-translate-y-2 h-full flex flex-col justify-between">
               <!-- Giant Watermark Step Number -->
               <span
                 class="absolute top-2 right-4 text-6xl font-display font-black text-slate-100 group-hover:lg:text-teal-100/70 transition-colors pointer-events-none select-none">02</span>
@@ -2463,7 +2474,7 @@
           <!-- Step 3 -->
           <div class="swiper-slide h-auto">
             <div
-              class="bg-gradient-to-br from-white via-amber-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 hover-glow-card transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:shadow-2xl hover:lg:-translate-y-2 h-full flex flex-col justify-between">
+              class="bg-gradient-to-br from-white via-amber-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:-translate-y-2 h-full flex flex-col justify-between">
               <!-- Giant Watermark Step Number -->
               <span
                 class="absolute top-2 right-4 text-6xl font-display font-black text-slate-100 group-hover:lg:text-amber-100/70 transition-colors pointer-events-none select-none">03</span>
@@ -2521,7 +2532,7 @@
           <!-- Step 4 -->
           <div class="swiper-slide h-auto">
             <div
-              class="bg-gradient-to-br from-white via-cyan-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 hover-glow-card transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:shadow-2xl hover:lg:-translate-y-2 h-full flex flex-col justify-between">
+              class="bg-gradient-to-br from-white via-cyan-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:-translate-y-2 h-full flex flex-col justify-between">
               <!-- Giant Watermark Step Number -->
               <span
                 class="absolute top-2 right-4 text-6xl font-display font-black text-slate-100 group-hover:lg:text-cyan-100/70 transition-colors pointer-events-none select-none">04</span>
@@ -2579,7 +2590,7 @@
           <!-- Step 5 -->
           <div class="swiper-slide h-auto">
             <div
-              class="bg-gradient-to-br from-white via-emerald-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 hover-glow-card transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:shadow-2xl hover:lg:-translate-y-2 h-full flex flex-col justify-between">
+              class="bg-gradient-to-br from-white via-emerald-50/20 to-white border border-slate-200/90 p-7 rounded-[2rem] space-y-6 transition-all duration-500 relative overflow-hidden group shadow-sm hover:lg:-translate-y-2 h-full flex flex-col justify-between">
               <!-- Giant Watermark Step Number -->
               <span
                 class="absolute top-2 right-4 text-6xl font-display font-black text-slate-100 group-hover:lg:text-emerald-100/70 transition-colors pointer-events-none select-none">05</span>

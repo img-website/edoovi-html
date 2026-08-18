@@ -75,20 +75,10 @@ if (mobileMenuBtn && mobileNav) {
 // Scroll-triggered navbar compact state
 const mainNavbar = document.getElementById('main-navbar');
 window.addEventListener('scroll', () => {
-  const isDark = document.documentElement.classList.contains('dark');
   if (window.scrollY > 40) {
     mainNavbar.classList.add('scrolled');
-    if (isDark) {
-      mainNavbar.style.backgroundColor = 'rgba(15, 23, 42, 0.94)';
-      mainNavbar.style.borderColor = 'rgba(30, 41, 59, 0.8)';
-    } else {
-      mainNavbar.style.backgroundColor = 'rgba(255, 255, 255, 0.94)';
-      mainNavbar.style.borderColor = 'rgba(226, 232, 240, 0.8)';
-    }
   } else {
     mainNavbar.classList.remove('scrolled');
-    mainNavbar.style.backgroundColor = '';
-    mainNavbar.style.borderColor = '';
   }
 }, { passive: true });
 
@@ -216,34 +206,103 @@ const modulesData = {
   }
 };
 
+const moduleStats = {
+  'tab-dashboard': [
+    { name: "OPD/IPD Activity", sub: "Today's IPD", value: "256", pct: 75, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "Revenue Audit", sub: "Today's Target", value: "₹3.45L", pct: 60, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "Bed Occupancy", sub: "Total Wards", value: "82%", pct: 82, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "Doctor Availability", sub: "On Standby", value: "18", pct: 90, color: 'text-indigo-600 dark:text-indigo-400' }
+  ],
+  'tab-registration': [
+    { name: "UHID Gen", sub: "Active Patient Base", value: "1.2K", pct: 85, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "Demographics", sub: "Profile Completeness", value: "100%", pct: 100, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "Insurance", sub: "TPA Approvals", value: "45", pct: 65, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "Documents", sub: "EHR Sync Rate", value: "98%", pct: 98, color: 'text-indigo-600 dark:text-indigo-400' }
+  ],
+  'tab-appointments': [
+    { name: "Daily Bookings", sub: "Rescheduled slots", value: "142", pct: 80, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "OPD Queue", sub: "Avg Wait: 12 min", value: "12m", pct: 40, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "Active Tokens", sub: "Checked in", value: "85", pct: 70, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "Reminders Sent", sub: "No-show Alert Sync", value: "99%", pct: 99, color: 'text-indigo-600 dark:text-indigo-400' }
+  ],
+  'tab-opd': [
+    { name: "Consultations", sub: "E-Prescriptions", value: "110", pct: 75, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "Vitals Tracked", sub: "Triaged Patients", value: "100%", pct: 100, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "Digital Rx", sub: "MIMS Drug Checked", value: "95%", pct: 95, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "ICD-10 Mapped", sub: "Clinical Diagnosis", value: "92%", pct: 92, color: 'text-indigo-600 dark:text-indigo-400' }
+  ],
+  'tab-ipd': [
+    { name: "Admissions", sub: "Pending Clearances", value: "32", pct: 60, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "Bed Allocations", sub: "Ward Transfers", value: "88%", pct: 88, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "Doctor Rounds", sub: "Clinical Updates", value: "24/24", pct: 100, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "Nursing Shift Logs", sub: "Vitals Recorded", value: "97%", pct: 97, color: 'text-indigo-600 dark:text-indigo-400' }
+  ],
+  'tab-pharmacy': [
+    { name: "Medicine Inward", sub: "Vendor Orders", value: "85%", pct: 85, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "Inventory Tracked", sub: "Item Batches", value: "12K+", pct: 90, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "Expiry Warnings", sub: "Discarded Stock", value: "0", pct: 100, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "Synced Bills", sub: "IPD/OPD Orders", value: "100%", pct: 100, color: 'text-indigo-600 dark:text-indigo-400' }
+  ],
+  'tab-laboratory': [
+    { name: "Tests Cataloged", sub: "Packages Configured", value: "450", pct: 95, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "Samples Routed", sub: "Barcode Tagged", value: "100%", pct: 100, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "Result Verification", sub: "Pathologist Signoff", value: "94%", pct: 94, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "WhatsApp Dispatched", sub: "PDF Report Sync", value: "99%", pct: 99, color: 'text-indigo-600 dark:text-indigo-400' }
+  ],
+  'tab-billing': [
+    { name: "Unified Bills", sub: "Agreed Tariff sync", value: "100%", pct: 100, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "TPA Claims", sub: "Real-time Audited", value: "96%", pct: 96, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "Discount Clearance", sub: "Admin Approvals", value: "12", pct: 50, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "Digital Payments", sub: "Refund Actions", value: "88%", pct: 88, color: 'text-indigo-600 dark:text-indigo-400' }
+  ],
+  'tab-reports': [
+    { name: "Revenue Audits", sub: "Daily Accounts Book", value: "100%", pct: 100, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "Patient Flow", sub: "Demographic Trends", value: "Live", pct: 100, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "Doctor Insights", sub: "OPD load tracking", value: "Synced", pct: 100, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "Stock Valuations", sub: "Low stock alerts", value: "Safe", pct: 95, color: 'text-indigo-600 dark:text-indigo-400' }
+  ],
+  'tab-superadmin': [
+    { name: "Active Tenancies", sub: "Branches Syncing", value: "4", pct: 80, color: 'text-brand-600 dark:text-emerald-450' },
+    { name: "Package Tier Bills", sub: "License Keys", value: "Synced", pct: 100, color: 'text-emerald-600 dark:text-teal-400' },
+    { name: "RBAC Permissions", sub: "Audit Trails", value: "100%", pct: 100, color: 'text-cyan-600 dark:text-cyan-400' },
+    { name: "System Uptime SLA", sub: "Node health status", value: "99.9%", pct: 99, color: 'text-indigo-600 dark:text-indigo-400' }
+  ]
+};
+
 function switchModule(tabId) {
   // Toggle button highlights
   document.querySelectorAll('.module-tab-btn').forEach(btn => {
-    btn.classList.remove('active', 'border-slate-200', 'bg-white', 'shadow-sm', 'dark:bg-slate-800', 'dark:border-slate-700');
-    btn.classList.add('border-slate-100');
+    btn.classList.remove('active');
   });
   const selectedBtn = document.getElementById('btn-' + tabId);
   if (selectedBtn) {
-    selectedBtn.classList.add('active', 'border-slate-200', 'bg-white', 'shadow-sm', 'dark:bg-slate-800', 'dark:border-slate-700');
-    selectedBtn.classList.remove('border-slate-100');
+    selectedBtn.classList.add('active');
   }
 
   // Fetch content
   const data = modulesData[tabId];
   if (!data) return;
   const container = document.getElementById('module-display-content');
-
-  // Build features list html
-  let featuresHtml = '';
-  data.features.forEach(f => {
-    featuresHtml += `
-      <div class="flex items-start space-x-3 p-3 rounded-2xl bg-slate-50/70 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:border-brand-200 hover:bg-brand-50/30 transition-all duration-200">
-        <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-brand-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm shadow-brand-500/20">
-          <i data-lucide="check" class="w-3.5 h-3.5"></i>
+  // Build premium circular progress dials HTML dynamically
+  let dialsHtml = '';
+  const stats = moduleStats[tabId] || [];
+  stats.forEach(s => {
+    const strokeDash = Math.round(s.pct);
+    dialsHtml += `
+      <div class="bg-slate-50/60 dark:bg-slate-900/40 border border-slate-150 dark:border-slate-800/80 rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-xs">
+        <span class="text-[9px] font-black text-slate-450 dark:text-slate-300 uppercase tracking-widest mb-3">${s.name}</span>
+        <div class="relative w-20 h-20 flex items-center justify-center mb-3">
+          <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+            <path class="text-slate-100 dark:text-slate-850" stroke-width="2.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="${s.color}" stroke-width="2.5" stroke-dasharray="${strokeDash}, 100" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          </svg>
+          <div class="absolute text-center">
+            <span class="text-base font-black text-slate-850 dark:text-white">${s.value}</span>
+          </div>
         </div>
-        <div>
-          <h6 class="text-xs font-bold text-slate-800 dark:text-white">${f.name}</h6>
-          <p class="text-[0.6875rem] text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">${f.desc}</p>
+        <div class="space-y-0.5">
+          <p class="text-[10px] font-bold text-slate-800 dark:text-white">${s.name}</p>
+          <p class="text-[8px] text-slate-400 dark:text-slate-300 font-medium">${s.sub}</p>
         </div>
       </div>
     `;
@@ -251,44 +310,57 @@ function switchModule(tabId) {
 
   // Update inner HTML of detail container
   container.innerHTML = `
-    <div class="space-y-5">
-      <div class="flex items-start justify-between gap-4">
+    <div class="space-y-6">
+      <!-- Module title row -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span class="inline-flex items-center space-x-1 text-[0.625rem] font-bold text-brand-600 tracking-widest uppercase bg-brand-50 dark:bg-slate-800 border border-brand-100 dark:border-slate-700 px-2.5 py-0.5 rounded-md mb-2">
+          <span class="inline-flex items-center space-x-1.5 text-[0.625rem] font-bold text-brand-600 dark:text-[#10b981] tracking-widest uppercase bg-brand-50 dark:bg-slate-800 border border-brand-100 dark:border-slate-700 px-3 py-1 rounded-full mb-3">
             <i data-lucide="layers" class="w-3 h-3"></i>
             <span>Module Detail</span>
           </span>
-          <h3 class="text-2xl font-display font-extrabold text-slate-900 dark:text-white">${data.title}</h3>
+          <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-slate-900 dark:text-white leading-tight">${data.title}</h3>
         </div>
-        <div class="flex items-center space-x-1.5 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 px-3 py-1.5 rounded-xl">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 dark:bg-emerald-400 animate-pulse"></span>
-          <span class="text-xs font-bold text-emerald-700 dark:text-emerald-400">Active</span>
+        <div class="flex-shrink-0">
+          <div class="inline-flex items-center space-x-1.5 bg-brand-50 dark:bg-emerald-950/30 border border-brand-100 dark:border-emerald-800 px-3.5 py-1.5 rounded-xl shadow-xs">
+            <i data-lucide="check-circle" class="w-4 h-4 text-brand-650 dark:text-emerald-400"></i>
+            <span class="text-xs font-black text-brand-700 dark:text-[#10b981]">Active</span>
+          </div>
         </div>
       </div>
 
-      <div class="space-y-2">
-        <h6 class="text-[0.625rem] font-bold text-slate-400 uppercase tracking-widest">Overview</h6>
-        <p class="text-slate-600 dark:text-slate-350 text-sm leading-relaxed">${data.desc}</p>
-      </div>
+      <p class="text-slate-650 dark:text-slate-200 text-sm sm:text-base leading-relaxed">${data.desc}</p>
 
+      <!-- Premium Circular Status Dials (matching screenshot) -->
       <div>
-        <h5 class="text-[0.625rem] font-bold uppercase tracking-widest text-slate-400 mb-3 flex items-center space-x-2">
-          <span class="flex-1 h-px bg-slate-100 dark:bg-slate-800"></span>
-          <span>Key Features</span>
-          <span class="flex-1 h-px bg-slate-100 dark:bg-slate-800"></span>
+        <h5 class="text-[0.625rem] font-black uppercase tracking-widest text-slate-450 dark:text-slate-300 mb-6 flex items-center space-x-3">
+          <span class="flex-1 h-px bg-slate-200/60 dark:bg-slate-800/80"></span>
+          <span>Key System Features</span>
+          <span class="flex-1 h-px bg-slate-200/60 dark:bg-slate-800/80"></span>
         </h5>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          ${featuresHtml}
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          ${dialsHtml}
         </div>
       </div>
 
-      <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-indigo-50 dark:from-slate-800 to-brand-50/50 dark:to-slate-800/50 border border-indigo-100 dark:border-slate-700">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-indigo-500/25">
-          <i data-lucide="trending-up" class="w-5 h-5"></i>
+      <!-- Business Benefit / Impact Banner with dynamic bar chart (matching screenshot) -->
+      <div class="flex items-center justify-between p-5 rounded-2xl bg-gradient-to-r from-brand-50 to-indigo-50/50 border border-brand-100 dark:from-slate-800 dark:to-slate-800/50 dark:border-slate-700">
+        <div class="flex items-start space-x-4">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-brand-600 text-white flex items-center justify-center flex-shrink-0 shadow-md shadow-brand-500/25">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h6 class="text-[0.625rem] font-bold text-brand-900 dark:text-brand-300 uppercase tracking-wider">Business Impact</h6>
+            <p class="text-xs text-brand-850 dark:text-slate-200 mt-0.5 leading-relaxed">${data.benefits}</p>
+          </div>
         </div>
-        <div>
-          <h6 class="text-[0.625rem] font-bold text-indigo-900 dark:text-indigo-300 uppercase tracking-wider">Business Benefits</h6>
-          <p class="text-xs text-indigo-800 dark:text-indigo-200 mt-0.5 leading-relaxed">${data.benefits}</p>
+        <!-- Floating mini dynamic bar chart -->
+        <div class="hidden sm:flex items-end gap-1.5 h-12 shrink-0 pr-2">
+          <div class="w-2 h-5 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs opacity-60"></div>
+          <div class="w-2 h-8 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs opacity-80"></div>
+          <div class="w-2 h-11 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs"></div>
+          <div class="w-2 h-6 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs opacity-75"></div>
+          <div class="w-2 h-9 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs opacity-90"></div>
+          <div class="w-2 h-12 bg-gradient-to-t from-brand-600 to-teal-400 rounded-t-xs"></div>
         </div>
       </div>
     </div>
@@ -724,28 +796,6 @@ function initDarkMode() {
     document.documentElement.classList.toggle('dark');
     const isDark = document.documentElement.classList.contains('dark');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-
-    // Update scrolled navbar color immediately if scrolled
-    if (mainNavbar && mainNavbar.classList.contains('scrolled')) {
-      if (isDark) {
-        mainNavbar.style.backgroundColor = 'rgba(15, 23, 42, 0.94)';
-        mainNavbar.style.borderColor = 'rgba(30, 41, 59, 0.8)';
-      } else {
-        mainNavbar.style.backgroundColor = 'rgba(255, 255, 255, 0.94)';
-        mainNavbar.style.borderColor = 'rgba(226, 232, 240, 0.8)';
-      }
-    }
-
-    // Dynamic footer bg-image toggle
-    document.querySelectorAll("footer").forEach(foot => {
-      if (isDark) {
-        foot.style.backgroundImage = 'none';
-        foot.style.backgroundColor = '#050811';
-      } else {
-        foot.style.backgroundImage = '';
-        foot.style.backgroundColor = '';
-      }
-    });
   }
 
   if (darkModeToggle) {
@@ -769,10 +819,6 @@ function initDarkMode() {
     // 2. Footer
     document.querySelectorAll("footer").forEach(foot => {
       foot.classList.add("dark:bg-[#050811]", "dark:text-slate-200");
-      if (document.documentElement.classList.contains('dark')) {
-        foot.style.backgroundImage = 'none';
-        foot.style.backgroundColor = '#050811';
-      }
     });
 
     // 3. Cards & Mockups
@@ -791,7 +837,7 @@ function initDarkMode() {
     });
 
     // 6. Paragraphs & descriptions
-    document.querySelectorAll(".text-slate-700, .text-slate-600, .text-slate-500").forEach(el => {
+    document.querySelectorAll(".text-slate-700, .text-slate-600, .text-slate-505, .text-slate-500, .text-slate-650").forEach(el => {
       el.classList.add("dark:text-slate-300");
     });
 
@@ -831,12 +877,8 @@ function initDarkMode() {
   }
 
   // Apply scrolled state styling on initial load if scrolled
-  if (document.documentElement.classList.contains('dark')) {
-    if (mainNavbar && window.scrollY > 40) {
-      mainNavbar.classList.add('scrolled');
-      mainNavbar.style.backgroundColor = 'rgba(15, 23, 42, 0.94)';
-      mainNavbar.style.borderColor = 'rgba(30, 41, 59, 0.8)';
-    }
+  if (mainNavbar && window.scrollY > 40) {
+    mainNavbar.classList.add('scrolled');
   }
 }
 initDarkMode();
